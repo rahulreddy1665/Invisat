@@ -288,7 +288,36 @@ ol {
 /*===  Accordion ===*/
 .accordion-area .panel {
 	margin-bottom: 15px;
+
 }
+
+.products {
+	outline: 0px;
+	text-decoration: none;
+	height: 370px;
+	color: rgb(0, 0, 0);
+	box-sizing: border-box;
+	border-radius: 0.5rem;
+	position: relative;
+	overflow: hidden;
+	background-color: rgb(255, 255, 255);
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 0.0625rem 0.1875rem, rgba(0, 0, 0, 0.05) 0px 1.25rem 1.5625rem -0.3125rem, rgba(0, 0, 0, 0.04) 0px 0.625rem 0.625rem -0.3125rem;
+	display: flex;
+	flex-direction: column;
+	transition: transform 150ms, box-shadow 150ms;
+	padding: 1.25rem;
+}
+
+.img {
+	object-fit: contain;
+	width: 100%;
+	height: 17.25rem;
+}
+
+
+
+
+
 
 .accordion-area .panel-header {
 	background: #f0f0f0;
@@ -2213,3 +2242,6 @@ ol {
 	color: #fff;
 	padding-top: 40px;
 }
+
+
+/* Forr Products  */
