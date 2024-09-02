@@ -107,6 +107,10 @@ img {
   .section-title {
 	margin-bottom: -120px !important;
   }
+  .intro-section{
+	padding-top: 0px !important ;
+	padding-bottom: 0px !important;
+  }
 }
 
 input:focus,
