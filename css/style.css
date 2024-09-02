@@ -95,6 +95,7 @@ img {
 	background-size: contain !important;
 	width: 100%;
 	height: 47.75rem;
+	
 	background: #333;
 	-o-transition: 0.8s;
 	transition: 0.8s;
@@ -104,13 +105,13 @@ img {
 	-webkit-transform: translateX(0);
 	opacity: 1;
   }
-  .section-title {
-	margin-bottom: -120px !important;
-  }
   .intro-section{
 	padding-top: 0px !important ;
 	padding-bottom: 0px !important;
   }
+  .section-title1{
+	margin-bottom: -120px !important;
+  } 
 }
 
 input:focus,
@@ -177,6 +178,15 @@ ol {
 
 .section-title h1,
 .section-title h2 {
+  display: inline-block;
+  background: #e0b264;
+  padding: 0 20px;
+  margin-bottom: 0;
+  font-size: 60px;
+}
+
+.section-title1 h1,
+.section-title1 h2 {
   display: inline-block;
   background: #e0b264;
   padding: 0 20px;
