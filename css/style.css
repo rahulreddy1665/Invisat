@@ -284,6 +284,10 @@ ol {
     /* animation: loader 1.2s linear infinite;
     -webkit-animation: loader 1.2s linear infinite; Smaller size for mobile */
   }
+  .abc{
+    margin-bottom: 60px;
+  }
+  
 }
 
 .site-btn {
@@ -1361,7 +1365,7 @@ ol {
   right: auto;
   left: 100%;
   bottom: -160px;
-  width: 160px;
+  width: 170px;
   height: 230px;
   padding-right: 30px;
   padding-top: 80px;
@@ -1839,6 +1843,7 @@ ol {
   content: "";
   display: block;
   clear: both;
+  
 }
 
 .portfolio-warp .grid-item.grid-wide,
