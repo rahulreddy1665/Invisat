@@ -213,25 +213,30 @@ ol {
   top: 0;
   left: 0;
   z-index: 999999;
-  background: #f0f0f0;
+  background: #ffffff;
   display: flex; /* Use flexbox for centering */
   justify-content: center; /* Horizontally center */
   align-items: center;
 }
 
 .loader {
-  width: 100px;
-  height: 30px;
-  border: 5px solid #e0b264;
+  width: 400px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -13px;
-  margin-left: -13px;
+  top: 30%;
+  left: 40%;
+  /* margin-top: -13px; */
+  /* margin-left: -13px; */
   border-radius: 60px;
+  background-image: url('../img/favicon.jpeg');
+  background-color: transparent;
+  /* border-color: #e0b264;
+  border-width: 6px; */
   /* border-left-color: transparent; */
-  animation: loader 1.2s linear infinite;
-  -webkit-animation: loader 1.2s linear infinite;
+  /* animation: loader 1.2s linear infinite;
+  -webkit-animation: loader 1.2s linear infinite; */
 }
 
 @keyframes loader {
@@ -265,18 +270,19 @@ ol {
 /* Media query for small screens */
 @media (max-width: 600px) {
   .loader {
-    width: 70px; /* Smaller size for mobile */
-    height: 45px;
-    border: 5px solid #e0b264;
+    width: 200px; /* Smaller size for mobile */
+    height: 150px;
+    background-image: url('../img/favicon.jpeg');
+    background-color: transparent;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 40%;
     margin-top: -13px;
     margin-left: -13px;
     border-radius: 60px;
     /* border-left-color: transparent; */
-    animation: loader 1.2s linear infinite;
-    -webkit-animation: loader 1.2s linear infinite; /* Smaller size for mobile */
+    /* animation: loader 1.2s linear infinite;
+    -webkit-animation: loader 1.2s linear infinite; Smaller size for mobile */
   }
 }
 
@@ -1258,7 +1264,7 @@ ol {
   height: calc(100% + 120px);
   left: 0;
   top: -60px;
-  background-image: url("../img/cta-img.jpg");
+  background-image: url("../img/cta-img.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -1270,8 +1276,8 @@ ol {
 
 .testimonials-section .qut {
   color: #e0b264;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .ts-item p {
