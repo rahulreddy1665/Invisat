@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    table {
+      width: 90%;
+      margin: 30px auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+
+    .not-found {
+      text-align: center;
+      color: red;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2 id="product-title">Loading...</h2>
+  <div id="table-container"></div>
+
+  <script>
+    // Get product name from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('product');
+
+    // Update page title
+    document.getElementById('product-title').textContent = productName;
+
+    // Define unique tables for each product
+    const productTables = {
+      "ANTIBIOTICS": `
+        <table>
+          <tr><th>Brand</th><th>Composition</th><th>Pack</th></tr>
+          <tr><td>Amoxy 500</td><td>Amoxicillin 500mg</td><td>10's</td></tr>
+          <tr><td>CiproMax</td><td>Ciprofloxacin 250mg</td><td>10's</td></tr>
+        </table>
+      `,
+      "ANTI DIABETIC": `
+        <table>
+          <tr><th>Brand</th><th>Composition</th><th>Dosage Form</th></tr>
+          <tr><td>GlucoControl</td><td>Metformin 500mg</td><td>Tablet</td></tr>
+          <tr><td>SugarFix</td><td>Glimepiride 2mg</td><td>Tablet</td></tr>
+        </table>
+      `,
+      "CAPSULES": `
+        <table>
+          <tr><th>Brand</th><th>Ingredients</th><th>Use</th></tr>
+          <tr><td>VitaCaps</td><td>Multivitamin + Zinc</td><td>Daily Supplement</td></tr>
+        </table>
+      `,
+      "DRY INJECTIONS": `
+        <table>
+          <tr><th>Brand</th><th>Composition</th><th>Vial Size</th></tr>
+          <tr><td>CefDry</td><td>Ceftriaxone 1g</td><td>1 Vial</td></tr>
+        </table>
+      `
+      // Add more product-specific tables here...
+    };
+
+    // Display table if found
+    const container = document.getElementById('table-container');
+    if (productTables[productName]) {
+      container.innerHTML = productTables[productName];
+    } else {
+      container.innerHTML = `<div class="not-found">No table found for <strong>${productName}</strong>.</div>`;
+    }
+  </script>
+</body>
+</html>
