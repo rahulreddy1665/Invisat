@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Product Table</title>
+  <title>Invisat Pharmaceuticals</title>
+  <meta name="description" content="Invisat Pharmaceuticals website">
+  <meta name="keywords" content="medical, website, Pharmaceuticals, onepage, creative, html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Favicon -->
+  <link href="img/favicon.jpeg" rel="shortcut icon" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/animate.css" />
+  <link rel="stylesheet" href="css/owl.carousel.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  min-height: 100vh; /* Ensure body takes full height */
+  display: flex;
+  flex-direction: column;
       padding: 20px;
     }
 
@@ -13,9 +31,22 @@
       text-align: center;
     }
 
+    .search-box {
+      width: 90%;
+      margin: 20px auto;
+      text-align: right;
+    }
+
+    .search-box input {
+      padding: 8px;
+      width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
     table {
       width: 90%;
-      margin: 30px auto;
+      margin: 20px auto;
       border-collapse: collapse;
     }
 
@@ -23,6 +54,11 @@
       padding: 12px;
       border: 1px solid #ccc;
       text-align: left;
+      cursor: pointer;
+    }
+
+    th.sortable:hover {
+      background-color: #f1f1f1;
     }
 
     .not-found {
@@ -30,10 +66,41 @@
       color: red;
       margin-top: 50px;
     }
+    th.sortable {
+  position: relative;
+  padding-right: 20px;
+}
+
+th.sortable::after {
+  content: "\2195"; /* up/down arrow */
+  position: absolute;
+  right: 8px;
+  font-size: 12px;
+  color: #888;
+}
+
+th.sortable.asc::after {
+  content: "\2191"; /* up arrow */
+}
+
+th.sortable.desc::after {
+  content: "\2193"; /* down arrow */
+}
+
   </style>
 </head>
 <body>
+  <!-- Page Preloder -->
+
+
+	
+
   <h2 id="product-title">Loading...</h2>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search in table...">
+  </div>
+
   <div id="table-container"></div>
 
   <script>
@@ -46,42 +113,527 @@
 
     // Define unique tables for each product
     const productTables = {
-      "ANTIBIOTICS": `
-        <table>
-          <tr><th>Brand</th><th>Composition</th><th>Pack</th></tr>
-          <tr><td>Amoxy 500</td><td>Amoxicillin 500mg</td><td>10's</td></tr>
-          <tr><td>CiproMax</td><td>Ciprofloxacin 250mg</td><td>10's</td></tr>
-        </table>
-      `,
-      "ANTI DIABETIC": `
-        <table>
-          <tr><th>Brand</th><th>Composition</th><th>Dosage Form</th></tr>
-          <tr><td>GlucoControl</td><td>Metformin 500mg</td><td>Tablet</td></tr>
-          <tr><td>SugarFix</td><td>Glimepiride 2mg</td><td>Tablet</td></tr>
-        </table>
-      `,
-      "CAPSULES": `
-        <table>
-          <tr><th>Brand</th><th>Ingredients</th><th>Use</th></tr>
-          <tr><td>VitaCaps</td><td>Multivitamin + Zinc</td><td>Daily Supplement</td></tr>
-        </table>
-      `,
-      "DRY INJECTIONS": `
-        <table>
-          <tr><th>Brand</th><th>Composition</th><th>Vial Size</th></tr>
-          <tr><td>CefDry</td><td>Ceftriaxone 1g</td><td>1 Vial</td></tr>
-        </table>
-      `
-      // Add more product-specific tables here...
-    };
+  "ANTIBIOTICS": `
+    <table id="productTable">
+  <thead>
+    <tr>
+      <th class="sortable">Brand / Composition</th>
+      <th class="sortable">Pack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>AMOXYCILLIN 500 + CLAVULANATE 125 MG ALU ALU PACK TAB. MONO PACK</td><td>10*1*10</td></tr>
+    <tr><td>AMOXYCILLIN 250 + CLAVULANATE 125 MG ALU ALU PACK TAB.</td><td>10*6</td></tr>
+    <tr><td>AMOXYCILLIN 875 + CLAVULANATE 125 MG</td><td>1*10</td></tr>
+    <tr><td>AMOXYCILLIN 500 CAPSULE (YELLOW COLOR)</td><td>20*10</td></tr>
+    <tr><td>AMOXYCILLIN 250 MG CAP (GRAY YELLOW)</td><td>30*10</td></tr>
+    <tr><td>AMOXYCILLIN 250 MG DISPERSIBLE TABLET</td><td>20*10</td></tr>
+    <tr><td>AZITHROMYCIN 250 MG</td><td>20*6</td></tr>
+    <tr><td>AZITHROMYCIN 500 MG</td><td>20*3</td></tr>
+    <tr><td>CEFALEXIN 500 MG CAPSULE</td><td>10*10</td></tr>
+    <tr><td>CEFPODOXIME 200 MG + CLAVULANATE 125 MG MONO PACK</td><td>10*1*10</td></tr>
+    <tr><td>CEFPODOXIME 200MG TAB</td><td>10*10</td></tr>
+    <tr><td>CEFPODOXIME 200 + OFLOXACIN 200 MG TABLET</td><td>10*10</td></tr>
+    <tr><td>CIPROFLOXACIN 250 MG</td><td>10*10</td></tr>
+    <tr><td>CIPROFLOXACIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>CLARITHROMYCIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>CLINDAMYCIN 300 MG CAPSULE</td><td>10*10</td></tr>
+    <tr><td>CIPROFLOXACIN 500 MG + TINIDAZOLE 600 MG</td><td>10*10</td></tr>
+    <tr><td>CEFIXIME 200 + SULBACTAM 150 MG</td><td>10*1*10</td></tr>
+    <tr><td>CEFIXIME 200 MG + LACTIC ACID BACILLUS</td><td>10*10</td></tr>
+    <tr><td>CEFIXIME 200 MG DISPERSIBLE TABLET</td><td>10*10</td></tr>
+    <tr><td>CEFIXIME 100 MG DISPERSIBLE TABLET</td><td>10*10</td></tr>
+    <tr><td>CEFIXIME 200 MG + CLAVULANATE 125 MG MONO PACK</td><td>10*1*10</td></tr>
+    <tr><td>CEFIXIME 200 MG + OFLOXACIN 200 MG</td><td>10*10</td></tr>
+  </tbody>
+</table>
 
-    // Display table if found
+  `,
+  "ANTI DIABETIC": `
+    <table id="productTable">
+  <thead>
+    <tr>
+      <th class="sortable">Brand</th>
+      <th class="sortable">Composition</th>
+      <th class="sortable">Pack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Glucare 50</td><td>ACARBOSE 50</td><td>10*10</td></tr>
+    <tr><td>Glucare 25</td><td>ACARBOSE 25</td><td>10*10</td></tr>
+    <tr><td>DapaTab 5</td><td>DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>DapaMet 10/500</td><td>DAPAGLIFLOZIN 10 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>DapaMet 10/1000</td><td>DAPAGLIFLOZIN 10 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>DapaTeneMet 10/20/500</td><td>DAPAGLIFLOZIN 10 MG + TENELIGLIPTIN 20 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>DapaTeneMet 10/20/1000</td><td>DAPAGLIFLOZIN 10 MG + TENELIGLIPTIN 20 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/1/1000</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 1 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/2/1000</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 2 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/1/500</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 1 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/2/500</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 2 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>DapaMet 5/500</td><td>DAPAGLIFLOZIN 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>DapaMet 5/1000</td><td>DAPAGLIFLOZIN 5 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>DapaTene 10/20</td><td>DAPAGLIFLOZIN 10 MG + TENELIGLIPTIN 20 MG</td><td>10*10</td></tr>
+    <tr><td>DapaVilMet 10/100/500</td><td>DAPAGLIFLOZIN 10 MG + VILDAGLIPTIN 100 MG + METFORMIN 500</td><td>10*10</td></tr>
+    <tr><td>DapaVilMet 10/100/1000</td><td>DAPAGLIFLOZIN 10 MG + VILDAGLIPTIN 100 MG + METFORMIN 1000</td><td>10*10</td></tr>
+    <tr><td>DapaVil 10/100</td><td>DAPAGLIFLOZIN 10 MG + VILDAGLIPTIN 100 MG</td><td>10*10</td></tr>
+    <tr><td>DapaVil 5/100</td><td>DAPAGLIFLOZIN 5 MG + VILDAGLIPTIN 100 MG</td><td>10*10</td></tr>
+    <tr><td>DapaVil 5/50</td><td>DAPAGLIFLOZIN 5 MG + VILDAGLIPTIN 50 MG</td><td>10*10</td></tr>
+    <tr><td>Empa 10</td><td>EMPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
+    <tr><td>Empa 25</td><td>EMPAGLIFLOZIN 25 MG</td><td>10*10</td></tr>
+    <tr><td>EmpaMet 12.5/500</td><td>EMPAGLIFLOZIN 12.50 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>EmpaMet 12.5/1000</td><td>EMPAGLIFLOZIN 12.50 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>EmpaLina 10/5</td><td>EMPAGLIFLOZIN 10 MG + LINAGLIPTIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>EmpaLina 25/5</td><td>EMPAGLIFLOZIN 25 MG + LINAGLIPTIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>GliMet 5/500</td><td>GLIBENCLAMIDE 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>GlimMet 0.5/500</td><td>GLIMEPIRIDE 0.5 MG + METFORMIN 500 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 0.5/1000</td><td>GLIMEPIRIDE 0.5 MG + METFORMIN 1000 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 2/500</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 2/1000</td><td>GLIMEPIRIDE 2 MG + METFORMIN 1000 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 1/1000 SR</td><td>GLIMEPIRIDE 1MG+METFORMIN 1000MG SR BLISTER</td><td>10*10</td></tr>
+    <tr><td>GlimPioMet 2/500/15</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 + PIOGLITAZONE 15 MG BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimPioMet 1/500/15</td><td>GLIMEPIRIDE 1 MG + METFORMIN 500 + PIOGLITAZONE 15 MG BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 1/500/0.2</td><td>GLIMEPIRIDE 1 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.2 MG</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 2/500/0.2</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.2 MG</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 1/1000/0.2</td><td>GLIMEPIRIDE 1 MG + METFORMIN 1000 MG + VOGLIBOSE 0.2 MG</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 1/500/0.3</td><td>GLIMEPIRIDE 1 MG + METFORMIN 500 + VOGLIBOSE 0.3</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 2/500/0.3</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.3 MG</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 3/500/0.3</td><td>GLIMEPIRIDE 3 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.3 MG</td><td>10*10</td></tr>
+    <tr><td>GlimMet 3/500</td><td>GLIMIPRIDE 3 MG + METFORMIN 500 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 3/850</td><td>GLIMIPRIDE 3 MG + METFORMIN 850 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 3/1000</td><td>GLIMIPRIDE 3 MG + METFORMIN 1000 BILAYER</td><td>10*15</td></tr>
+    <tr><td>GlimMet 4/500</td><td>GLIMIPRIDE 4 MG + METFORMIN 500 BILAYER</td><td>10*10</td></tr>
+    <tr><td>GlimMet 4/1000</td><td>GLIMIPRIDE 4 MG + METFORMIN 1000 BILAYER</td><td>10*10</td></tr>
+    <tr><td>Metformin 250 SR</td><td>METFORMIN HYDROCHLORIDE 250 MG SR BLISTER</td><td>10*10</td></tr>
+    <tr><td>Glimipride 500</td><td>GLIMEPIRIDE 500 MG WITHOUT SR</td><td>20*20</td></tr>
+    <tr><td>Metformin 500 SR</td><td>METFORMIN HYDROCHLORIDE 500 MG SR BLISTER</td><td>10*15</td></tr>
+    <tr><td>Metformin 850 SR</td><td>METFORMIN HYDROCHLORIDE 850 MG SR BLISTER</td><td>10*10</td></tr>
+    <tr><td>Metformin 1000 SR</td><td>METFORMIN HYDROCHLORIDE 1000 MG SR BLISTER</td><td>10*10</td></tr>
+    <tr><td>Glimipride 1</td><td>GLIMIPRIDE 1 MG</td><td>20*10</td></tr>
+    <tr><td>Glimipride 2</td><td>GLIMIPRIDE 2 MG</td><td>50*10</td></tr>
+    <tr><td>Glimipride 3</td><td>GLIMIPRIDE 3 MG</td><td>10*10</td></tr>
+    <tr><td>Glimipride 4</td><td>GLIMIPRIDE 4 MG</td><td>10*10</td></tr>
+    <tr><td>Gliclazide 30 SR</td><td>GLICLAZIDE 30 MG SR</td><td>20*10</td></tr>
+    <tr><td>Gliclazide 40 SR</td><td>GLICLAZIDE 40 MG SR</td><td>20*10</td></tr>
+    <tr><td>Gliclazide 60 SR</td><td>GLICLAZIDE 60 MG SR</td><td>20*10</td></tr>
+    <tr><td>Gliclazide 80 SR</td><td>GLICLAZIDE 80 MG SR</td><td>20*10</td></tr>
+    <tr><td>GlicMet 40/500</td><td>GLICLAZIDE 40 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>GlicMet 60/500 ER</td><td>GLICLAZIDE 60 MG + METFORMIN 500 MG (EXTENDED RELEASE)</td><td>20*10</td></tr>
+    <tr><td>GlicMet 80/500 ER</td><td>GLICLAZIDE 80 MG + METFORMIN 500 MG (EXTENDED RELEASE)</td><td>20*10</td></tr>
+    <tr><td>GlicPioMet 30/15/500</td><td>GLICLAZIDE 30 MG + PIOGLITAZONE 15 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
+    <tr><td>GlicPioMet 60/15/500</td><td>GLICLAZIDE 60 MG + PIOGLITAZONE 15 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
+    <tr><td>GlicMetVogli 80/500/0.2</td><td>GLICLAZIDE 80 MG + METFORMIN 500 MG + VOGLIBOSE 0.2</td><td>10*10</td></tr>
+    <tr><td>GlicMetVogli 80/500/0.3</td><td>GLICLAZIDE 80 MG + METFORMIN 500 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
+    <tr><td>GlipiMet 5/500</td><td>GLIPIZIDE 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>Lina 5</td><td>LINAGLIPTIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>LinaMet 5/500</td><td>LINAGLIPTIN 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>LinaMet 2.5/500</td><td>LINAGLIPTIN 2.5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>LinaMet 2.5/850</td><td>LINAGLIPTIN 2.5 MG + METFORMIN 850 MG</td><td>10*10</td></tr>
+    <tr><td>LinaMet 2.5/1000</td><td>LINAGLIPTIN 2.5 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 5/10</td><td>LINAGLIPTIN 5 MG + DAPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 5/5</td><td>LINAGLIPTIN 5 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 2.5/10</td><td>LINAGLIPTIN 2.5 MG + DAPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 2.5/5</td><td>LINAGLIPTIN 2.5 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>Pio 7.5</td><td>PIOGLITAZONE 7.5 MG</td><td>10*10</td></tr>
+    <tr><td>Pio 15</td><td>PIOGLITAZONE 15 MG</td><td>20*10</td></tr>
+    <tr><td>Pio 30</td><td>PIOGLITAZONE 30 MG</td><td>20*10</td></tr>
+    <tr><td>Repa 1</td><td>REPAGLINIDE 1 MG</td><td>10*10</td></tr>
+    <tr><td>Repa 2</td><td>REPAGLINIDE 2 MG</td><td>10*10</td></tr>
+    <tr><td>RepaVogli 1/0.3</td><td>REPAGLINIDE 1 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
+    <tr><td>RepaVogli 0.5/0.3</td><td>REPAGLINIDE 0.5 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
+    <tr><td>RepaVogli 2/0.3</td><td>REPAGLINIDE 2 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
+    <tr><td>Sita 25</td><td>SITAGLIPTIN 25 MG</td><td>10*7</td></tr>
+    <tr><td>Sita 50</td><td>SITAGLIPTIN 50 MG</td><td>10*7</td></tr>
+    <tr><td>Sita 100</td><td>SITAGLIPTIN 100 MG</td><td>10*7</td></tr>
+    <tr><td>SitaMet 50/500</td><td>SITAGLIPTIN 50 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
+    <tr><td>SitaMet 50/1000</td><td>SITAGLIPTIN 50 MG + METFORMIN 1000 MG</td><td>10*15</td></tr>
+    <tr><td>SitaGlimMet 50/1/500</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 1 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>SitaGlimMet 50/2/500</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 2 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>SitaGlimMet 50/1/1000</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 1 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>SitaGlimMet 50/2/1000</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 2 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>SitaMet 100/500</td><td>SITAGLIPTIN 100 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
+    <tr><td>SitaMet 100/1000</td><td>SITAGLIPTIN 100 MG + METFORMIN 1000 MG</td><td>10*15</td></tr>
+    <tr><td>SitaDapa 100/5</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>SitaDapa 100/10</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
+    <tr><td>SitaDapa 50/5</td><td>SITAGLIPTIN 50 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 100/10/500</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 10 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 100/10/1000</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 10 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 50/5/500</td><td>SITAGLIPTIN 50 MG + DAPAGLIFLOZIN 5 MG+ METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 50/5/1000</td><td>SITAGLIPTIN 50 MG + DAPAGLIFLOZIN 5 MG+ METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>SitaMetPio 100/500/15</td><td>SITAGLIPTIN 100 MG + METFORMIN 500 MG + PIOGLITAZONE 15 MG</td><td>10*10</td></tr>
+    <tr><td>Tene 20</td><td>TENELIGLIPTIN 20 MG</td><td>20*10</td></tr>
+    <tr><td>TeneMet 20/500</td><td>TENELIGLIPTIN 20 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>TeneMet 20/1000</td><td>TENELIGLIPTIN 20 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
+    <tr><td>Vogli 0.2</td><td>VOGLIBOSE 0.2MG ALU ALU MOUTH DISSOLVING</td><td>10*10</td></tr>
+    <tr><td>Vogli 0.3</td><td>VOGLIBOSE 0.3MG ALU ALU MOUTH DISSOLVING</td><td>10*10</td></tr>
+    <tr><td>VogliMet 0.2/500</td><td>VOGLIBOSE 0.2 + METFORMIN 500 BILAYERED TABLET</td><td>10*10</td></tr>
+    <tr><td>VogliMet 0.3/500</td><td>VOGLIBOSE 0.3 + METFORMIN 500 BILAYERED TABLET</td><td>10*10</td></tr>
+    <tr><td>VilPio 50/15</td><td>Vildagliptin 50 MG + PIOGLITAZONE 15 MG</td><td>10*10</td></tr>
+    <tr><td>Vil 50</td><td>Vildagliptin 50 MG</td><td>20*15</td></tr>
+    <tr><td>Vil 100 SR</td><td>Vildagliptin 100 MG SR TAB</td><td>10*15</td></tr>
+    <tr><td>VilMet 50/500</td><td>Vildagliptin 50 MG + Metformin 500 MG</td><td>10*15</td></tr>
+    <tr><td>VilMet 50/850</td><td>VILDAGLIPTIN 50 MG + METFORMIN 850 MG</td><td>10*15</td></tr>
+    <tr><td>VilMet 50/1000</td><td>Vildagliptin 50 MG + Metformin 1000 MG</td><td>10*15</td></tr>
+    <tr><td>NutriPro</td><td>HIGH PROTEIN POWDER 65 GM. IN EACH 100 GM. FORTIFIED WITH GINSENG , CALCIUM , LYCOPENE , ASHWAGANDHA , VITAMINS WITH MINERALS</td><td>400GM</td></tr>
+    <tr><td>Amoxy 500</td><td>AMOXYCILLIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>Amoxy 250</td><td>AMOXYCILLIN 250 MG</td><td>10*10</td></tr>
+    <tr><td>AmoxyClav 625</td><td>AMOXYCILLIN 500 MG + CLAVULANIC ACID 125 MG</td><td>10*6</td></tr>
+    <tr><td>Azithro 250</td><td>AZITHROMYCIN 250 MG</td><td>10*6</td></tr>
+    <tr><td>Azithro 500</td><td>AZITHROMYCIN 500 MG</td><td>10*3</td></tr>
+    <tr><td>Cefix 200</td><td>CEFIXIME 200 MG</td><td>10*10</td></tr>
+    <tr><td>Cefix 100</td><td>CEFIXIME 100 MG</td><td>10*10</td></tr>
+    <tr><td>Cefpodox 200</td><td>CEFPODOXIME 200 MG</td><td>10*10</td></tr>
+    <tr><td>Oflin 200</td><td>OFLOXACIN 200 MG</td><td>10*10</td></tr>
+    <tr><td>Oflin-OZ</td><td>OFLOXACIN 200 MG + ORNIDAZOLE 500 MG</td><td>10*10</td></tr>
+    <tr><td>Levoquin 500</td><td>LEVOFLOXACIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>Cipro 500</td><td>CIPROFLOXACIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>Doxy 100</td><td>DOXYCYCLINE 100 MG</td><td>10*10</td></tr>
+    <tr><td>Clarithro 500</td><td>CLARITHROMYCIN 500 MG</td><td>10*10</td></tr>
+    <tr><td>Linezid 600</td><td>LINEZOLID 600 MG</td><td>10*6</td></tr>
+    <tr><td>Meropenem</td><td>MEROPENEM 1 GM INJECTION</td><td>Vial</td></tr>
+    <tr><td>Piptaz</td><td>PIPERACILLIN 4 GM + TAZOBACTAM 0.5 GM INJECTION</td><td>Vial</td></tr>
+  </tbody>
+</table>
+
+  `,
+  "ANTIINFLAMATORY": `
+   <table id="productTable">
+  <thead>
+    <tr>
+      <th class="sortable">Brand / Composition</th>
+      <th class="sortable">Pack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>ACECLOFENAC 200 MG</td><td>10*10</td></tr>
+    <tr><td>ACECLOFENAC 100MG + PARACETAMOL 325MG TAB.</td><td>20*10</td></tr>
+    <tr><td>ACECLOFENAC 100MG + PARACETAMOL 325MG TAB.</td><td>10*10</td></tr>
+    <tr><td>ACECLOFENAC 100MG + PARACETAMOL 325MG + SERRATIOPEPTIDASE 15MG FILM COATED ALU ALU PACK TAB.</td><td>10*10</td></tr>
+    <tr><td>ACECLOFENAC 100MG + PARACETAMOL 325MG + CHLORZOXAZONE 250 MG</td><td>10*10</td></tr>
+    <tr><td>ACECLOFENAC 100 MG + PARACETAMOL 325 MG + TRYPSIN CHYMOTRYPSIN 50000 AU</td><td>10*10</td></tr>
+    <tr><td>ACECLOFENAC 100 MG + TIZANIDINE 2 MG</td><td>10*10</td></tr>
+    <tr><td>ACECLOFENAC 200 MG SR + CYCLOBENZAPRINE 15 MG</td><td>10*10</td></tr>
+    <tr><td>BACLOFEN 20 MG ER</td><td>10*10</td></tr>
+    <tr><td>CELECOXIB 200</td><td>10*10</td></tr>
+    <tr><td>DICLOFENAC SR 100</td><td>10*10</td></tr>
+    <tr><td>DICLOFENAC 50 MG + SERRATIOPEPTIDASE 10 MG</td><td>10*10</td></tr>
+    <tr><td>DICLOFENAC SODIUM 50 MG + PARACETAMOL 325 MG</td><td>20*10</td></tr>
+    <tr><td>DICLOFENAC 50 MG + METAXALONE 400 MG</td><td>10*10</td></tr>
+    <tr><td>DICLOFENAC POTASSIUM 50 MG + PCM 325 MG + CHLORZOXAZONE 250 MG</td><td>10*10</td></tr>
+  </tbody>
+</table>
+
+  `,
+  "CAPSULES": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Ingredients</th><th class="sortable">Use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>VitaCaps</td><td>Multivitamin + Zinc</td><td>Daily Supplement</td></tr>
+      </tbody>
+    </table>
+  `,
+  "CARDIOVASCULAR": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Dosage Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CardioSafe</td><td>Amlodipine 5mg</td><td>Tablet</td></tr>
+      </tbody>
+    </table>
+  `,
+  "CRITICAL CARE": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Pack</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CritoMed</td><td>Meropenem 1g</td><td>Vial</td></tr>
+      </tbody>
+    </table>
+  `,
+  "DERMATOLOGY": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>DermaClear</td><td>Clindamycin Gel</td><td>Gel</td></tr>
+      </tbody>
+    </table>
+  `,
+  "DRY INJECTIONS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Vial Size</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>CefDry</td><td>Ceftriaxone 1g</td><td>1 Vial</td></tr>
+      </tbody>
+    </table>
+  `,
+  "GASTROINTESTINALS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Dosage Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GastroFix</td><td>Omeprazole 20mg</td><td>Capsule</td></tr>
+      </tbody>
+    </table>
+  `,
+  "GYNACOLOGY": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GynaCare</td><td>Progesterone 200mg</td><td>Capsule</td></tr>
+      </tbody>
+    </table>
+  `,
+  "Injs": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Pack</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Injex</td><td>Cefotaxime 500mg</td><td>Injection</td></tr>
+      </tbody>
+    </table>
+  `,
+  "INVISAT MED DEVICES PRODUCT LIST": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Device</th><th class="sortable">Description</th><th class="sortable">Use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Syringe</td><td>Disposable 5ml</td><td>Injection</td></tr>
+      </tbody>
+    </table>
+  `,
+  "INVISAT PRODUCTS 2": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Invicat</td><td>Specialty Formula</td><td>Tablet</td></tr>
+      </tbody>
+    </table>
+  `,
+  "LIQUID INJS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Pack</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>LiqInj</td><td>Diclofenac Sodium 75mg/ml</td><td>Ampoule</td></tr>
+      </tbody>
+    </table>
+  `,
+  "NEURO PSYCHETRIC RANGE": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>NeuroCalm</td><td>Clonazepam 0.5mg</td><td>Tablet</td></tr>
+      </tbody>
+    </table>
+  `,
+  "OINTMENTS & CREAMS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SkinSoft</td><td>Hydrocortisone 1%</td><td>Cream</td></tr>
+      </tbody>
+    </table>
+  `,
+  "ONCOLOGY": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Strength</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>OncoMed</td><td>Cisplatin</td><td>50mg Vial</td></tr>
+      </tbody>
+    </table>
+  `,
+  "OPTHOMOLOGY": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>EyeClear</td><td>Moxifloxacin</td><td>Eye Drops</td></tr>
+      </tbody>
+    </table>
+  `,
+  "ORTHOPEDIC": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>BoneStrong</td><td>Calcium + Vitamin D3</td><td>Tablet</td></tr>
+      </tbody>
+    </table>
+  `,
+  "OTC": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ColdAway</td><td>Paracetamol + Phenylephrine</td><td>Tablet</td></tr>
+      </tbody>
+    </table>
+  `,
+  "PEDIATRICS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PediaCare</td><td>Paracetamol 120mg/5ml</td><td>Syrup</td></tr>
+      </tbody>
+    </table>
+  `,
+  "REGULAR INJECTIONS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Strength</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>RegiInj</td><td>Cefuroxime</td><td>750mg Vial</td></tr>
+      </tbody>
+    </table>
+  `,
+  "RESPIRATORY & ANTI ALLERGETICS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Respira</td><td>Salbutamol</td><td>Inhaler</td></tr>
+      </tbody>
+    </table>
+  `,
+  "SEASONAL PRODUCTS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Product</th><th class="sortable">Use</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Cough Syrup</td><td>Cold & Flu</td><td>Syrup</td></tr>
+      </tbody>
+    </table>
+  `,
+  "SEXUAL WELLNESS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>WellMax</td><td>Sildenafil 50mg</td><td>Tablet</td></tr>
+      </tbody>
+    </table>
+  `,
+  "SYRUPS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Flavor</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Syruply</td><td>Iron + Folic Acid</td><td>Orange</td></tr>
+      </tbody>
+    </table>
+  `,
+  "TABLETS": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Strength</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TabSafe</td><td>Losartan</td><td>50mg</td></tr>
+      </tbody>
+    </table>
+  `,
+  "UNIQUE RANGES": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Product</th><th class="sortable">Description</th><th class="sortable">Use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>UniqueMed</td><td>Specialty Formula</td><td>Rare Condition</td></tr>
+      </tbody>
+    </table>
+  `,
+  "UROLOGY": `
+    <table id="productTable">
+      <thead>
+        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>UroCare</td><td>Tamsulosin 0.4mg</td><td>Capsule</td></tr>
+      </tbody>
+    </table>
+  `
+};
+
+
+    // Display the correct table
     const container = document.getElementById('table-container');
     if (productTables[productName]) {
       container.innerHTML = productTables[productName];
     } else {
       container.innerHTML = `<div class="not-found">No table found for <strong>${productName}</strong>.</div>`;
     }
+
+    // Search Functionality
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const filter = this.value.toLowerCase();
+      const rows = document.querySelectorAll('#productTable tbody tr');
+      rows.forEach(row => {
+        const match = Array.from(row.cells).some(cell =>
+          cell.textContent.toLowerCase().includes(filter)
+        );
+        row.style.display = match ? '' : 'none';
+      });
+    });
+
+    // Sort Functionality
+   document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('sortable')) {
+    const th = e.target;
+    const table = th.closest('table');
+    const tbody = table.querySelector('tbody');
+    const index = Array.from(th.parentNode.children).indexOf(th);
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    // Determine sort direction
+    const isAsc = !th.classList.contains('asc');
+    table.querySelectorAll('th').forEach(header => header.classList.remove('asc', 'desc'));
+    th.classList.toggle('asc', isAsc);
+    th.classList.toggle('desc', !isAsc);
+
+    // Sort rows
+    rows.sort((a, b) => {
+      const cellA = a.children[index].textContent.trim().toLowerCase();
+      const cellB = b.children[index].textContent.trim().toLowerCase();
+      if (cellA < cellB) return isAsc ? -1 : 1;
+      if (cellA > cellB) return isAsc ? 1 : -1;
+      return 0;
+    });
+
+    rows.forEach(row => tbody.appendChild(row));
+  }
+});
+
   </script>
 </body>
 </html>
