@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Invisat Pharmaceuticals</title>
@@ -20,10 +21,11 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-  padding: 20px;
-  min-height: 100vh; /* Ensure body takes full height */
-  display: flex;
-  flex-direction: column;
+      padding: 20px;
+      min-height: 100vh;
+      /* Ensure body takes full height */
+      display: flex;
+      flex-direction: column;
       padding: 20px;
     }
 
@@ -50,7 +52,8 @@
       border-collapse: collapse;
     }
 
-    th, td {
+    th,
+    td {
       padding: 12px;
       border: 1px solid #ccc;
       text-align: left;
@@ -66,34 +69,38 @@
       color: red;
       margin-top: 50px;
     }
+
     th.sortable {
-  position: relative;
-  padding-right: 20px;
-}
+      position: relative;
+      padding-right: 20px;
+    }
 
-th.sortable::after {
-  content: "\2195"; /* up/down arrow */
-  position: absolute;
-  right: 8px;
-  font-size: 12px;
-  color: #888;
-}
+    th.sortable::after {
+      content: "\2195";
+      /* up/down arrow */
+      position: absolute;
+      right: 8px;
+      font-size: 12px;
+      color: #888;
+    }
 
-th.sortable.asc::after {
-  content: "\2191"; /* up arrow */
-}
+    th.sortable.asc::after {
+      content: "\2191";
+      /* up arrow */
+    }
 
-th.sortable.desc::after {
-  content: "\2193"; /* down arrow */
-}
-
+    th.sortable.desc::after {
+      content: "\2193";
+      /* down arrow */
+    }
   </style>
 </head>
+
 <body>
   <!-- Page Preloder -->
 
 
-	
+
 
   <h2 id="product-title">Loading...</h2>
 
@@ -113,10 +120,10 @@ th.sortable.desc::after {
 
     // Define unique tables for each product
     const productTables = {
-  "ANTIBIOTICS": `
-    <table id="productTable">
+      "ANTIBIOTICS": `
+    <table id="productTable" border="1" cellspacing="0" cellpadding="6">
   <thead>
-    <tr>
+    <tr style="background:#f2f2f2;">
       <th class="sortable">Brand / Composition</th>
       <th class="sortable">Pack</th>
     </tr>
@@ -149,156 +156,155 @@ th.sortable.desc::after {
 </table>
 
   `,
-  "ANTI DIABETIC": `
-    <table id="productTable">
+      "ANTI DIABETIC": `
+<table id="productTable" border="1" cellspacing="0" cellpadding="6">
   <thead>
-    <tr>
+    <tr style="background:#f2f2f2;">
       <th class="sortable">Brand</th>
-      <th class="sortable">Composition</th>
       <th class="sortable">Pack</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>Glucare 50</td><td>ACARBOSE 50</td><td>10*10</td></tr>
-    <tr><td>Glucare 25</td><td>ACARBOSE 25</td><td>10*10</td></tr>
-    <tr><td>DapaTab 5</td><td>DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>DapaMet 10/500</td><td>DAPAGLIFLOZIN 10 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>DapaMet 10/1000</td><td>DAPAGLIFLOZIN 10 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>DapaTeneMet 10/20/500</td><td>DAPAGLIFLOZIN 10 MG + TENELIGLIPTIN 20 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>DapaTeneMet 10/20/1000</td><td>DAPAGLIFLOZIN 10 MG + TENELIGLIPTIN 20 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>DapaGlimMet 10/1/1000</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 1 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>DapaGlimMet 10/2/1000</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 2 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>DapaGlimMet 10/1/500</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 1 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>DapaGlimMet 10/2/500</td><td>DAPAGLIFLOZIN 10 MG + GLIMEPIRIDE 2 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>DapaMet 5/500</td><td>DAPAGLIFLOZIN 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>DapaMet 5/1000</td><td>DAPAGLIFLOZIN 5 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>DapaTene 10/20</td><td>DAPAGLIFLOZIN 10 MG + TENELIGLIPTIN 20 MG</td><td>10*10</td></tr>
-    <tr><td>DapaVilMet 10/100/500</td><td>DAPAGLIFLOZIN 10 MG + VILDAGLIPTIN 100 MG + METFORMIN 500</td><td>10*10</td></tr>
-    <tr><td>DapaVilMet 10/100/1000</td><td>DAPAGLIFLOZIN 10 MG + VILDAGLIPTIN 100 MG + METFORMIN 1000</td><td>10*10</td></tr>
-    <tr><td>DapaVil 10/100</td><td>DAPAGLIFLOZIN 10 MG + VILDAGLIPTIN 100 MG</td><td>10*10</td></tr>
-    <tr><td>DapaVil 5/100</td><td>DAPAGLIFLOZIN 5 MG + VILDAGLIPTIN 100 MG</td><td>10*10</td></tr>
-    <tr><td>DapaVil 5/50</td><td>DAPAGLIFLOZIN 5 MG + VILDAGLIPTIN 50 MG</td><td>10*10</td></tr>
-    <tr><td>Empa 10</td><td>EMPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
-    <tr><td>Empa 25</td><td>EMPAGLIFLOZIN 25 MG</td><td>10*10</td></tr>
-    <tr><td>EmpaMet 12.5/500</td><td>EMPAGLIFLOZIN 12.50 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>EmpaMet 12.5/1000</td><td>EMPAGLIFLOZIN 12.50 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>EmpaLina 10/5</td><td>EMPAGLIFLOZIN 10 MG + LINAGLIPTIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>EmpaLina 25/5</td><td>EMPAGLIFLOZIN 25 MG + LINAGLIPTIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>GliMet 5/500</td><td>GLIBENCLAMIDE 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>GlimMet 0.5/500</td><td>GLIMEPIRIDE 0.5 MG + METFORMIN 500 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 0.5/1000</td><td>GLIMEPIRIDE 0.5 MG + METFORMIN 1000 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 2/500</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 2/1000</td><td>GLIMEPIRIDE 2 MG + METFORMIN 1000 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 1/1000 SR</td><td>GLIMEPIRIDE 1MG+METFORMIN 1000MG SR BLISTER</td><td>10*10</td></tr>
-    <tr><td>GlimPioMet 2/500/15</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 + PIOGLITAZONE 15 MG BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimPioMet 1/500/15</td><td>GLIMEPIRIDE 1 MG + METFORMIN 500 + PIOGLITAZONE 15 MG BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMetVogli 1/500/0.2</td><td>GLIMEPIRIDE 1 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.2 MG</td><td>10*15</td></tr>
-    <tr><td>GlimMetVogli 2/500/0.2</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.2 MG</td><td>10*15</td></tr>
-    <tr><td>GlimMetVogli 1/1000/0.2</td><td>GLIMEPIRIDE 1 MG + METFORMIN 1000 MG + VOGLIBOSE 0.2 MG</td><td>10*15</td></tr>
-    <tr><td>GlimMetVogli 1/500/0.3</td><td>GLIMEPIRIDE 1 MG + METFORMIN 500 + VOGLIBOSE 0.3</td><td>10*15</td></tr>
-    <tr><td>GlimMetVogli 2/500/0.3</td><td>GLIMEPIRIDE 2 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.3 MG</td><td>10*15</td></tr>
-    <tr><td>GlimMetVogli 3/500/0.3</td><td>GLIMEPIRIDE 3 MG + METFORMIN 500 MG SR + VOGLIBOSE 0.3 MG</td><td>10*10</td></tr>
-    <tr><td>GlimMet 3/500</td><td>GLIMIPRIDE 3 MG + METFORMIN 500 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 3/850</td><td>GLIMIPRIDE 3 MG + METFORMIN 850 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 3/1000</td><td>GLIMIPRIDE 3 MG + METFORMIN 1000 BILAYER</td><td>10*15</td></tr>
-    <tr><td>GlimMet 4/500</td><td>GLIMIPRIDE 4 MG + METFORMIN 500 BILAYER</td><td>10*10</td></tr>
-    <tr><td>GlimMet 4/1000</td><td>GLIMIPRIDE 4 MG + METFORMIN 1000 BILAYER</td><td>10*10</td></tr>
-    <tr><td>Metformin 250 SR</td><td>METFORMIN HYDROCHLORIDE 250 MG SR BLISTER</td><td>10*10</td></tr>
-    <tr><td>Glimipride 500</td><td>GLIMEPIRIDE 500 MG WITHOUT SR</td><td>20*20</td></tr>
-    <tr><td>Metformin 500 SR</td><td>METFORMIN HYDROCHLORIDE 500 MG SR BLISTER</td><td>10*15</td></tr>
-    <tr><td>Metformin 850 SR</td><td>METFORMIN HYDROCHLORIDE 850 MG SR BLISTER</td><td>10*10</td></tr>
-    <tr><td>Metformin 1000 SR</td><td>METFORMIN HYDROCHLORIDE 1000 MG SR BLISTER</td><td>10*10</td></tr>
-    <tr><td>Glimipride 1</td><td>GLIMIPRIDE 1 MG</td><td>20*10</td></tr>
-    <tr><td>Glimipride 2</td><td>GLIMIPRIDE 2 MG</td><td>50*10</td></tr>
-    <tr><td>Glimipride 3</td><td>GLIMIPRIDE 3 MG</td><td>10*10</td></tr>
-    <tr><td>Glimipride 4</td><td>GLIMIPRIDE 4 MG</td><td>10*10</td></tr>
-    <tr><td>Gliclazide 30 SR</td><td>GLICLAZIDE 30 MG SR</td><td>20*10</td></tr>
-    <tr><td>Gliclazide 40 SR</td><td>GLICLAZIDE 40 MG SR</td><td>20*10</td></tr>
-    <tr><td>Gliclazide 60 SR</td><td>GLICLAZIDE 60 MG SR</td><td>20*10</td></tr>
-    <tr><td>Gliclazide 80 SR</td><td>GLICLAZIDE 80 MG SR</td><td>20*10</td></tr>
-    <tr><td>GlicMet 40/500</td><td>GLICLAZIDE 40 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>GlicMet 60/500 ER</td><td>GLICLAZIDE 60 MG + METFORMIN 500 MG (EXTENDED RELEASE)</td><td>20*10</td></tr>
-    <tr><td>GlicMet 80/500 ER</td><td>GLICLAZIDE 80 MG + METFORMIN 500 MG (EXTENDED RELEASE)</td><td>20*10</td></tr>
-    <tr><td>GlicPioMet 30/15/500</td><td>GLICLAZIDE 30 MG + PIOGLITAZONE 15 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
-    <tr><td>GlicPioMet 60/15/500</td><td>GLICLAZIDE 60 MG + PIOGLITAZONE 15 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
-    <tr><td>GlicMetVogli 80/500/0.2</td><td>GLICLAZIDE 80 MG + METFORMIN 500 MG + VOGLIBOSE 0.2</td><td>10*10</td></tr>
-    <tr><td>GlicMetVogli 80/500/0.3</td><td>GLICLAZIDE 80 MG + METFORMIN 500 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
-    <tr><td>GlipiMet 5/500</td><td>GLIPIZIDE 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>Lina 5</td><td>LINAGLIPTIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>LinaMet 5/500</td><td>LINAGLIPTIN 5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>LinaMet 2.5/500</td><td>LINAGLIPTIN 2.5 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>LinaMet 2.5/850</td><td>LINAGLIPTIN 2.5 MG + METFORMIN 850 MG</td><td>10*10</td></tr>
-    <tr><td>LinaMet 2.5/1000</td><td>LINAGLIPTIN 2.5 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>LinaDapa 5/10</td><td>LINAGLIPTIN 5 MG + DAPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
-    <tr><td>LinaDapa 5/5</td><td>LINAGLIPTIN 5 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>LinaDapa 2.5/10</td><td>LINAGLIPTIN 2.5 MG + DAPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
-    <tr><td>LinaDapa 2.5/5</td><td>LINAGLIPTIN 2.5 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>Pio 7.5</td><td>PIOGLITAZONE 7.5 MG</td><td>10*10</td></tr>
-    <tr><td>Pio 15</td><td>PIOGLITAZONE 15 MG</td><td>20*10</td></tr>
-    <tr><td>Pio 30</td><td>PIOGLITAZONE 30 MG</td><td>20*10</td></tr>
-    <tr><td>Repa 1</td><td>REPAGLINIDE 1 MG</td><td>10*10</td></tr>
-    <tr><td>Repa 2</td><td>REPAGLINIDE 2 MG</td><td>10*10</td></tr>
-    <tr><td>RepaVogli 1/0.3</td><td>REPAGLINIDE 1 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
-    <tr><td>RepaVogli 0.5/0.3</td><td>REPAGLINIDE 0.5 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
-    <tr><td>RepaVogli 2/0.3</td><td>REPAGLINIDE 2 MG + VOGLIBOSE 0.3</td><td>10*10</td></tr>
-    <tr><td>Sita 25</td><td>SITAGLIPTIN 25 MG</td><td>10*7</td></tr>
-    <tr><td>Sita 50</td><td>SITAGLIPTIN 50 MG</td><td>10*7</td></tr>
-    <tr><td>Sita 100</td><td>SITAGLIPTIN 100 MG</td><td>10*7</td></tr>
-    <tr><td>SitaMet 50/500</td><td>SITAGLIPTIN 50 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
-    <tr><td>SitaMet 50/1000</td><td>SITAGLIPTIN 50 MG + METFORMIN 1000 MG</td><td>10*15</td></tr>
-    <tr><td>SitaGlimMet 50/1/500</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 1 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>SitaGlimMet 50/2/500</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 2 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>SitaGlimMet 50/1/1000</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 1 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>SitaGlimMet 50/2/1000</td><td>SITAGLIPTIN 50 MG + GLIMEPIRIDE 2 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>SitaMet 100/500</td><td>SITAGLIPTIN 100 MG + METFORMIN 500 MG</td><td>10*15</td></tr>
-    <tr><td>SitaMet 100/1000</td><td>SITAGLIPTIN 100 MG + METFORMIN 1000 MG</td><td>10*15</td></tr>
-    <tr><td>SitaDapa 100/5</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>SitaDapa 100/10</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 10 MG</td><td>10*10</td></tr>
-    <tr><td>SitaDapa 50/5</td><td>SITAGLIPTIN 50 MG + DAPAGLIFLOZIN 5 MG</td><td>10*10</td></tr>
-    <tr><td>SitaDapaMet 100/10/500</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 10 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>SitaDapaMet 100/10/1000</td><td>SITAGLIPTIN 100 MG + DAPAGLIFLOZIN 10 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>SitaDapaMet 50/5/500</td><td>SITAGLIPTIN 50 MG + DAPAGLIFLOZIN 5 MG+ METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>SitaDapaMet 50/5/1000</td><td>SITAGLIPTIN 50 MG + DAPAGLIFLOZIN 5 MG+ METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>SitaMetPio 100/500/15</td><td>SITAGLIPTIN 100 MG + METFORMIN 500 MG + PIOGLITAZONE 15 MG</td><td>10*10</td></tr>
-    <tr><td>Tene 20</td><td>TENELIGLIPTIN 20 MG</td><td>20*10</td></tr>
-    <tr><td>TeneMet 20/500</td><td>TENELIGLIPTIN 20 MG + METFORMIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>TeneMet 20/1000</td><td>TENELIGLIPTIN 20 MG + METFORMIN 1000 MG</td><td>10*10</td></tr>
-    <tr><td>Vogli 0.2</td><td>VOGLIBOSE 0.2MG ALU ALU MOUTH DISSOLVING</td><td>10*10</td></tr>
-    <tr><td>Vogli 0.3</td><td>VOGLIBOSE 0.3MG ALU ALU MOUTH DISSOLVING</td><td>10*10</td></tr>
-    <tr><td>VogliMet 0.2/500</td><td>VOGLIBOSE 0.2 + METFORMIN 500 BILAYERED TABLET</td><td>10*10</td></tr>
-    <tr><td>VogliMet 0.3/500</td><td>VOGLIBOSE 0.3 + METFORMIN 500 BILAYERED TABLET</td><td>10*10</td></tr>
-    <tr><td>VilPio 50/15</td><td>Vildagliptin 50 MG + PIOGLITAZONE 15 MG</td><td>10*10</td></tr>
-    <tr><td>Vil 50</td><td>Vildagliptin 50 MG</td><td>20*15</td></tr>
-    <tr><td>Vil 100 SR</td><td>Vildagliptin 100 MG SR TAB</td><td>10*15</td></tr>
-    <tr><td>VilMet 50/500</td><td>Vildagliptin 50 MG + Metformin 500 MG</td><td>10*15</td></tr>
-    <tr><td>VilMet 50/850</td><td>VILDAGLIPTIN 50 MG + METFORMIN 850 MG</td><td>10*15</td></tr>
-    <tr><td>VilMet 50/1000</td><td>Vildagliptin 50 MG + Metformin 1000 MG</td><td>10*15</td></tr>
-    <tr><td>NutriPro</td><td>HIGH PROTEIN POWDER 65 GM. IN EACH 100 GM. FORTIFIED WITH GINSENG , CALCIUM , LYCOPENE , ASHWAGANDHA , VITAMINS WITH MINERALS</td><td>400GM</td></tr>
-    <tr><td>Amoxy 500</td><td>AMOXYCILLIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>Amoxy 250</td><td>AMOXYCILLIN 250 MG</td><td>10*10</td></tr>
-    <tr><td>AmoxyClav 625</td><td>AMOXYCILLIN 500 MG + CLAVULANIC ACID 125 MG</td><td>10*6</td></tr>
-    <tr><td>Azithro 250</td><td>AZITHROMYCIN 250 MG</td><td>10*6</td></tr>
-    <tr><td>Azithro 500</td><td>AZITHROMYCIN 500 MG</td><td>10*3</td></tr>
-    <tr><td>Cefix 200</td><td>CEFIXIME 200 MG</td><td>10*10</td></tr>
-    <tr><td>Cefix 100</td><td>CEFIXIME 100 MG</td><td>10*10</td></tr>
-    <tr><td>Cefpodox 200</td><td>CEFPODOXIME 200 MG</td><td>10*10</td></tr>
-    <tr><td>Oflin 200</td><td>OFLOXACIN 200 MG</td><td>10*10</td></tr>
-    <tr><td>Oflin-OZ</td><td>OFLOXACIN 200 MG + ORNIDAZOLE 500 MG</td><td>10*10</td></tr>
-    <tr><td>Levoquin 500</td><td>LEVOFLOXACIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>Cipro 500</td><td>CIPROFLOXACIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>Doxy 100</td><td>DOXYCYCLINE 100 MG</td><td>10*10</td></tr>
-    <tr><td>Clarithro 500</td><td>CLARITHROMYCIN 500 MG</td><td>10*10</td></tr>
-    <tr><td>Linezid 600</td><td>LINEZOLID 600 MG</td><td>10*6</td></tr>
-    <tr><td>Meropenem</td><td>MEROPENEM 1 GM INJECTION</td><td>Vial</td></tr>
-    <tr><td>Piptaz</td><td>PIPERACILLIN 4 GM + TAZOBACTAM 0.5 GM INJECTION</td><td>Vial</td></tr>
+    <tr><td>Glucare 50</td><td>10*10</td></tr>
+    <tr><td>Glucare 25</td><td>10*10</td></tr>
+    <tr><td>DapaTab 5</td><td>10*10</td></tr>
+    <tr><td>DapaMet 10/500</td><td>10*10</td></tr>
+    <tr><td>DapaMet 10/1000</td><td>10*10</td></tr>
+    <tr><td>DapaTeneMet 10/20/500</td><td>10*10</td></tr>
+    <tr><td>DapaTeneMet 10/20/1000</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/1/1000</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/2/1000</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/1/500</td><td>10*10</td></tr>
+    <tr><td>DapaGlimMet 10/2/500</td><td>10*10</td></tr>
+    <tr><td>DapaMet 5/500</td><td>10*10</td></tr>
+    <tr><td>DapaMet 5/1000</td><td>10*10</td></tr>
+    <tr><td>DapaTene 10/20</td><td>10*10</td></tr>
+    <tr><td>DapaVilMet 10/100/500</td><td>10*10</td></tr>
+    <tr><td>DapaVilMet 10/100/1000</td><td>10*10</td></tr>
+    <tr><td>DapaVil 10/100</td><td>10*10</td></tr>
+    <tr><td>DapaVil 5/100</td><td>10*10</td></tr>
+    <tr><td>DapaVil 5/50</td><td>10*10</td></tr>
+    <tr><td>Empa 10</td><td>10*10</td></tr>
+    <tr><td>Empa 25</td><td>10*10</td></tr>
+    <tr><td>EmpaMet 12.5/500</td><td>10*10</td></tr>
+    <tr><td>EmpaMet 12.5/1000</td><td>10*10</td></tr>
+    <tr><td>EmpaLina 10/5</td><td>10*10</td></tr>
+    <tr><td>EmpaLina 25/5</td><td>10*10</td></tr>
+    <tr><td>GliMet 5/500</td><td>10*10</td></tr>
+    <tr><td>GlimMet 0.5/500</td><td>10*15</td></tr>
+    <tr><td>GlimMet 0.5/1000</td><td>10*15</td></tr>
+    <tr><td>GlimMet 2/500</td><td>10*15</td></tr>
+    <tr><td>GlimMet 2/1000</td><td>10*15</td></tr>
+    <tr><td>GlimMet 1/1000 SR</td><td>10*10</td></tr>
+    <tr><td>GlimPioMet 2/500/15</td><td>10*15</td></tr>
+    <tr><td>GlimPioMet 1/500/15</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 1/500/0.2</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 2/500/0.2</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 1/1000/0.2</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 1/500/0.3</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 2/500/0.3</td><td>10*15</td></tr>
+    <tr><td>GlimMetVogli 3/500/0.3</td><td>10*10</td></tr>
+    <tr><td>GlimMet 3/500</td><td>10*15</td></tr>
+    <tr><td>GlimMet 3/850</td><td>10*15</td></tr>
+    <tr><td>GlimMet 3/1000</td><td>10*15</td></tr>
+    <tr><td>GlimMet 4/500</td><td>10*10</td></tr>
+    <tr><td>GlimMet 4/1000</td><td>10*10</td></tr>
+    <tr><td>Metformin 250 SR</td><td>10*10</td></tr>
+    <tr><td>Glimipride 500</td><td>20*20</td></tr>
+    <tr><td>Metformin 500 SR</td><td>10*15</td></tr>
+    <tr><td>Metformin 850 SR</td><td>10*10</td></tr>
+    <tr><td>Metformin 1000 SR</td><td>10*10</td></tr>
+    <tr><td>Glimipride 1</td><td>20*10</td></tr>
+    <tr><td>Glimipride 2</td><td>50*10</td></tr>
+    <tr><td>Glimipride 3</td><td>10*10</td></tr>
+    <tr><td>Glimipride 4</td><td>10*10</td></tr>
+    <tr><td>Gliclazide 30 SR</td><td>20*10</td></tr>
+    <tr><td>Gliclazide 40 SR</td><td>20*10</td></tr>
+    <tr><td>Gliclazide 60 SR</td><td>20*10</td></tr>
+    <tr><td>Gliclazide 80 SR</td><td>20*10</td></tr>
+    <tr><td>GlicMet 40/500</td><td>10*10</td></tr>
+    <tr><td>GlicMet 60/500 ER</td><td>20*10</td></tr>
+    <tr><td>GlicMet 80/500 ER</td><td>20*10</td></tr>
+    <tr><td>GlicPioMet 30/15/500</td><td>10*15</td></tr>
+    <tr><td>GlicPioMet 60/15/500</td><td>10*15</td></tr>
+    <tr><td>GlicMetVogli 80/500/0.2</td><td>10*10</td></tr>
+    <tr><td>GlicMetVogli 80/500/0.3</td><td>10*10</td></tr>
+    <tr><td>GlipiMet 5/500</td><td>10*10</td></tr>
+    <tr><td>Lina 5</td><td>10*10</td></tr>
+    <tr><td>LinaMet 5/500</td><td>10*10</td></tr>
+    <tr><td>LinaMet 2.5/500</td><td>10*10</td></tr>
+    <tr><td>LinaMet 2.5/850</td><td>10*10</td></tr>
+    <tr><td>LinaMet 2.5/1000</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 5/10</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 5/5</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 2.5/10</td><td>10*10</td></tr>
+    <tr><td>LinaDapa 2.5/5</td><td>10*10</td></tr>
+    <tr><td>Pio 7.5</td><td>10*10</td></tr>
+    <tr><td>Pio 15</td><td>20*10</td></tr>
+    <tr><td>Pio 30</td><td>20*10</td></tr>
+    <tr><td>Repa 1</td><td>10*10</td></tr>
+    <tr><td>Repa 2</td><td>10*10</td></tr>
+    <tr><td>RepaVogli 1/0.3</td><td>10*10</td></tr>
+    <tr><td>RepaVogli 0.5/0.3</td><td>10*10</td></tr>
+    <tr><td>RepaVogli 2/0.3</td><td>10*10</td></tr>
+    <tr><td>Sita 25</td><td>10*7</td></tr>
+    <tr><td>Sita 50</td><td>10*7</td></tr>
+    <tr><td>Sita 100</td><td>10*7</td></tr>
+    <tr><td>SitaMet 50/500</td><td>10*15</td></tr>
+    <tr><td>SitaMet 50/1000</td><td>10*15</td></tr>
+    <tr><td>SitaGlimMet 50/1/500</td><td>10*10</td></tr>
+    <tr><td>SitaGlimMet 50/2/500</td><td>10*10</td></tr>
+    <tr><td>SitaGlimMet 50/1/1000</td><td>10*10</td></tr>
+    <tr><td>SitaGlimMet 50/2/1000</td><td>10*10</td></tr>
+    <tr><td>SitaMet 100/500</td><td>10*15</td></tr>
+    <tr><td>SitaMet 100/1000</td><td>10*15</td></tr>
+    <tr><td>SitaDapa 100/5</td><td>10*10</td></tr>
+    <tr><td>SitaDapa 100/10</td><td>10*10</td></tr>
+    <tr><td>SitaDapa 50/5</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 100/10/500</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 100/10/1000</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 50/5/500</td><td>10*10</td></tr>
+    <tr><td>SitaDapaMet 50/5/1000</td><td>10*10</td></tr>
+    <tr><td>SitaMetPio 100/500/15</td><td>10*10</td></tr>
+    <tr><td>Tene 20</td><td>20*10</td></tr>
+    <tr><td>TeneMet 20/500</td><td>10*10</td></tr>
+    <tr><td>TeneMet 20/1000</td><td>10*10</td></tr>
+    <tr><td>Vogli 0.2</td><td>10*10</td></tr>
+    <tr><td>Vogli 0.3</td><td>10*10</td></tr>
+    <tr><td>VogliMet 0.2/500</td><td>10*10</td></tr>
+    <tr><td>VogliMet 0.3/500</td><td>10*10</td></tr>
+    <tr><td>VilPio 50/15</td><td>10*10</td></tr>
+    <tr><td>Vil 50</td><td>20*15</td></tr>
+    <tr><td>Vil 100 SR</td><td>10*15</td></tr>
+    <tr><td>VilMet 50/500</td><td>10*15</td></tr>
+    <tr><td>VilMet 50/850</td><td>10*15</td></tr>
+    <tr><td>VilMet 50/1000</td><td>10*15</td></tr>
+    <tr><td>NutriPro</td><td>400GM</td></tr>
+    <tr><td>Amoxy 500</td><td>10*10</td></tr>
+    <tr><td>Amoxy 250</td><td>10*10</td></tr>
+    <tr><td>AmoxyClav 625</td><td>10*6</td></tr>
+    <tr><td>Azithro 250</td><td>10*6</td></tr>
+    <tr><td>Azithro 500</td><td>10*3</td></tr>
+    <tr><td>Cefix 200</td><td>10*10</td></tr>
+    <tr><td>Cefix 100</td><td>10*10</td></tr>
+    <tr><td>Cefpodox 200</td><td>10*10</td></tr>
+    <tr><td>Oflin 200</td><td>10*10</td></tr>
+    <tr><td>Oflin-OZ</td><td>10*10</td></tr>
+    <tr><td>Levoquin 500</td><td>10*10</td></tr>
+    <tr><td>Cipro 500</td><td>10*10</td></tr>
+    <tr><td>Doxy 100</td><td>10*10</td></tr>
+    <tr><td>Clarithro 500</td><td>10*10</td></tr>
+    <tr><td>Linezid 600</td><td>10*6</td></tr>
+    <tr><td>Meropenem</td><td>Vial</td></tr>
+    <tr><td>Piptaz</td><td>Vial</td></tr>
   </tbody>
 </table>
 
   `,
-  "ANTIINFLAMATORY": `
-   <table id="productTable">
+      "ANTIINFLAMATORY": `
+   <table id="productTable" border="1" cellspacing="0" cellpadding="6">
   <thead>
-    <tr>
+    <tr style="background:#f2f2f2;">
       <th class="sortable">Brand / Composition</th>
       <th class="sortable">Pack</th>
     </tr>
@@ -323,97 +329,1301 @@ th.sortable.desc::after {
 </table>
 
   `,
-  "CAPSULES": `
-    <table id="productTable">
+      "CAPSULES": `
+    <table id="productTable" border="1" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th class="sortable">S.No</th>
+      <th class="sortable">Name of the Product</th>
+      <th class="sortable">Packing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Acebrophylline Capsules</td><td>10x10</td></tr>
+    <tr><td>2</td><td>Aceclofenac SR 200mg & Thiocolchicoside SR 8mg Pellets Capsules</td><td>10x10</td></tr>
+    <tr><td>3</td><td>Aceclofenac SR 200mg & Thiocolchicoside SR 16mg Pellets Capsules</td><td>10x10</td></tr>
+    <tr><td>4</td><td>Atorvastatin 10mg and Aspirin 75mg</td><td>10x10</td></tr>
+    <tr><td>5</td><td>Atorvastatin 10mg and Aspirin 150mg</td><td>10x10</td></tr>
+    <tr><td>6</td><td>Carbonyl iron 100mg, Folic Acid 1.5mg, Zinc Sulphate 61.8mg, Vitamin C 75mg, Vitamin B12 15mcg Capsules</td><td>10x10</td></tr>
+    <tr><td>7</td><td>Clindamycin 150mg IP</td><td>10x10</td></tr>
+    <tr><td>8</td><td>Clindamycin 300mg IP</td><td>10x10</td></tr>
+    <tr><td>9</td><td>DexRabeprazole 10mg EC & Domperidone 30mg SR</td><td>10x10</td></tr>
+    <tr><td>10</td><td>Doxycycline Hcl 50 mg IP</td><td>10x10</td></tr>
+    <tr><td>11</td><td>Doxycycline Hcl 100 mg IP</td><td>10x10</td></tr>
+    <tr><td>12</td><td>Doxycycline Hcl 100 mg with Lactic Acid Bacillus 5 Million Spores Capsules</td><td>10x10</td></tr>
+    <tr><td>13</td><td>Doxycycline Hcl 100 mg with Lactic Acid Bacillus 5 Billion Spores Capsules</td><td>10x10</td></tr>
+    <tr><td>14</td><td>Doxycycline Hcl 200 mg IP</td><td>10x10</td></tr>
+    <tr><td>15</td><td>Esomeprazole Magnesium 40mg EC & Domperidone 30mg SR</td><td>10x10</td></tr>
+    <tr><td>16</td><td>Esomeprazole Magnesium 40mg EC & Levosulpiride 75mg SR</td><td>10x10</td></tr>
+    <tr><td>17</td><td>Esomeprazole Magnesium 40mg EC & Itopride Hydrochloride 150mg SR</td><td>10x10</td></tr>
+    <tr><td>18</td><td>Fluconazole 150 mg IP</td><td>10x10</td></tr>
+    <tr><td>19</td><td>Gabapentin 300mg</td><td>10x10</td></tr>
+    <tr><td>20</td><td>Itraconazole 100mg</td><td>10x10, 10x4</td></tr>
+    <tr><td>21</td><td>Itraconazole 200mg</td><td>10x10, 10x4</td></tr>
+    <tr><td>22</td><td>Lansoprazole 15mg</td><td>10x10</td></tr>
+    <tr><td>23</td><td>Lansoprazole 30mg</td><td>10x10</td></tr>
+    <tr><td>24</td><td>Loperamide 2mg IP</td><td>10x10</td></tr>
+    <tr><td>25</td><td>Lactic Acid Bacillus, B-Complex and Vitamins Capsules</td><td>10x10</td></tr>
+    <tr><td>26</td><td>Methylcobalamin 1500mcg, Alpha Lipoic Acid 100mg, Folic Acid 1.5mg, Thiamine Mono Nitrate 10mg, Pyridoxine Hydrochloride 3mg Capsules</td><td>10x10</td></tr>
+    <tr><td>27</td><td>Methylcobalamin 750mcg, Folic Acid 0.75mg, Vitamin B6 1.5mg, Benfothiamine 7.5mg, Pregabalin 75mg Capsules</td><td>10x10</td></tr>
+    <tr><td>28</td><td>Methylcobalamin 1500mcg, Alpha Lipoic Acid 200mcg, Folic Acid 1.5mg, Biotine 30mcg, Pyridoxine Hydrochloride 3mg</td><td>10x10</td></tr>
+    <tr><td>29</td><td>Mecobalamin 1000mcg, Alpha Lipoic Acid 200mg, Vitamin B6 3mg, Folic Acid 1.5mg, Inositol 100mg, Benfotiamine 100mg Capsules</td><td>10x10</td></tr>
+    <tr><td>30</td><td>Methylcobalamin 1500mcg, Alpha Lipoic Acid 100mg, Vitamin B6 3mg, Folic Acid 1.5mg, Benfothiamine 50mg, Biotin 5mg, Chromium Picolinate 200mcg Capsules</td><td>10x10</td></tr>
+    <tr><td>31</td><td>Methylcobalamin 750mcg, Alpha Lipoic Acid 100mg, Pregabalin 75mg, Pyridoxine Hcl 3mg, Folic Acid 1.5mg Capsules</td><td>10x10</td></tr>
+    <tr><td>32</td><td>Methylcobalamin 1500mcg, Alpha Lipoic Acid 100mg, Folic Acid 1.5mg, Pyridoxine Hydrochloride 3mg, Vitamin D3 1000 IU Tablets</td><td>10x10</td></tr>
+    <tr><td>33</td><td>Methylcobalamin 1500mcg, Calcium 200mg, Calcitriol 0.25mcg, Folic Acid 1.5mg, Pyridoxine Hcl 3mg Capsules</td><td>10x10</td></tr>
+    <tr><td>34</td><td>Mecobalamin 500mcg, Alpha Lipoic Acid 100mg, Folic Acid 1.5mg, Vitamin B5 5mg, Zn. Sulphate 25mg, Cr. Polynicotinate 200mcg, Selenium 65mcg, Inositol 1.5mg Capsules</td><td>10x10</td></tr>
+    <tr><td>35</td><td>Omeprazole 20mg (EC)</td><td>10x10</td></tr>
+    <tr><td>36</td><td>Omeprazole 20mg (EC) & Cinitapride (ER) 3mg Capsules</td><td>10x10</td></tr>
+    <tr><td>37</td><td>Omeprazole 20mg (EC) & Domperidone 10mg</td><td>10x10</td></tr>
+    <tr><td>38</td><td>Pantoprazole 40mg (EC) & Cinitapride (ER) 3mg Capsules</td><td>10x10</td></tr>
+    <tr><td>39</td><td>Pantoprazole 40 mg & Domperidone 30mg SR</td><td>10x10</td></tr>
+    <tr><td>40</td><td>Pantoprazole 40 mg & Levosulpiride 75mg SR</td><td>10x10</td></tr>
+    <tr><td>41</td><td>Pantoprazole 40 mg & Itopride Hydrochloride 150mg SR</td><td>10x10</td></tr>
+    <tr><td>42</td><td>Pregabalin 75mg Capsules</td><td>10x10</td></tr>
+    <tr><td>43</td><td>Pregabalin 150mg Capsules</td><td>10x10</td></tr>
+    <tr><td>44</td><td>Pregabalin 300mg Capsules</td><td>10x10</td></tr>
+    <tr><td>45</td><td>Pregabalin 75mg & Methylcobalamin 500mcg Capsules</td><td>10x10</td></tr>
+    <tr><td>46</td><td>Pregabalin 75mg & Methylcobalamin 750mcg Capsules</td><td>10x10</td></tr>
+    <tr><td>47</td><td>Rabeprazole 20mg EC & Domperidone 30mg SR</td><td>10x10</td></tr>
+    <tr><td>48</td><td>Rabeprazole 40mg EC & Domperidone 30mg SR</td><td>10x10</td></tr>
+    <tr><td>49</td><td>Rabeprazole Sodium 20mg EC & Levosulpiride 75mg</td><td>10x10</td></tr>
+    <tr><td>50</td><td>Rabeprazole Sodium 20mg & Aceclofenac 200mg SR</td><td>10x10</td></tr>
+    <tr><td>51</td><td>Rabeprazole 20mg Enteric Coated & Itopride HCl 150mg SR</td><td>10x10</td></tr>
+    <tr><td>52</td><td>Rabeprazole 20mg EC & Diclofenac Sodium 100mg SR</td><td>10x10</td></tr>
+    <tr><td>53</td><td>Racecadotril 100mg Capsules IP</td><td>10x10</td></tr>
+    <tr><td>54</td><td>Ribavirin 200mg Capsules IP</td><td>10x10</td></tr>
+    <tr><td>55</td><td>Rifampicin 150mg Capsules IP</td><td>10x10</td></tr>
+    <tr><td>56</td><td>Rifampicin 300mg Capsules IP</td><td>10x10</td></tr>
+    <tr><td>57</td><td>Ritonavir 100mg Capsules IP</td><td>10x10</td></tr>
+    <tr><td>58</td><td>Amoxycillin 250 mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+    <tr><td>59</td><td>Amoxycillin 500 mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+    <tr><td>60</td><td>Ampicillin 250 mg & Dicloxacillin 250mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+    <tr><td>61</td><td>Cephalexin 250mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+    <tr><td>62</td><td>Cephalexin 500mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+    <tr><td>63</td><td>Amoxycillin 500 mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+    <tr><td>64</td><td>Amoxycillin 250 mg Capsules</td><td>10x10, 10x6, 10x4</td></tr>
+  </tbody>
+</table>
+
+  `,
+      "CARDIOVASCULAR": `
+    <table id="productTable" border="1" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th class="sortable">Composition</th>
+      <th class="sortable">Pack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>AMLODIPINE 10MG</td><td>20*10</td></tr>
+    <tr><td>AMLODIPINE 5MG + HYDROCHLOROTHIAZIDE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>S-AMLODIPINE 5MG</td><td>10*15</td></tr>
+    <tr><td>S-AMLODIPINE 2.5MG</td><td>10*15</td></tr>
+    <tr><td>ATENOLOL 50MG</td><td>20*14</td></tr>
+    <tr><td>AZELNIDIPINE 8MG</td><td>10*10</td></tr>
+    <tr><td>AZELNIDIPINE 16MG</td><td>10*10</td></tr>
+    <tr><td>AZILSARTAN 40MG</td><td>10*10</td></tr>
+    <tr><td>APIXABAN 2.5MG</td><td>10*10</td></tr>
+    <tr><td>APIXABAN 5MG</td><td>10*10</td></tr>
+    <tr><td>APIXABAN 2.5MG</td><td>20*10</td></tr>
+    <tr><td>APIXABAN 5MG</td><td>10*10</td></tr>
+    <tr><td>BENIDIPINE 4MG</td><td>10*10</td></tr>
+    <tr><td>BENIDIPINE 4MG + TELMISARTAN 40MG</td><td>10*10</td></tr>
+    <tr><td>BISOPROLOL 1.25MG</td><td>20*10</td></tr>
+    <tr><td>BISOPROLOL 2.5MG</td><td>4*5*10</td></tr>
+    <tr><td>BISOPROLOL 5MG</td><td>4*5*10</td></tr>
+    <tr><td>BISOPROLOL 5MG + AMLODIPINE 5MG</td><td>20*10</td></tr>
+    <tr><td>BISOPROLOL 2.5MG + AMLODIPINE 5MG</td><td>20*10</td></tr>
+    <tr><td>BISOPROLOL 5MG + TELMISARTAN 40MG</td><td>10*10</td></tr>
+    <tr><td>TICAGRELOR 60MG</td><td>10*14</td></tr>
+    <tr><td>CARVEDILOL 3.125</td><td>20*10</td></tr>
+    <tr><td>CARVEDILOL 6.25</td><td>10*10</td></tr>
+    <tr><td>CARVEDILOL 12.5</td><td>20*10</td></tr>
+    <tr><td>CARVEDILOL CONTROL RELEASE 10MG</td><td>5*2*10</td></tr>
+    <tr><td>CARVEDILOL CONTROL RELEASE 20MG</td><td>5*2*10</td></tr>
+    <tr><td>CARVEDILOL 12.5MG + IVABRADIN 5MG</td><td>10*10</td></tr>
+    <tr><td>CLOPIDOGREL 150MG</td><td>10*10</td></tr>
+    <tr><td>CLOPIDOGREL 75MG</td><td>10*10</td></tr>
+    <tr><td>CLOPIDOGREL 75MG + ASPIRIN 150MG</td><td>10*15</td></tr>
+    <tr><td>CLOPIDOGREL 75MG + ASPIRIN 75MG</td><td>10*15</td></tr>
+    <tr><td>DABIGATRAN 75</td><td>10*10</td></tr>
+    <tr><td>DABIGATRAN 110</td><td>10*10</td></tr>
+    <tr><td>DABIGATRAN 150</td><td>10*10</td></tr>
+    <tr><td>DILTIAZEM 60MG CR TABLET</td><td>10*10</td></tr>
+    <tr><td>DILTIAZEM 90MG CR TABLET</td><td>10*10</td></tr>
+    <tr><td>ENALAPRIL 2.5MG</td><td>10*10</td></tr>
+    <tr><td>EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>FUROSEMIDE 20MG + SPIRONOLACTONE 50MG</td><td>10*10</td></tr>
+    <tr><td>FENOFIBRATE 145MG</td><td>10*10</td></tr>
+    <tr><td>FENOFIBRATE 160MG</td><td>10*10</td></tr>
+    <tr><td>ISOSORBIDE 20MG</td><td>4*5*10</td></tr>
+    <tr><td>DILUTED ISOSORBIDE DINITRATE 20MG + HYDRALAZINE 37.5 MG</td><td>10*10</td></tr>
+    <tr><td>BOSENTAN 62.5MG</td><td>10*10</td></tr>
+    <tr><td>INDAPAMIDE 1.5MG SUSTAINED RELEASE</td><td>10*10</td></tr>
+    <tr><td>PRAZOSIN 2.5MG</td><td>10*15</td></tr>
+    <tr><td>PRAZOSIN 5MG</td><td>10*10</td></tr>
+    <tr><td>IVABRADINE 7.5MG</td><td>10*10</td></tr>
+    <tr><td>LABETALOL 100MG</td><td>10*10</td></tr>
+    <tr><td>LISINOPRIL 2.5</td><td>10*10</td></tr>
+    <tr><td>LISINOPRIL 5</td><td>10*10</td></tr>
+    <tr><td>LISINOPRIL 10</td><td>10*10</td></tr>
+    <tr><td>LISINOPRIL 5 + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>LOSARTAN 25MG</td><td>10*10</td></tr>
+    <tr><td>LOSARTAN 50 + HYDROCHLOROTHIAZIDE 12.5</td><td>10*10</td></tr>
+    <tr><td>LOSARTAN 50MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>LOSARTAN 50 + CHLORTHALIDONE 6.25</td><td>10*10</td></tr>
+    <tr><td>METOLAZONE 2.5</td><td>10*10</td></tr>
+    <tr><td>METOLAZONE 5</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL SUCCINATE 25MG + AMLODIPINE 2.5MG</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL SUCCINATE 50MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL 12.5XL</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL SUCCINATE PROLONGED RELEASE 50MG</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL SUCCINATE PROLONGED RELEASE 100MG</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL SUCCINATE 25MG + RAMIPIRIL 2.5MG</td><td>4*5*10</td></tr>
+    <tr><td>METOPROLOL SUCCINATE 50MG + RAMIPIRIL 5MG</td><td>10*10</td></tr>
+    <tr><td>METOPROLOL 50MG + CHLORTHALIDONE 12.50</td><td>10*10</td></tr>
+    <tr><td>MIDODRINE 2.5MG</td><td>10*10</td></tr>
+    <tr><td>MIDODRINE 5MG</td><td>10*10</td></tr>
+    <tr><td>MOXONIDINE 0.3MG</td><td>10*10</td></tr>
+    <tr><td>MOXONIDINE 0.2MG</td><td>10*10</td></tr>
+    <tr><td>NEBIVOLOL 2.5MG</td><td>20*10</td></tr>
+    <tr><td>NEBIVOLOL 5MG</td><td>20*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + NEBIVOLOL 5MG</td><td>10*10</td></tr>
+    <tr><td>NEBIVOLOL 5MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>NEBIVOLOL 5MG + HYDROCHLOROTHIAZIDE 12.50MG</td><td>10*15</td></tr>
+    <tr><td>NEBIVOLOL 2.5MG + CILNIDIPINE 10MG</td><td>10*10</td></tr>
+    <tr><td>NEBIVOLOL 5MG + CILNIDIPINE 10MG</td><td>10*10</td></tr>
+    <tr><td>NICOUMALONE 1MG</td><td>10*10</td></tr>
+    <tr><td>NICOUMALONE 2MG</td><td>10*10</td></tr>
+    <tr><td>NICOUMALONE 3MG</td><td>10*10</td></tr>
+    <tr><td>NICOUMALONE 4MG</td><td>4*5*10</td></tr>
+    <tr><td>NICORANDIL 5MG</td><td>30tab</td></tr>
+    <tr><td>NICORENDIL 10MG</td><td>10*10</td></tr>
+    <tr><td>NIFEDIPINE 20MG SR TABLET</td><td>10*10</td></tr>
+    <tr><td>NIFEDIPINE 30MG SR TABLET</td><td>10*10</td></tr>
+    <tr><td>Nitroglycerine 2.6mg</td><td>1*30</td></tr>
+    <tr><td>Nitroglycerine 6.4mg</td><td>1*30</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 20MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 40MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN 20MG + HYDROCHLOROTHIAZIDE 12.50MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN 40MG + HYDROCHLOROTHIAZIDE 12.50MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 20MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 40MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 20MG + CHLORTHALIDONE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 40MG + CHLORTHALIDONE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 20MG + AMLODIPINE 5MG + HYDROCHLOROTHAZIDE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>OLMESARTAN MEDOXOMIL 40MG + AMLODIPINE 5MG + HYDROCHLOROTHAZIDE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>PERINDOPRIL ERBUMINE 4MG</td><td>10*10</td></tr>
+    <tr><td>EPLERENONE 25MG</td><td>10*10</td></tr>
+    <tr><td>EPLERENONE 50MG</td><td>10*10</td></tr>
+    <tr><td>PRASUGREL 10MG</td><td>10*10</td></tr>
+    <tr><td>RAMIPRIL 1.25MG</td><td>10*10</td></tr>
+    <tr><td>RAMIPRIL 2.5</td><td>20*10</td></tr>
+    <tr><td>RAMIPRIL 5</td><td>10*10</td></tr>
+    <tr><td>RAMIPRIL 10MG</td><td>10*10</td></tr>
+    <tr><td>RAMIPRIL 2.5MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>RAMIPRIL 5MG + HYDROCHLOROTHIAZIDE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>RANOLAZINE 500 EXTENDED RELEASE</td><td>10*10</td></tr>
+    <tr><td>RIVAROXABAN 10MG</td><td>10*14</td></tr>
+    <tr><td>RIVAROXABAN 15MG</td><td>10*14</td></tr>
+    <tr><td>RIVAROXABAN 20MG</td><td>10*14</td></tr>
+    <tr><td>ROSUVASTATIN 20MG + EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 10MG + EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 40MG + EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 5MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 10MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 20MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 40MG</td><td>20*10</td></tr>
+    <tr><td>ROSUVASTATIN 10MG + FENOFIBRATE 160MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 5MG + FENOFIBRATE 160MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 20MG + FENOFIBRATE 160MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 20MG + ASPIRIN 75MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 10MG + ASPIRIN 75MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 10MG + CLOPIDOGREL 75MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 20MG + CLOPIDOGREL 75MG</td><td>10*10</td></tr>
+    <tr><td>ASPIRIN 75 + ROSUVASTATIN 10MG + CLOPIDOGREL 75MG</td><td>10*10</td></tr>
+    <tr><td>ASPIRIN 75 + ROSUVASTATIN 20MG + CLOPIDOGREL 150MG</td><td>10*15</td></tr>
+    <tr><td>SIMVASTIN 10MG</td><td>10*10</td></tr>
+    <tr><td>SIMVASTIN 20MG</td><td>10*10</td></tr>
+    <tr><td>SPIRONOLACTONE 25MG IN RED PVC</td><td>10*10</td></tr>
+    <tr><td>SPIRONOLACTONE 50MG IN RED PVC</td><td>10*10</td></tr>
+    <tr><td>SACUBITRIL 24 MG + VALSARTAN 26MG</td><td>10*14</td></tr>
+    <tr><td>SACUBITRIL 49 MG + VALSARTAN 51MG</td><td>10*14</td></tr>
+    <tr><td>SACUBITRIL 98 MG + VALSARTAN 102MG</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 20MG</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG/ALUALU</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 80MG/ALUALU</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 80MG + AMLODIPINE 5MG + HYDROCHLORTHIAZIDE 12.5/ ALU</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + AMLODIPINE 5MG + HYDROCHLORTHIAZIDE 12.5/ ALU</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + AMLODIPINE 5MG + CHLORTHALIDONE 6.25</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + AMLODIPINE 5MG + CHLORTHALIDONE 12.5</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + METOPROLOL SR 25MG</td><td>20*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + METOPROLOL SR 50MG</td><td>20*10</td></tr>
+    <tr><td>TELMISARTAN 80MG + HYDROCHLORTHIAZIDE 12.5MG/ALUALU</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 80MG + AMLODIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + CHLORTHALIDONE 6.25MG</td><td>20*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + CHLORTHALIDONE 12.5MG</td><td>20*10</td></tr>
+    <tr><td>TELMISARTAN 80MG + CHLORTHALIDONE 12.5MG</td><td>10*10</td></tr>
+    <tr><td>ROSUVASTATIN 10MG + TELMISARTAN 40MG</td><td>10*10</td></tr>
+    <tr><td>CHLORTHALIDONE 6.25MG</td><td>10*15</td></tr>
+    <tr><td>CHLORTHALIDONE 12.5MG</td><td>10*15</td></tr>
+    <tr><td>TORSEMIDE 5MG</td><td>10*15</td></tr>
+    <tr><td>TORSEMIDE 10MG</td><td>10*15</td></tr>
+    <tr><td>TORSEMIDE 20MG</td><td>10*10</td></tr>
+    <tr><td>TORSEMIDE 40MG</td><td>10*10</td></tr>
+    <tr><td>TORSEMIDE 100MG</td><td>10*10</td></tr>
+    <tr><td>TORSEMIDE 5MG + SPIRONOLACTONE 50MG</td><td>10*10</td></tr>
+    <tr><td>TORSEMIDE 10MG + SPIRONOLACTONE 50MG</td><td>10*10</td></tr>
+    <tr><td>TORSEMIDE 20MG + SPIRONOLACTONE 50MG</td><td>10*10</td></tr>
+    <tr><td>TORSEMIDE 10MG + SPIRONOLACTONE 25MG</td><td>10*10</td></tr>
+    <tr><td>TRIMETAZIDINE 20MG</td><td>10*10</td></tr>
+    <tr><td>TRIMETAZIDINE CONTROLLED RELEASE 60MG</td><td>10*10</td></tr>
+    <tr><td>TRIMETAZIDINE 35MG</td><td>10*10</td></tr>
+    <tr><td>VALSARTAN 40MG</td><td>10*10</td></tr>
+    <tr><td>VALSARTAN 80</td><td>10*10</td></tr>
+    <tr><td>WARFARIN 1MG</td><td>10*30</td></tr>
+    <tr><td>WARFARIN 2MG</td><td>10*30</td></tr>
+    <tr><td>WARFARIN 5MG</td><td>10*30</td></tr>
+    <tr><td>CILNIDIPINE 5MG</td><td>10*10</td></tr>
+    <tr><td>CILNIDIPINE 10MG</td><td>10*15</td></tr>
+    <tr><td>CILNIDIPINE 20MG</td><td>10*10</td></tr>
+    <tr><td>CILINDIPINE 10MG + METOPROLOL 50MG</td><td>10*10</td></tr>
+    <tr><td>CILINDIPINE 10MG + METOPROLOL 25MG</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + CILNIDIPINE 10MG + CHLORTHALIDONE 12.5</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + CILNIDIPINE 10MG + CHLORTHALIDONE 6.25</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + CILNIDIPINE 10MG</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 80MG + CILNIDIPINE 10MG</td><td>10*10</td></tr>
+    <tr><td>TELMISARTAN 40MG + METOPROLOL 25MG + CILNIDIPINE 10 MG</td><td>10*15</td></tr>
+    <tr><td>TELMISARTAN 40MG + METOPROLOL 50MG + CILNIDIPINE 10 MG</td><td>10*15</td></tr>
+    <tr><td>CILNIDIPINE 10MG + CHLORTHALIDONE 12.5</td><td>10*10</td></tr>
+    <tr><td>CILNIDIPINE 10MG + OLMESARTAN 20MG</td><td>10*10</td></tr>
+    <tr><td>CILNIDIPINE 10MG + OLMESARTAN 40MG + CHLORTHALIDONE 12.5</td><td>10*10</td></tr>
+    <tr><td>CILNIDIPINE 10MG + OLMESARTAN 20MG + CHLORTHALIDONE 12.5</td><td>10*10</td></tr>
+    <tr><td>ASPIRIN 75MG</td><td>50*10</td></tr>
+    <tr><td>ASPIRIN 150MG</td><td>50*10</td></tr>
+    <tr><td>ATORVASTATIN 5MG</td><td>10*15</td></tr>
+    <tr><td>ATORVASTATIN 10MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 20MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 40MG</td><td>20*10</td></tr>
+    <tr><td>ATORVASTATIN 80MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 10MG + EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 20MG + EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 40MG + EZETIMIBE 10MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 10MG + FENOFIBRATE 160MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 10MG + ASPIRIN 75MG</td><td>20*15</td></tr>
+    <tr><td>ATORVASTATIN 10MG + ASPIRIN 150MG</td><td>20*15</td></tr>
+    <tr><td>ATORVASTATIN 20MG + ASPIRIN 75MG</td><td>10*15</td></tr>
+    <tr><td>ATORVASTATIN 10MG + CLOPIDOGREL 75MG</td><td>10*10</td></tr>
+    <tr><td>ATORVASTATIN 20MG + CLOPIDOGREL 75MG</td><td>10*10</td></tr>
+    <tr><td>ASPIRIN 75 + ATORVASTATIN 40 MG + CLOPIDOGREL 75MG</td><td>10*15</td></tr>
+    <tr><td>ASPIRIN 75 + ATORVASTATIN 20 MG + CLOPIDOGREL 75MG</td><td>10*15</td></tr>
+    <tr><td>ASPIRIN 75 + ATORVASTATIN 10 MG + CLOPIDOGREL 75MG</td><td>10*15</td></tr>
+  </tbody>
+</table>
+  `,
+      "CRITICAL CARE": `
+    <table id="productTable" border="1" cellspacing="0" cellpadding="6">
       <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Ingredients</th><th class="sortable">Use</th></tr>
+        <tr style="background:#f2f2f2;">
+          <th class="sorting">S.No</th>
+          <th class="sortable">Name of the Product</th>
+          <th >Packing</th>
+        </tr>
       </thead>
       <tbody>
-        <tr><td>VitaCaps</td><td>Multivitamin + Zinc</td><td>Daily Supplement</td></tr>
+        <tr><td>1</td><td>ALLOPURINOL 100 MG</td><td>10*10</td></tr>
+        <tr><td>2</td><td>AMIODARONE 200 MG</td><td>10*10</td></tr>
+        <tr><td>3</td><td>ALPHA KETO ISOLEUCINE CALCIUM SALT 67 MG + ALPHA KETO LEUCINE 101 MG + ALPHA KETO PHENYLALANINE 68 MG + ALPHA KETO VALINE 86 MG + ALPHA HYDROXY METHIONINE 59 MG + THREONINE 53 MG + TRYPTOPHAN 23 MG + HISTIDINE 38 MG + TYROSINE 30 MG + LYSINE ACETATE 105 MG</td><td>10*10</td></tr>
+        <tr><td>4</td><td>ALPHA KETO ISOLEUCINE CALCIUM SALT 134 MG + ALPHA KETO LEUCINE 202 MG + ALPHA KETO PHENYLALANINE 136 MG + ALPHA KETO VALINE 172 MG + ALPHA HYDROXY METHIONINE 118 MG + THREONINE 106 MG + TRYPTOPHAN 46 MG + HISTIDINE 76 MG + TYROSINE 60 MG + LYSINE ACETATE 210 MG</td><td>10*10</td></tr>
+        <tr><td>5</td><td>STREPTOCOCCUS THERMOPHILUS 5 BILLION SPORES + LACTOBACILLUS ACIDOPHILUS 5 BILLION SPORES + BIFIDOBACTERIUM LONGUM 5 BILLION SPORES + FRUCTO OLIGOSACCHARIDES 100 MG</td><td>10*1*10</td></tr>
+        <tr><td>6</td><td>STREPTOCOCCUS THERMOPHILUS 15 BILLION SPORES + LACTOBACILLUS ACIDOPHILUS 15 BILLION SPORES + BIFIDOBACTERIUM LONGUM 15 BILLION SPORES + FRUCTO OLIGOSACCHARIDES 100 MG</td><td>10*1*10</td></tr>
+        <tr><td>7</td><td>CALCIUM ACETATE 667 MG</td><td>10*10</td></tr>
+        <tr><td>8</td><td>CALCIUM DOBESILATE 500 MG</td><td>10*10</td></tr>
+        <tr><td>9</td><td>DIOSMIN 450 MG + HESPERIDIN 50 MG</td><td>10*10</td></tr>
+        <tr><td>10</td><td>ISOXSUPRINE 40 MG</td><td>10*10</td></tr>
+        <tr><td>11</td><td>FEBUXOSTAT 40 MG</td><td>10*10</td></tr>
+        <tr><td>12</td><td>FEBUXOSTAT 80 MG</td><td>10*10</td></tr>
+        <tr><td>13</td><td>OSELTAMIVIR 75 MG</td><td>10*10</td></tr>
+        <tr><td>14</td><td>MYCOPHENOLATE MOFETIL 500 MG</td><td>10*10</td></tr>
+        <tr><td>15</td><td>TENOFOVIR DISOPROXIL FUMARATE IP 300 MG</td><td>1*30</td></tr>
+        <tr><td>16</td><td>CALCIUM POLYSTYREINE SULPHANATE 15GM</td><td>15GM</td></tr>
+        <tr><td>17</td><td>LITHIUM CARBONATE SR 400 MG TABLET</td><td>10*10</td></tr>
+        <tr><td>18</td><td>MESALAMINE 400 MG TABLET</td><td>10*10</td></tr>
+        <tr><td>19</td><td>MESALAMINE 800 MG TABLET</td><td>10*10</td></tr>
+        <tr><td>20</td><td>MESALAMINE DELAYED RELEASE 1200 MG</td><td>10*10</td></tr>
+        <tr><td>21</td><td>METHIMAZOLE 5 MG</td><td>10*30</td></tr>
+        <tr><td>22</td><td>FLUNARIZINE 10 MG</td><td>10*10</td></tr>
+        <tr><td>23</td><td>CAFFEINE 100 MG + ERGOTAMINE 1 MG</td><td>10*10</td></tr>
+        <tr><td>24</td><td>N-ACETYLAYSTEINE 150 MG + TAURINE 500 MG</td><td>10*10</td></tr>
+        <tr><td>25</td><td>N-ACETYLCYSTEINE 300 MG + PYRIDOXAMINE 50 MG</td><td>10*10</td></tr>
+        <tr><td>26</td><td>ARTEMETHER 80 MG + LUMEFANTRINE 480 MG</td><td>10*6</td></tr>
+        <tr><td>27</td><td>NIMODIPINE 30 MG</td><td>10*10</td></tr>
+        <tr><td>28</td><td>SEVELAMER 400 MG</td><td>10*10</td></tr>
+        <tr><td>29</td><td>SEVELAMER 800 MG</td><td>10*10</td></tr>
+        <tr><td>30</td><td>CARBIMAZOLE 20 MG</td><td>1*100</td></tr>
+        <tr><td>31</td><td>TACROLIMUS 1 MG</td><td>10*10</td></tr>
+        <tr><td>32</td><td>THYROXINE 12.5 MCG</td><td>1*120</td></tr>
+        <tr><td>33</td><td>THYROXINE 25 MCG</td><td>1*120</td></tr>
+        <tr><td>34</td><td>THYROXINE 37.5 MCG</td><td>1*100</td></tr>
+        <tr><td>35</td><td>THYROXINE 50 MCG</td><td>1*120</td></tr>
+        <tr><td>36</td><td>THYROXINE 62.5 MCG</td><td>1*100</td></tr>
+        <tr><td>37</td><td>THYROXINE 75 MCG</td><td>1*120</td></tr>
+        <tr><td>38</td><td>THYROXINE 88 MCG</td><td>1*100</td></tr>
+        <tr><td>39</td><td>THYROXINE 100 MCG</td><td>1*120</td></tr>
+        <tr><td>40</td><td>THYROXINE 125 MCG</td><td>1*100</td></tr>
+        <tr><td>41</td><td>THYROXINE 150 MCG</td><td>1*100</td></tr>
+        <tr><td>42</td><td>TRIHEXYPHENIDYL 2 MG</td><td>20*10</td></tr>
       </tbody>
     </table>
   `,
-  "CARDIOVASCULAR": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Dosage Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>CardioSafe</td><td>Amlodipine 5mg</td><td>Tablet</td></tr>
-      </tbody>
-    </table>
+      "DERMATOLOGY": `
+    <table id="productTable" border="1" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sortable">Name of the Product</th>
+      <th>Packing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>ALOEVERA + NEEM OIL + KESAR + SANDAL + TULSI + OLIVE OIL</td><td>75 g</td></tr>
+    <tr><td>2</td><td>APREMILAST 10 MG</td><td>10*10</td></tr>
+    <tr><td>3</td><td>APREMILAST 30 MG</td><td>10*10</td></tr>
+    <tr><td>4</td><td>BIOTIN 5 MG</td><td>20*10</td></tr>
+    <tr><td>5</td><td>BIOTIN 10 MG</td><td>20*10</td></tr>
+    <tr><td>6</td><td>CLOTRIMAZOLE MOUTHPAINT 1%</td><td>15 ML</td></tr>
+    <tr><td>7</td><td>CETYL ALCOHOL 2.650% + STEARYL ALCOHOL 0.265% CLEANSING LOTION</td><td>125 ML</td></tr>
+    <tr><td>8</td><td>DEXCHLORPHENIRAMINE 2 MG</td><td>10*10</td></tr>
+    <tr><td>9</td><td>DESLORATADINE 5 MG</td><td>10*15</td></tr>
+    <tr><td>10</td><td>BECLOMETHASONE DIPROPIONATE 0.025% + CLOTRIMAZOLE 1.0%</td><td>30 ML</td></tr>
+    <tr><td>11</td><td>L-GLUTATHIONE 500 MG + KEY LIME 500 MG</td><td>10*1*10</td></tr>
+    <tr><td>12</td><td>VITAMIN C SERUM 20%</td><td>15 ML</td></tr>
+    <tr><td>13</td><td>ALOEVERA + NEEM + TULSI FACE WASH - FOR ANTI ACNE, OIL CONTROL, REMOVES DIRT</td><td>2 PEC</td></tr>
+    <tr><td>14</td><td>ACTIVATED CHARCOAL + AQUA + SODIUM LAURYL ETHER SULPHATE + GLYCERIN + COCAMIDOPROPYL BETAINE + TOCOPHERYL ACETATE + ALOEVERA EXTRACT</td><td>2 PEC</td></tr>
+    <tr><td>15</td><td>SODIUM SURCOSINATE + ALOEVERA EXT + NEEM EXT + TULSI EXT + SALICYLIC ACID + CAPB + GLYCERINE + SOD. GLUCONATE + GLYCOLIC ACID</td><td>150 ML</td></tr>
+    <tr><td>16</td><td>HALDI CHANDAN F/W</td><td>75+25 ML</td></tr>
+    <tr><td>17</td><td>EDTA DISODIUM + GLYCERIN + PROPYLENE GLYCOL + LURIC ACID + MYRISTIC ACID + STEARIC ACID + LICORICE + KOJIC ACID + VITAMIN C + GLYCOLIC ACID + SALICYLIC ACID EX.</td><td>100 GM</td></tr>
+    <tr><td>18</td><td>LULICONAZOLE 1% LOTION</td><td>30 ML</td></tr>
+    <tr><td>19</td><td>LORATADINE 10 MG</td><td>20*10</td></tr>
+    <tr><td>20</td><td>METHOXSALEN 10 MG</td><td>10*10</td></tr>
+    <tr><td>21</td><td>CLOBETASOL PROPIONATE 0.05% + SALICYLIC ACID 3.0%</td><td>30 ML</td></tr>
+    <tr><td>22</td><td>ALOEVERA + SALICYLIC ACID + GLYCOLIC ACID & VITAMIN E ACETATE WITH ENCAPSULATED BEADS OF NATURAL INGREDIENTS</td><td>100 GM</td></tr>
+    <tr><td>23</td><td>FLUCONAZOLE 200 MG TAB</td><td>2 TAB</td></tr>
+    <tr><td>24</td><td>KETOCONAZOLE DUSTING POWDER 2%</td><td>100 GM</td></tr>
+    <tr><td>25</td><td>HYDROXYZINE HCL 10 MG</td><td>10*15</td></tr>
+    <tr><td>26</td><td>HYDROXYZINE HCL 25 MG</td><td>20*15</td></tr>
+    <tr><td>27</td><td>ITRACONAZOLE 65 MG SUPRA BIOAVAILABLE</td><td>10*10</td></tr>
+    <tr><td>28</td><td>ITRACONAZOLE 130 MG</td><td>10*10</td></tr>
+    <tr><td>29</td><td>ITRACONAZOLE 100 MG</td><td>10*10</td></tr>
+    <tr><td>30</td><td>RED ONION & BLACK SEED OIL</td><td>100 ML</td></tr>
+    <tr><td>31</td><td>RED ONION & BLACK SEED SHAMPOO (PARABEN FREE)</td><td>300 ML</td></tr>
+    <tr><td>32</td><td>KETOCONAZOLE 2% + ZPTO 1%</td><td>75 GM</td></tr>
+    <tr><td>33</td><td>KETOCONAZOLE 2%</td><td>75 G</td></tr>
+    <tr><td>34</td><td>KETOCONAZOLE 2%</td><td>100 ML</td></tr>
+    <tr><td>35</td><td>KETOCONAZOLE 2% + BIOTIN + ALOEVERA + D.PENT.</td><td>100 ML</td></tr>
+    <tr><td>36</td><td>BIOTIN 10 MG + CALCIUM PANTOTHENATE 100 MG + ACETYLCYSTEINE 50 MG + ZINC 22.5 MG + COPPER + SELENIUM 65 MCG</td><td>10*1*10</td></tr>
+    <tr><td>37</td><td>MINOXIDIL SOLUTION 5% WITH TREY, DROPER & SPRAY</td><td>60 ML</td></tr>
+    <tr><td>38</td><td>MINOXIDIL SOLUTION 10% WITH TREY, DROPER & SPRAY</td><td>60 ML</td></tr>
+    <tr><td>39</td><td>MINOXIDIL SOLUTION 5% + FINASTERIDE 0.1% WITH TREY, DROPER & SPRAY</td><td>60 ML</td></tr>
+    <tr><td>40</td><td>PERMETHRIN SOAP 1%</td><td>75 GM</td></tr>
+    <tr><td>41</td><td>PERMETHRIN LOTION 5% W/V + CETRIMIDE 0.01% LOTION</td><td>60 ML</td></tr>
+    <tr><td>42</td><td>TERBINAFINE 250 MG</td><td>10*1*7</td></tr>
+    <tr><td>43</td><td>PERMETHRIN LOTION 5%</td><td>50 ML</td></tr>
+    <tr><td>44</td><td>OATMEAL EXTRACT + VITAMIN E + SHEA BUTTER + JOJOBA OIL + ALMOND OIL + SQUALENE + DIMETHICONE</td><td>200 G</td></tr>
+    <tr><td>45</td><td>SUN SCREEN SPF 50+ (SUN SAFE GUARD)</td><td>60 g</td></tr>
+    <tr><td>46</td><td>TRIAMCINOLONE 4 MG</td><td>10*10</td></tr>
+    <tr><td>47</td><td>ALOEVERA 10% + LANOLIN 0.5% + WHEAT GERM OIL 0.5% + JOJOBA OIL 0.1% + KOKUM BUTTER 0.5% + SODIUM PCA + GRAPE SEED OIL MOISTURE LOTION</td><td>100 ML</td></tr>
+    <tr><td>48</td><td>ALOEVERA + WHEAT GERM OIL + SANDAL + TURMERIC + ALMOND OIL + NEEM + CUCUMBER + ORANGE PEEL + BANANA + PAPAYA (FACE AND BODY MOISTURE CREAM)</td><td>100 GM</td></tr>
+    <tr><td>49</td><td>ALOEVERA GEL + ROSE</td><td>100 G</td></tr>
+  </tbody>
+</table>
+
   `,
-  "CRITICAL CARE": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Pack</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>CritoMed</td><td>Meropenem 1g</td><td>Vial</td></tr>
-      </tbody>
-    </table>
+      "DRY INJECTIONS": `
+   <table id="productTable" border="1" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th class="sorting">S.NO</th>
+      <th class='sortable'>PRODUCT</th>
+      <th class='sortable'>COMPOSITION</th>
+      <th>STRENGTH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Ceftriaxone Inj.</td>
+      <td>Each Vial Contains: Ceftriaxone Sodium Eq. to Ceftriaxone</td>
+      <td>250 Mg / 500 Mg / 1 G / 2 G</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Ceftriaxone + Sulbactam Inj.</td>
+      <td>Each Vial Contains: Ceftriaxone Sodium + Sulbactam Sodium</td>
+      <td>250+125 Mg / 500+250 Mg / 1.5 G / 3 G</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Cefoperazone + Sulbactam Inj.</td>
+      <td>Each Vial Contains: Cefoperazone Sodium + Sulbactam Sodium</td>
+      <td>750 Mg / 1.5 G / 2 G / 3 G</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Piperacillin + Tazobactam Inj.</td>
+      <td>Each Vial Contains: Piperacillin Sodium + Tazobactam Sodium</td>
+      <td>2.25 G / 4.5 G</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Cefotaxime Sodium Inj.</td>
+      <td>Each Vial Contains: Cefotaxime Sodium Eq. to Cefotaxime</td>
+      <td>250 Mg / 500 Mg / 1 G</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Ceftazidime Inj.</td>
+      <td>Each Vial Contains: Ceftazidime Pentahydrate Eq. to Ceftazidime</td>
+      <td>250 Mg / 500 Mg / 1 G / 2 G</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>Cefepime Inj.</td>
+      <td>Each Vial Contains: Cefepime Hydrochloride Eq. to Cefepime</td>
+      <td>250 Mg / 500 Mg / 1 G</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>Cefepime + Tazobactam Inj.</td>
+      <td>Each Vial Contains: Cefepime Hydrochloride + Tazobactam Sodium</td>
+      <td>1.125 G / 1.5 G</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>Meropenem Inj.</td>
+      <td>Each Vial Contains: Meropenem Trihydrate Eq. to Meropenem</td>
+      <td>250 Mg / 500 Mg / 1 G</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>Imipenem + Cilastatin Inj.</td>
+      <td>Each Vial Contains: Imipenem + Cilastatin Sodium</td>
+      <td>250+250 Mg / 500+500 Mg</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>Cefuroxime Sodium Inj.</td>
+      <td>Each Vial Contains: Cefuroxime Sodium Eq. to Cefuroxime</td>
+      <td>250 Mg / 750 Mg / 1.5 G</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>Cloxacillin Sodium Inj.</td>
+      <td>Each Vial Contains: Cloxacillin Sodium</td>
+      <td>250 Mg / 500 Mg / 1 G</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>Amoxycillin + Clavulanic Acid Inj.</td>
+      <td>Each Vial Contains: Amoxycillin Sodium + Clavulanate Potassium</td>
+      <td>1.2 G / 600 Mg</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>Cefixime + Sulbactam Inj.</td>
+      <td>Each Vial Contains: Cefixime + Sulbactam Sodium</td>
+      <td>1.5 G</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Tigecycline Inj.</td>
+      <td>Each Vial Contains: Tigecycline (Sterile Lyophilized Powder)</td>
+      <td>50 Mg</td>
+    </tr>
+  </tbody>
+</table>
+
   `,
-  "DERMATOLOGY": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>DermaClear</td><td>Clindamycin Gel</td><td>Gel</td></tr>
-      </tbody>
-    </table>
+      "GASTROINTESTINALS": `
+    <table border="1" cellspacing="0" cellpadding="6" id="productTable">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sortable">Category</th>
+      <th class="sortable">Product / Composition</th>
+      <th class="sortable">Strength / Pack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Proton Pump Inhibitors / P-CAB -->
+    <tr><td>1</td><td>PPI / P-CAB</td><td>Vonoprazan</td><td>20 mg | 10*10</td></tr>
+    <tr><td>2</td><td>PPI</td><td>Dexlansoprazole</td><td>30 mg MR | 10*10</td></tr>
+    <tr><td>3</td><td>PPI</td><td>Omeprazole</td><td>20 mg | 20*15</td></tr>
+    <tr><td>4</td><td>PPI + Prokinetic</td><td>Omeprazole + Domperidone</td><td>20 mg + 10 mg | 20*15</td></tr>
+    <tr><td>5</td><td>PPI</td><td>Pantoprazole</td><td>20 / 40 mg | 10*10 / 20*10</td></tr>
+    <tr><td>6</td><td>PPI + Prokinetic</td><td>Pantoprazole + Domperidone</td><td>40 mg + 10 mg | 10*10</td></tr>
+    <tr><td>7</td><td>PPI + Antiemetic</td><td>Pantoprazole + Ondansetron</td><td>40 mg + 4 mg | 10*15</td></tr>
+    <tr><td>8</td><td>PPI + Prokinetic</td><td>Pantoprazole + Itopride</td><td>40 mg + 150 mg | 10*10</td></tr>
+    <tr><td>9</td><td>PPI + Prokinetic</td><td>Pantoprazole + Cinitapride</td><td>40 mg + 3 mg | 10*10</td></tr>
+    <tr><td>10</td><td>PPI + Prokinetic</td><td>Pantoprazole + Levosulpiride SR</td><td>40 mg + 75 mg | 10*10</td></tr>
+    <tr><td>11</td><td>PPI + Prokinetic</td><td>Pantoprazole + Domperidone (IR + SR)</td><td>40 mg + 10 mg IR + 20 mg SR | 10*15</td></tr>
+    <tr><td>12</td><td>PPI</td><td>Rabeprazole</td><td>20 mg | 10*10</td></tr>
+    <tr><td>13</td><td>PPI + Prokinetic</td><td>Rabeprazole + Domperidone</td><td>20 mg + 10 mg | 10*10</td></tr>
+    <tr><td>14</td><td>PPI + Prokinetic</td><td>Rabeprazole + Domperidone SR</td><td>20 / 40 mg + 30 mg | 10*10 / 20*10</td></tr>
+    <tr><td>15</td><td>PPI + Prokinetic</td><td>Rabeprazole + Domperidone (IR + SR)</td><td>20 mg + 10 mg IR + 20 mg SR | 10*15</td></tr>
+    <tr><td>16</td><td>PPI + Prokinetic</td><td>Rabeprazole + Levosulpiride SR</td><td>20 mg + 75 mg | 10*10</td></tr>
+    <tr><td>17</td><td>PPI + Prokinetic</td><td>Rabeprazole + Itopride</td><td>20 mg + 150 mg | 10*10</td></tr>
+
+    <!-- Hepatic Care -->
+    <tr><td>18</td><td>Hepatic Care</td><td>Ursodeoxycholic Acid</td><td>150 / 300 / 450 mg | 10*10</td></tr>
+    <tr><td>19</td><td>Hepatic Care</td><td>Ursodeoxycholic Acid Syrup</td><td>300 mg / 100 ml</td></tr>
+    <tr><td>20</td><td>Hepatic Care</td><td>L-Ornithine L-Aspartate + Pancreatin</td><td>150 mg + 100 mg | 10*10</td></tr>
+    <tr><td>21</td><td>Hepatic Care</td><td>N-Acetylcysteine + Silymarin + Glutathione + CoQ10 + Multivitamins</td><td>Combi | 10*1*10</td></tr>
+    <tr><td>22</td><td>Hepatic Care</td><td>Obeticholic Acid</td><td>5 mg / 10 mg | 10*10</td></tr>
+
+    <!-- Probiotics & Enzymes -->
+    <tr><td>23</td><td>Probiotic</td><td>Prebiotic + Probiotic</td><td>10*10</td></tr>
+    <tr><td>24</td><td>Probiotic</td><td>Bacillus Clausii</td><td>2 Billion Spores / 5 ml | 12*5</td></tr>
+    <tr><td>25</td><td>Probiotic</td><td>Lactic Acid Bacillus</td><td>120 Million Spores | 20*20</td></tr>
+    <tr><td>26</td><td>Probiotic</td><td>Pre-Probiotic with Zinc Sachet</td><td>50*1 gm</td></tr>
+    <tr><td>27</td><td>Enzyme</td><td>Pancreatin + Bile Constituents + Simethicone</td><td>192 mg + 25 mg + 40 mg | 10*10</td></tr>
+    <tr><td>28</td><td>Enzyme</td><td>Pancreatine</td><td>300 mg | 10*10</td></tr>
+    <tr><td>29</td><td>Enzyme</td><td>Fungal Diastase + Papain + Activated Charcoal</td><td>100 mg + 60 mg + 75 mg | 10*10</td></tr>
+
+    <!-- Anti-diarrheal & Laxatives -->
+    <tr><td>30</td><td>Anti-Diarrheal</td><td>Racecadotril</td><td>100 mg | 10*10</td></tr>
+    <tr><td>31</td><td>Laxative</td><td>Lactulose Syrup</td><td>15 ml (6 gm) | 100 ml</td></tr>
+    <tr><td>32</td><td>Laxative</td><td>Lactitol Monohydrate + Ispaghula Husk</td><td>10 gm + 3.5 gm | 90 gm</td></tr>
+    <tr><td>33</td><td>Laxative</td><td>Bisacodyl</td><td>5 mg | 20*10</td></tr>
+    <tr><td>34</td><td>Laxative</td><td>Sodium Picosulphate Tablet</td><td>10 mg | 10*10</td></tr>
+    <tr><td>35</td><td>Laxative</td><td>Sodium Picosulphate Syrup</td><td>5 mg | 110 ml</td></tr>
+    <tr><td>36</td><td>Laxative</td><td>Sodium Picosulphate + Liquid Paraffin + Milk of Magnesia</td><td>3.33 mg + 1.25 ml + 3.75 ml | 80*1</td></tr>
+
+    <!-- Spasmolytics -->
+    <tr><td>37</td><td>Spasmolytic</td><td>Hyoscine Butylbromide</td><td>10 mg | 3*10</td></tr>
+    <tr><td>38</td><td>Spasmolytic</td><td>Drotaverine + Mefenamic Acid</td><td>80 mg + 250 mg | 10*10</td></tr>
+    <tr><td>39</td><td>Spasmolytic</td><td>Dicyclomine + Mefenamic Acid</td><td>10 mg + 250 mg | 20*10</td></tr>
+    <tr><td>40</td><td>Spasmolytic</td><td>Dicyclomine + Paracetamol</td><td>20 mg + 325 mg | 20*10</td></tr>
+
+    <!-- Anti-nausea -->
+    <tr><td>41</td><td>Antiemetic</td><td>Ondansetron</td><td>4 mg | 10*10</td></tr>
+    <tr><td>42</td><td>Antiemetic</td><td>Rabeprazole + Ondansetron</td><td>20 mg + 4 mg | 10*10 / 10*15</td></tr>
+
+    <!-- Others -->
+    <tr><td>43</td><td>H2 Blocker</td><td>Ranitidine</td><td>150 mg | 30*30</td></tr>
+    <tr><td>44</td><td>Motility Modulator</td><td>Itopride</td><td>50 mg | 20*10</td></tr>
+    <tr><td>45</td><td>Motility Modulator</td><td>Prucalopride</td><td>2 mg | 10*10</td></tr>
+    <tr><td>46</td><td>Motility Modulator</td><td>Acotiamide</td><td>100 mg / 300 mg | 10*15 / 10*10</td></tr>
+  </tbody>
+</table>
+
   `,
-  "DRY INJECTIONS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Vial Size</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>CefDry</td><td>Ceftriaxone 1g</td><td>1 Vial</td></tr>
-      </tbody>
-    </table>
+      "GYNACOLOGY": `
+   <table border="1" cellspacing="0" cellpadding="6" id="productTable">
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sorting">Category</th>
+      <th class="sorting">Product / Composition</th>
+      <th>Strength / Pack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Fertility Support -->
+    <tr><td>1</td><td>Fertility</td><td>Clomiphene</td><td>25 / 50 / 100 mg | 10*10</td></tr>
+    <tr><td>2</td><td>Fertility</td><td>Clomiphene + N-Acetylcysteine + Astaxanthin</td><td>100 mg + 600 mg + 4 mg | Kit 10*1*30</td></tr>
+    <tr><td>3</td><td>Fertility</td><td>Cabergoline</td><td>0.5 mg | 10*1*4</td></tr>
+    <tr><td>4</td><td>Fertility</td><td>Letrozole</td><td>2.5 mg | 10*10</td></tr>
+    <tr><td>5</td><td>Fertility</td><td>Myo-Inositol + Metformin</td><td>600 mg + 500 mg | 10*10</td></tr>
+    <tr><td>6</td><td>Fertility</td><td>N-Acetyl Cysteine + Astaxanthin + Myo-Inositol + Chromium Picolinate + Alfacalcidol + Vitamins & Minerals</td><td>10*1*10</td></tr>
+
+    <!-- Hormonal & Contraceptives -->
+    <tr><td>7</td><td>Hormonal</td><td>Drospirenone + Ethinylestradiol</td><td>3 mg + 0.02/0.03 mg | 10*1*21</td></tr>
+    <tr><td>8</td><td>Hormonal</td><td>Dienogest</td><td>2 mg | 10*1*10</td></tr>
+    <tr><td>9</td><td>Hormonal</td><td>Dydrogesterone</td><td>10 / 20 / 30 mg | 10*1*10</td></tr>
+    <tr><td>10</td><td>Hormonal</td><td>Estradiol</td><td>2 mg | 10*28</td></tr>
+    <tr><td>11</td><td>Hormonal</td><td>Medroxyprogesterone Acetate</td><td>10 mg | 10*10</td></tr>
+    <tr><td>12</td><td>Hormonal</td><td>Progesterone Softgel</td><td>200 mg | 10*1*10</td></tr>
+    <tr><td>13</td><td>Hormonal</td><td>Progesterone SR</td><td>200 / 300 mg | 10*10</td></tr>
+    <tr><td>14</td><td>Hormonal</td><td>Norethisterone</td><td>5 mg | 10*10</td></tr>
+    <tr><td>15</td><td>Hormonal</td><td>Norgestrel + Ethinylestradiol</td><td>0.5 mg + 0.05 mg | 10*1*20</td></tr>
+
+    <!-- Nutritional & Support -->
+    <tr><td>16</td><td>Supplements</td><td>L-Arginine + Proanthocyanidin</td><td>3 gm + 75 mg | 20*5 gm</td></tr>
+    <tr><td>17</td><td>Supplements</td><td>L-Carnitine + CoQ10 + Lycopene + L-Arginine + Zinc</td><td>500 mg + 30 mg + 2500 mcg + 50 mg + 12.5 mg | 10*1*10</td></tr>
+    <tr><td>18</td><td>Supplements</td><td>Coenzyme Q10 + Astaxanthin</td><td>200 mg + 16 mg | 10*1*10</td></tr>
+    <tr><td>19</td><td>Supplements</td><td>Coenzyme Q10 + Astaxanthin + Magnesium + L-Arginine + Piperine + L-Glutathione</td><td>300 mg + 8 mg + 25 mg + 50 mg + 5 mg + 500 mg | 10*1*10</td></tr>
+    <tr><td>20</td><td>Supplements</td><td>Biotin + Folic Acid</td><td>5 mg + 5 mg | 10*10</td></tr>
+    <tr><td>21</td><td>Supplements</td><td>Calcitriol + Calcium Carbonate + Vit K27 + Isoflavones + Magnesium Oxide</td><td>0.25 mcg + 500 mg + 45 mcg + 50 mg + 50 mg | 10*1*15</td></tr>
+    <tr><td>22</td><td>Supplements</td><td>Cranberry Extract + D-Mannose</td><td>300 mg + 600 mg | 10*1*10</td></tr>
+    <tr><td>23</td><td>Supplements</td><td>Evening Primrose Oil</td><td>1000 mg | 10*1*10</td></tr>
+    <tr><td>24</td><td>Supplements</td><td>Evening Primrose + Omega 3 + Vitamin E</td><td>10*1*10</td></tr>
+
+    <!-- Hematinics / Iron -->
+    <tr><td>25</td><td>Hematinics</td><td>Ferrous Fumarate + Folic Acid + Zinc</td><td>152 mg + 750 mcg + 61.8 mg | 20*3*10</td></tr>
+    <tr><td>26</td><td>Hematinics</td><td>Iron + Zinc + Folic Acid + B12</td><td>30 mg + 10 mg + 1.5 mg + 15 mcg | 10*15</td></tr>
+    <tr><td>27</td><td>Hematinics</td><td>Ferric Ammonium Citrate + Iron + B12 + Folic Acid + Minerals</td><td>160 mg + 32.8 mg + 7.5 mg + 0.5 mg | 300 ml</td></tr>
+    <tr><td>28</td><td>Hematinics</td><td>Ferrous Ascorbate + Folic Acid + Zinc</td><td>100 mg + 1.5 mg + 22.5 mg | 10*1*10 / 10*10</td></tr>
+    <tr><td>29</td><td>Hematinics</td><td>Ferrous Bisglycinate + Zinc + Folic Acid + Methylcobalamin</td><td>60 mg + 15 mg + 1 mg + 500 mcg | 10*10</td></tr>
+    <tr><td>30</td><td>Hematinics</td><td>Ferrous Ascorbate + Folic Acid Syrup</td><td>30 mg + 550 mcg / 5 ml | 60 ml</td></tr>
+    <tr><td>31</td><td>Hematinics</td><td>Folic Acid</td><td>5 mg | 50*10</td></tr>
+
+    <!-- Anti-fungal / Anti-infective -->
+    <tr><td>32</td><td>Anti-infective</td><td>Fluconazole + Azithromycin + Secnidazole</td><td>150 mg + 1000 mg + 1000 mg | 10*1*4</td></tr>
+    <tr><td>33</td><td>Anti-infective</td><td>Clindamycin + Clotrimazole</td><td>100 mg + 200 mg | 10*1*7</td></tr>
+    <tr><td>34</td><td>Anti-infective</td><td>Nitrofurantoin SR</td><td>100 mg | 20*10</td></tr>
+    <tr><td>35</td><td>Anti-infective</td><td>Fosfomycin Sachet</td><td>3 gm | 15 gm sachet</td></tr>
+
+    <!-- Hemostatic -->
+    <tr><td>36</td><td>Hemostatic</td><td>Etamsylate</td><td>500 mg | 10*10</td></tr>
+    <tr><td>37</td><td>Hemostatic</td><td>Etamsylate + Tranexamic Acid</td><td>500 mg + 500 mg | 10*1*10</td></tr>
+    <tr><td>38</td><td>Hemostatic</td><td>Tranexamic Acid</td><td>500 mg | 10*10</td></tr>
+    <tr><td>39</td><td>Hemostatic</td><td>Tranexamic Acid + Mefenamic Acid</td><td>500 mg + 250 mg | 10*10</td></tr>
+
+    <!-- Vitamin / Folate -->
+    <tr><td>40</td><td>Vitamin / Folate</td><td>L-Methyl Folate + Methylcobalamin + Pyridoxal 5 Phosphate</td><td>1 mg + 1500 mcg + 0.5 mg | 10*10</td></tr>
+    <tr><td>41</td><td>Vitamin / Folate</td><td>L-Methyl Folate + Methylcobalamin + Pyridoxal 5 Phosphate + DHA</td><td>1 mg + 1500 mcg + 0.5 mg + 200 mg | 10*1*10</td></tr>
+    <tr><td>42</td><td>Vitamin / Folate</td><td>Doxylamine Succinate + Pyridoxine + Folic Acid</td><td>10 mg + 10 mg + 2.5 mg | 10*30</td></tr>
+  </tbody>
+</table>
+
   `,
-  "GASTROINTESTINALS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Dosage Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>GastroFix</td><td>Omeprazole 20mg</td><td>Capsule</td></tr>
-      </tbody>
-    </table>
+      "INJECTIONS": `
+   <h2>Injections</h2>
+<table border="1" cellspacing="0" cellpadding="6" id="productTable"> >
+  <thead>
+    <tr style="background:#f2f2f2;">
+      <th>S.NO</th>
+      <th>Product Name</th>
+      <th>Standard</th>
+      <th>Strength / Pack</t
+        h>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Bleomycin for Injection</td><td>USP</td><td>15 Units</td></tr>
+    <tr><td>2</td><td>Carboplatin Injection</td><td>BP</td><td>150 mg/15ml</td></tr>
+    <tr><td>3</td><td>Carboplatin Injection</td><td>BP</td><td>450 mg/45ml</td></tr>
+    <tr><td>4</td><td>Cisplatin Injection</td><td>BP</td><td>10mg/10ml</td></tr>
+    <tr><td>5</td><td>Cisplatin Injection</td><td>BP</td><td>50mg/50ml</td></tr>
+    <tr><td>6</td><td>Daunorubicin HCl for Inj</td><td>USP</td><td>20mg</td></tr>
+    <tr><td>7</td><td>Doxorubicin HCl for Injection</td><td>BP</td><td>10mg</td></tr>
+    <tr><td>8</td><td>Doxorubicin HCl for Injection</td><td>BP</td><td>50mg</td></tr>
+    <tr><td>9</td><td>Gemcitabine for Injection</td><td>USP</td><td>1g</td></tr>
+    <tr><td>10</td><td>Gemcitabine for Injection</td><td>USP</td><td>200mg</td></tr>
+    <tr><td>11</td><td>L-asparaginase for Injection</td><td>IH</td><td>10000 IU</td></tr>
+    <tr><td>12</td><td>L-asparaginase for Injection</td><td>IH</td><td>5000 IU</td></tr>
+    <tr><td>13</td><td>Oxaliplatin Injection</td><td>USP</td><td>100mg/50ml</td></tr>
+    <tr><td>14</td><td>Oxaliplatin Injection</td><td>USP</td><td>50mg/25ml</td></tr>
+    <tr><td>15</td><td>Amphotericin B for Injection</td><td>USP</td><td>50mg</td></tr>
+    <tr><td>16</td><td>Cytarabine Injection</td><td>BP</td><td>100mg/1ml</td></tr>
+    <tr><td>17</td><td>Cytarabine Injection</td><td>BP</td><td>500mg/5ml</td></tr>
+    <tr><td>18</td><td>Epirubicin Hydrochloride for Inj</td><td>IH</td><td>10mg</td></tr>
+    <tr><td>19</td><td>Epirubicin Hydrochloride for Inj</td><td>IH</td><td>50mg</td></tr>
+    <tr><td>20</td><td>Cytarabine Injection</td><td>BP</td><td>1g/10ml</td></tr>
+    <tr><td>21</td><td>Docetaxel Injection</td><td>USP</td><td>20mg/0.5ml</td></tr>
+    <tr><td>22</td><td>Docetaxel Injection</td><td>USP</td><td>80mg/2ml</td></tr>
+    <tr><td>23</td><td>Docetaxel Injection</td><td>USP</td><td>120mg/3ml</td></tr>
+    <tr><td>24</td><td>Methotrexate Injection</td><td>BP</td><td>50mg/2ml</td></tr>
+    <tr><td>25</td><td>Dacarbazine for Injection</td><td>USP</td><td>100mg</td></tr>
+    <tr><td>26</td><td>Dacarbazine for Injection</td><td>USP</td><td>500mg</td></tr>
+    <tr><td>27</td><td>Dacarbazine for Injection</td><td>USP</td><td>200mg</td></tr>
+    <tr><td>28</td><td>Fluorouracil Injection</td><td>USP</td><td>250mg/5ml</td></tr>
+    <tr><td>29</td><td>Fluorouracil Injection</td><td>USP</td><td>500mg/10ml</td></tr>
+    <tr><td>30</td><td>Paclitaxel Injection</td><td>USP</td><td>100mg/16.7ml</td></tr>
+    <tr><td>31</td><td>Paclitaxel Injection</td><td>USP</td><td>260mg/43.4ml</td></tr>
+    <tr><td>32</td><td>Bortezomib for Injection</td><td>IH</td><td>3.5mg</td></tr>
+    <tr><td>33</td><td>Methotrexate Injection</td><td>BP</td><td>500mg/5ml</td></tr>
+    <tr><td>34</td><td>Ceftazidime for Injection</td><td>USP</td><td>1g</td></tr>
+    <tr><td>35</td><td>Cefipime for Injection</td><td>USP</td><td>1g</td></tr>
+    <tr><td>36</td><td>Ceftriaxone & Sulbactam for Injection</td><td>IH</td><td>1.5g</td></tr>
+    <tr><td>37</td><td>Cefoperazone & Sulbactam for Injection</td><td>IH</td><td>1g</td></tr>
+    <tr><td>38</td><td>Cefoperazone & Sulbactam for Injection</td><td>IH</td><td>1.5g</td></tr>
+    <tr><td>39</td><td>Ceftriaxone for Injection</td><td>USP</td><td>1g</td></tr>
+    <tr><td>40</td><td>Ceftriaxone for Injection</td><td>USP</td><td>250mg</td></tr>
+    <tr><td>41</td><td>Vancomycin HCl for Injection</td><td>USP</td><td>1g</td></tr>
+    <tr><td>42</td><td>Vancomycin HCl for Injection</td><td>USP</td><td>500mg</td></tr>
+    <tr><td>43</td><td>Colistimethate Sodium for Injection</td><td>BP</td><td>1MIU</td></tr>
+    <tr><td>44</td><td>Colistimethate Sodium for Injection</td><td>BP</td><td>2MIU</td></tr>
+    <tr><td>45</td><td>Colistimethate Sodium for Injection</td><td>BP</td><td>1MIU</td></tr>
+    <tr><td>46</td><td>Colistimethate Sodium for Injection</td><td>BP</td><td>2MIU</td></tr>
+    <tr><td>47</td><td>Ceftazidime + Tazobactam for Inj</td><td>IH</td><td>1.125g</td></tr>
+    <tr><td>48</td><td>Teicoplanin for Injection</td><td>IH</td><td>400mg</td></tr>
+    <tr><td>49</td><td>Tigecycline for Injection</td><td>USP</td><td>50mg</td></tr>
+    <tr><td>50</td><td>Cefuroxime for Injection</td><td>USP</td><td>750mg</td></tr>
+    <tr><td>51</td><td>Hydrocortisone Na Succinate for Inj</td><td>USP</td><td>100mg</td></tr>
+    <tr><td>52</td><td>Methylprednisolone Sodium Succinate for Injection</td><td>USP</td><td>1g</td></tr>
+    <tr><td>53</td><td>Methylprednisolone Sodium Succinate for Injection</td><td>USP</td><td>500mg</td></tr>
+    <tr><td>54</td><td>Dopamine HCl Injection</td><td>USP</td><td>200mg/5ml</td></tr>
+    <tr><td>55</td><td>Highly Purified Chorionic Gonadotrophin for Injection (HCG-HP)</td><td>USP</td><td>2000IU, 5000IU, 10000 IU</td></tr>
+    <tr><td>56</td><td>Highly Purified Menopausal Gonadotrophin for Injection (HMG-HP)</td><td>USP</td><td>75IU, 150IU</td></tr>
+    <tr><td>57</td><td>Highly Purified Urofollitrophin (FSH-HP)</td><td>BP</td><td>75IU, 150IU</td></tr>
+    <tr><td>58</td><td>Leuprolide Acetate Injection</td><td>IH</td><td>4mg/4ml</td></tr>
+    <tr><td>59</td><td>Progesterone Injection</td><td>BP</td><td>100mg/1ml, 200mg/2ml</td></tr>
+  </tbody>
+</table>
+
   `,
-  "GYNACOLOGY": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>GynaCare</td><td>Progesterone 200mg</td><td>Capsule</td></tr>
-      </tbody>
-    </table>
+      "INVISAT MED DEVICES PRODUCT LIST": `
+  
+
+
+
+<h3>UROLOGY</h3>
+<h4>CATHETER</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>PCN CATHETER</td><td>6.0FR-14FR</td><td>30 CM</td><td>PIGTAIL</td></tr>
+    <tr><td>2</td><td>PCN CATHETER WITH LOCKING MECHANISM</td><td>8.0FR-16FR</td><td>22CM - 30CM</td><td>PIGTAIL</td></tr>
+    <tr><td>3</td><td>PCN CATHETER WITH NEEDLE (TROCAR)</td><td>6.0FR-18FR</td><td>22, 30, 45CM</td><td>PIGTAIL</td></tr>
+    <tr><td>4</td><td>PCN CATHETER WITH NEEDLE AND WITH LOCKING MECHANISM</td><td>6.0FR-18FR</td><td>22, 30, 45CM</td><td>PIGTAIL</td></tr>
+    <tr><td>5</td><td>MALECOT CATHETER</td><td>8.0FR-26 FR</td><td>30 CM</td><td>MALECOT</td></tr>
+    <tr><td>6</td><td>MALECOT SUPRAPUBIC CATHETER</td><td>10FR-16FR</td><td>25 CM</td><td>MALECOT</td></tr>
+    <tr><td>7</td><td>RE-ENTRY MALECOT CATHETER</td><td>10/6,12/6,14/6,16/6,16/7FR</td><td>45 CM</td><td></td></tr>
+    <tr><td>8</td><td>DUAL LUMEN URETERAL CATEHTER (BLUE)</td><td>10 FR</td><td>50 CM</td><td>STRAIGHT</td></tr>
+    <tr><td>9</td><td>DUAL LUMEN URETERAL CATEHTER (WHITE)</td><td>10 FR</td><td>50 CM</td><td>STRAIGHT</td></tr>
+    <tr><td>10</td><td>URETERAL CATEHETER -BLUE</td><td>3 FR - 8 FR</td><td>70 CM</td><td>OPEN TIP</td></tr>
+    <tr><td>11</td><td>URETERAL CATEHETER -BLUE</td><td>3 FR - 8 FR</td><td>70 CM</td><td>CLOSE TIP</td></tr>
+    <tr><td>12</td><td>URETERAL CATEHETER -BLUE</td><td>3 FR - 8 FR</td><td>70 CM</td><td>OPEN END WITH STYLET</td></tr>
+    <tr><td>13</td><td>URETERIC CATHETER - BLUE</td><td>3 FR - 8 FR</td><td>70 CM</td><td>ANGLE TIP</td></tr>
+    <tr><td>14</td><td>URETERIC CATHETER - BLUE</td><td>3 FR - 8 FR</td><td>70 CM</td><td>BULB TIP</td></tr>
+    <tr><td>15</td><td>URETERAL CATEHETER - GREEN (PU)</td><td>3 FR - 8 FR</td><td>70 CM</td><td>OPEN END</td></tr>
+    <tr><td>16</td><td>URETERAL CATEHETER - GREEN (PU)</td><td>3 FR - 8 FR</td><td>70 CM</td><td>CLOSE END</td></tr>
+    <tr><td>17</td><td>URETERAL CATEHETER - GREEN (PU)</td><td>3 FR - 8 FR</td><td>70 CM</td><td>OPE N END WITH STYLET</td></tr>
+    <tr><td>18</td><td>TIEMEN CATHETER (MALE)</td><td>10,12,14,16,18 Fr</td><td>30 & 40 CM</td><td></td></tr>
+    <tr><td>19</td><td>NEPHROSTOMY DRAINAGE CATHETER</td><td>14,16,18,20,22,24,26 & 28,30 Fr</td><td>40cm</td><td></td></tr>
+    <tr><td>20</td><td>CIC Catheter (MALE)</td><td>10,12,14,16,18 Fr</td><td>16 & 35 cm</td><td>Regular</td></tr>
+    <tr><td>21</td><td>CIC Catheter (FEMALE)</td><td>10,12,14,16,18 Fr</td><td>15 cm</td><td>Regular</td></tr>
+    <tr><td>22</td><td>FOLEYS CATHETER - LATEX - 2 WAY</td><td>8 Fr, 10 Fr,12 Fr</td><td></td><td></td></tr>
+    <tr><td>23</td><td>FOLEYS CATHETER - LATEX - 2 WAY</td><td>14 Fr,16 Fr,18 Fr</td><td></td><td></td></tr>
+    <tr><td>24</td><td>FOLEYS CATHETER - SILICON - 2 WAY</td><td>6 Fr, 8 Fr, 10 Fr,12 Fr</td><td></td><td></td></tr>
+    <tr><td>25</td><td>FOLEYS CATHETER - SILICON - 2 WAY</td><td>14 Fr,16 Fr,18 Fr</td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY-STENT</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>DOUBLE J STENT BLUE /White (SHORT TERM)</td><td>3.0FR-8.0FR</td><td>8CM - 28CM</td><td>OPEN / CLOSE TIP</td></tr>
+    <tr><td>2</td><td>LONG DURO STENT (MID TERM)</td><td>3.0FR-8.0FR</td><td>12CM - 28CM</td><td>OPEN / CLOSE TIP</td></tr>
+    <tr><td>3</td><td>DOUBLE J STENT ONE END MULTI LOOP -BLUE/White</td><td>3.0FR-8.0FR</td><td>8CM - 32CM</td><td>OPEN / CLOSE TIP</td></tr>
+    <tr><td>4</td><td>DOUBLE J STENT -BLACK SILICONE (LONG TERM )</td><td>5.0FR-8.0FR</td><td>8CM - 28CM</td><td>OPEN / CLOSE TIP</td></tr>
+    <tr><td>5</td><td>MONO J STENT (PIGTAIL)</td><td>3.0FR-8.0FR</td><td>70 CM</td><td></td></tr>
+    <tr><td>6</td><td>ENDOPYLOTOMY STENT</td><td>4/8 Fr,5/10 Fr,6/12,7/14 FR,7/16 Fr</td><td>16 CM - 28CM</td><td></td></tr>
+    <tr><td>7</td><td>URETHRAL STENT</td><td>6.0FR,8.0FR</td><td>25 CM</td><td>STRAIGHT /CURVED</td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY-DILATORS (Single and Set)</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>FACIAL DILATOR SET</td><td>6.0FR-16FR</td><td>22 cm</td><td></td></tr>
+    <tr><td>2</td><td>FACIAL DILATOR (SINGLE)</td><td>6.0 FR -16 FR</td><td>22 CM</td><td></td></tr>
+    <tr><td>3</td><td>URETERAL DILATOR SET</td><td>6.0FR-16FR</td><td>70 CM</td><td></td></tr>
+    <tr><td>4</td><td>URETHRAL DILATOR SET</td><td>6.0 FR – 16 FR</td><td>40 CM</td><td></td></tr>
+    <tr><td>5</td><td>URETHRAL DILATOR SET</td><td>6.0 FR – 24 FR</td><td>40 CM</td><td></td></tr>
+    <tr><td>6</td><td>URETHRAL DILATOR (Single)</td><td>6.0FR-26FR</td><td>40 CM</td><td></td></tr>
+    <tr><td>7</td><td>URETERAL DILATOR SINGLE</td><td>6.0FR-16FR</td><td>70 CM</td><td></td></tr>
+    <tr><td>8</td><td>SCREW DILATOR</td><td>12 FR , 14 FR, 16 FR , 18 FR</td><td>25 CM</td><td></td></tr>
+    <tr><td>9</td><td>SCREW DILATOR (OVER THE WIRE OR GUIDE ROD)</td><td>20FR, 22FR,24FR,26FR,28FR &30FR</td><td>30CM,35</td><td></td></tr>
+    <tr><td>10</td><td>SCREW Dilator with Amplatz Sheath (OVER THE WIRE OR GUIDE ROD)</td><td>24 Fr, 26 Fr,28 Fr & 30 Fr</td><td>35 CM</td><td></td></tr>
+    <tr><td>11</td><td>URETHRAL “S” DILATOR SET</td><td>6.0FR-16FR</td><td>40 CM</td><td></td></tr>
+    <tr><td>12</td><td>URETHRAL “S” DILATOR SET</td><td>8.0FR-24FR</td><td>40 CM</td><td></td></tr>
+    <tr><td>13</td><td>URETHRAL “S” DILATOR SET</td><td>6.0FR-30FR</td><td>40 CM</td><td></td></tr>
+    <tr><td>14</td><td>AMPLATZ Sheath</td><td>18 – 30 Fr</td><td>16 CM</td><td></td></tr>
+    <tr><td>15</td><td>AMPLATZ Sheath with dilator</td><td>14 fr-30 Fr</td><td>30 & 35 cm</td><td></td></tr>
+    <tr><td>16</td><td>AMPLATZ Renal Dilator Kit</td><td>6Fr – 30 Fr</td><td>30 & 35 cm</td><td></td></tr>
+    <tr><td>17</td><td>NOTINGHAM ONE STEP Dilator</td><td>10/6,12/6,14/7,16/7FR</td><td>70 CM</td><td></td></tr>
+    <tr><td>18</td><td>Meatel Dilator - Male</td><td>6.0FR-16FR</td><td>9CM</td><td></td></tr>
+    <tr><td>19</td><td>MEATAL DILATOR - Female</td><td>6.0FR-16FR</td><td>9CM</td><td></td></tr>
+    <tr><td>20</td><td>MEATAL DILATOR –Pediatric</td><td>6.0FR-16FR</td><td>9CM</td><td></td></tr>
+    <tr><td>21</td><td>Urethral Metal Dilator Set</td><td></td><td></td><td>MALE</td></tr>
+    <tr><td>22</td><td>Urethral Metal Dilator Set</td><td></td><td></td><td>FEMALE</td></tr>
+    <tr><td>23</td><td>METAL Dilator Set (Telescopic)</td><td>6.0 Fr-30 Fr</td><td></td><td>Flexible</td></tr>
+    <tr><td>24</td><td>FILIFORM DILATOR SET (Urethral)</td><td>6.0FR - 16 FR</td><td>20 CM</td><td>STRAIGHT /CURVED</td></tr>
+    <tr><td>25</td><td>FILIFORM DILATOR SINGLE</td><td>6.0FR-16FR</td><td>20CM</td><td></td></tr>
+    <tr><td>26</td><td>URETERAL Balloon Dilator</td><td>4.0FR,5.0FR ,6.0FR</td><td>60 CM</td><td></td></tr>
+    <tr><td>27</td><td>Nephrostomy Balloon dilator with Amplatz Sheath</td><td>7 FR</td><td>60 CM</td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY-GUIDE WIRES</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>GUIDE WIRE ( PTFE )</td><td>.018",.025",.028",.032",.035",.038"</td><td>80,90,150 CM</td><td>ST & J</td></tr>
+    <tr><td>2</td><td>HYDROPHILIC Guide Wire</td><td>.018",.025",.028",.032",.035",.038"</td><td>150 CM</td><td>ST & J</td></tr>
+    <tr><td>3</td><td>LUNDERQUIST Guide Wire</td><td>.032",.035",.038"</td><td>70,80,90cm</td><td>ST & J</td></tr>
+    <tr><td>4</td><td>STRIPPED GUIDE WIRE ( ZEBRA)</td><td>0.025”, 0.028”,0.032",0.035,0.038”</td><td></td><td>ST & J</td></tr>
+    <tr><td>5</td><td>Hydro Tip Stripped GUIDE WIRE ( ZEBRA)</td><td>0.025”, 0.028”,0.032",0.035,0.038”</td><td></td><td>ST & J</td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY-Needle Trup and Other Devices</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>URETERAL ACCESS SHEATH</td><td>10,12 & 14 FR</td><td>35,45 &55 CM</td><td></td></tr>
+    <tr><td>2</td><td>I.P. NEEDLE II Part</td><td>16G,17G,18G</td><td>15,20,21 CM</td><td>TROCAR TIP & BEVEL TIP</td></tr>
+    <tr><td>3</td><td>I.P. NEEDLE III Part</td><td>16G,17G,18G</td><td>15,20,21 CM</td><td>TROCAR TIP & BEVEL TIP</td></tr>
+    <tr><td>4</td><td>BIOPSY Needle</td><td>12 G, 14 G,16 G , 18 G, 21 G</td><td>11,15 CM</td><td></td></tr>
+    <tr><td>5</td><td>BIOPSY GUN</td><td>14G, 16 G, 18G & 21G</td><td>16 & 21 CM</td><td></td></tr>
+    <tr><td>6</td><td>BIOPSY GUN -Semi Automatic(With Co-oxial Needle)</td><td>14G, 16 G, 18G & 21G</td><td>16 & 21 CM</td><td></td></tr>
+    <tr><td>7</td><td>BIOPSY GUN -Semi Automatic</td><td>14G, 16 G, 18G & 21G</td><td>16 & 21 CM</td><td></td></tr>
+    <tr><td>8</td><td>CHIBA NEEDLE</td><td>22G,23G</td><td>15 ,16,20,21,23 CM</td><td></td></tr>
+    <tr><td>9</td><td>INTRODUCING NEEDLE</td><td>18 G</td><td>7 CM</td><td></td></tr>
+    <tr><td>10</td><td>“Y” Connector Needle</td><td>18G</td><td>7 CM</td><td></td></tr>
+    <tr><td>11</td><td>BUG BEE ELECTRODES</td><td></td><td></td><td></td></tr>
+    <tr><td>12</td><td>TUR SET(ENDOSCOPIC IRRIGATION )</td><td></td><td></td><td></td></tr>
+    <tr><td>13</td><td>PENILE CLAMP</td><td></td><td></td><td></td></tr>
+    <tr><td>14</td><td>BLADDER EVECUATOR/ ELLICKS EVACULATOR</td><td></td><td></td><td></td></tr>
+    <tr><td>15</td><td>TRACK FINDER / PATH FINDER</td><td></td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY- STONE RETRIVAL PRODUCTS</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>STONE BASKET - NITIONAL</td><td>3FR,4FR,5 FR</td><td>70CM</td><td>O' TIP</td></tr>
+    <tr><td>2</td><td>STONE BASKET- NITIONAL(RIRS)</td><td>3FR,4FR,5 FR</td><td>90,110,120CM</td><td>O' TIP</td></tr>
+    <tr><td>3</td><td>STONE BASKET - NITIONAL</td><td>2.5 FR,2.2 FR,1.9 FR,1.7FR</td><td>110, 120CM</td><td>O' TIP</td></tr>
+    <tr><td>4</td><td>STONE BASKET - HELICAL ( SS)</td><td>3FR,4FR,5 FR</td><td>70,90 CM</td><td></td></tr>
+    <tr><td>5</td><td>STONE BASKET - SEGURA ( SS)</td><td>3FR,4FR,5 FR</td><td>70,90CM</td><td></td></tr>
+    <tr><td>6</td><td>TRIPRONG BASKET-SS</td><td>3FR,4FR,5 FR,6FR</td><td>70CM,90CM</td><td></td></tr>
+    <tr><td>7</td><td>STONE STOPPER (STONE CONE)</td><td>3,4,5FR</td><td>90CM,100CM,120CM</td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY- COMBINATION SET</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>URETERAL STENT - SET<br>(include DJ stent with compatiable guide wire, Pusher, Cord Clamp)</td><td>4.0 Fr 4.5 Fr, 5.0 Fr 5.5 Fr & 6.0 Fr</td><td>0.025", 0.028" 0.032", 0.035" 0.038"</td><td></td></tr>
+    <tr><td>2</td><td>PCN DRAINAGE -SET<br>(include I.P Needle,Dilators,0.038'' J-Tip Guide wire,Pigtail / Malecot Drainage Catheter Scalpel and Urine bag Connector)</td><td>8.0 Fr, 10.0 Fr, 12.0 Fr, 14.0 Fr, 16.0 Fr</td><td></td><td></td></tr>
+    <tr><td></td><td>PCN DRAINAGE -SET - WITH LOCKING MECHANISM<br>(include I.P Needle,Dilators,0.038'' J-Tip Guide wire,Pigtail / Malecot Drainage Catheter Scalpel and Urine bag Connector)</td><td>8.0 Fr, 10.0 Fr, 12.0 Fr, 14.0 Fr, 16.0 Fr</td><td></td><td></td></tr>
+    <tr><td>3</td><td>MALECOT DRAINAGE -SET<br>(include I.P Needle,Dilators,0.038'' -J-Tip Guide wire,Pigtail / Malecot Drainage Catheter Scalpel and Urine bag Connector)</td><td>8.0 Fr, 10.0 Fr, 12.0 Fr, 14.0 Fr, 16.0 Fr</td><td></td><td></td></tr>
+    <tr><td>4</td><td>CYSTOSTOMY CATHETERIZATION SET (LATEX)<br>(include Latex Folleys Catheter,Cystostomy Trocar,Scalepel)</td><td>12.0 Fr, 14.0 Fr, 16.0 Fr</td><td></td><td></td></tr>
+    <tr><td></td><td>CYSTOSTOMY CATHETERIZATION SET (SILICON)<br>(include Latex Folleys Catheter,Cystostomy Trocar,Scalepel)</td><td>12.0 Fr, 14.0 Fr, 16.0 Fr</td><td></td><td></td></tr>
+    <tr><td>5</td><td>CYSTOSTOMY CATHETERIZATION SET (SILICON)<br>(include Latex Folleys Catheter, Split Metal Troacr ,Scalepel)</td><td>12.0 Fr, 14.0 Fr, 16.0 Fr</td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>SUB-CATEGORY-INSTRUMENTS</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>URS ALIGATOR FORCEPS</td><td>3FR,4FR,5 FR</td><td>63 CM</td><td>REGID</td></tr>
+    <tr><td>2</td><td>PCNL ALIGATOR FORCEPS</td><td>5,6,7,8,9,10 FR</td><td>45 CM</td><td></td></tr>
+    <tr><td>3</td><td>URS TRIPRONG</td><td>3FR,4FR,5 FR</td><td>63 CM</td><td>SYRINGE HANDLE</td></tr>
+    <tr><td>4</td><td>URS TRIPRONG</td><td>3FR,4FR,5 FR</td><td>63 CM</td><td>U HANDLE</td></tr>
+    <tr><td>5</td><td>URS BIPRONG</td><td>3FR,4FR,5 FR</td><td>63 CM</td><td>SYRINGE HANDLE</td></tr>
+    <tr><td>6</td><td>URS BIPRONG</td><td>3FR,4FR,5 FR</td><td>63 CM</td><td>U HANDLE</td></tr>
+    <tr><td>7</td><td>PCNL TRIPRONG</td><td>6FR,8FR,9 FR</td><td>36 CM</td><td>SYRINGE HANDLE</td></tr>
+    <tr><td>8</td><td>PCNL TRIPRONG</td><td>6FR,8FR,9 FR</td><td>36 CM</td><td>U HANDLE</td></tr>
+    <tr><td>9</td><td>PCNL BIPRONG</td><td>6FR,8FR,9 FR</td><td>36 CM</td><td>SYRINGE HANDLE</td></tr>
+    <tr><td>10</td><td>PCNL BIPRONG</td><td>6FR,8FR,9 FR</td><td>36 CM</td><td>U HANDLE</td></tr>
+    <tr><td>11</td><td>STENT REMOVING FORCEPS</td><td>6FR,7FR</td><td>45 CM</td><td>FLEXIBLE</td></tr>
+    <tr><td>12</td><td>STENT REMOVING FORCEPS</td><td>3FR,4FR,5 FR</td><td>45 CM</td><td>FLEXIBLE</td></tr>
+    <tr><td>13</td><td>Litho Handpiece</td><td></td><td></td><td></td></tr>
+    <tr><td>14</td><td>Foot Switch for Lithotripsy</td><td></td><td></td><td></td></tr>
+    <tr><td>15</td><td>Litho Probes</td><td></td><td></td><td></td></tr>
+    <tr><td>16</td><td>Stone Punch Set - With Obturator (Manual Lithotrite)</td><td></td><td></td><td></td></tr>
+    <tr><td>17</td><td>Alken Needle</td><td></td><td></td><td></td></tr>
+    <tr><td>18</td><td>Cysto Sheath</td><td>17 ,22 Fr</td><td></td><td></td></tr>
+    <tr><td>19</td><td>Cysto Bridge</td><td></td><td></td><td>Single channel</td></tr>
+    <tr><td>20</td><td>Cysto Bridge</td><td></td><td></td><td>Double channel</td></tr>
+    <tr><td>21</td><td>SPC Metal Trocar</td><td></td><td></td><td></td></tr>
+    <tr><td>22</td><td>Cysto Litho Bridge</td><td></td><td></td><td></td></tr>
+    <tr><td>23</td><td>Optical Biopsy Forceps</td><td></td><td></td><td></td></tr>
+    <tr><td>24</td><td>Optical Stone Crushing Forceps</td><td></td><td></td><td></td></tr>
+    <tr><td>25</td><td>OTIS Urethrotome</td><td></td><td></td><td></td></tr>
+    <tr><td>26</td><td>VUI Sheath</td><td></td><td></td><td></td></tr>
+    <tr><td>27</td><td>Suction irrigation Sheath With dilator</td><td></td><td></td><td></td></tr>
+    <tr><td>28</td><td>Working Element For Resectoscope(Storz Compatable)</td><td></td><td></td><td></td></tr>
+    <tr><td>29</td><td>TURP Sheath</td><td></td><td></td><td></td></tr>
+    <tr><td>30</td><td>TURP Set</td><td></td><td></td><td></td></tr>
+    <tr><td>31</td><td>Nephroscope Sheath</td><td></td><td></td><td></td></tr>
+    <tr><td>32</td><td>TOOMY SYRINGE</td><td></td><td></td><td>PLASTIC</td></tr>
+    <tr><td>33</td><td>TOOMY SYRINGE</td><td></td><td></td><td>GLASS - 50 CC</td></tr>
+    <tr><td>34</td><td>TOOMY SYRINGE</td><td></td><td></td><td>GLASS - 100 CC</td></tr>
+    <tr><td>35</td><td>BLADDER WASH SYRINGE</td><td></td><td></td><td>PLASTIC</td></tr>
+    <tr><td>36</td><td>LITHOTRIPSY MACHINE</td><td>FULLY DIGITAL WITH INBUILT MICRO PROCESSOR AND TOUCH SCREEN</td><td></td><td></td></tr>
+    <tr><td>37</td><td>LITHOTRIPSY MACHINE (PHNEUMATIC)</td><td>SEMI DIGITAL</td><td></td><td></td></tr>
+    <tr><td>38</td><td>LITHOTRIPSY MACHINE (PHNEUMATIC - ANALOG TYPE)</td><td></td><td></td><td></td></tr>
+    <tr><td>39</td><td>LIGHT SOURCE WITH OPTIC CABLE</td><td></td><td></td><td></td></tr>
+    <tr><td>40</td><td>HIGH FREQUENCY CORD / CAUTARY CABLE</td><td></td><td></td><td>SINGLE STEM</td></tr>
+    <tr><td>41</td><td>HIGH FREQUENCY CORD / CAUTARY CABLE</td><td></td><td></td><td>DOUBLE STEM</td></tr>
+    <tr><td>42</td><td>HIGH FREQUENCY CORD / CAUTARY CABLE</td><td></td><td></td><td>BIPOLAR</td></tr>
+    <tr><td>43</td><td>FIBER OPTIC CABLE</td><td></td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>TURP ELECTRODES</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>CUTTING LOOP –SINGLE STEM</td><td>24FR</td><td></td><td>STORZ</td></tr>
+    <tr><td>2</td><td>CUTTING LOOP –SINGLE STEM</td><td>24FR</td><td></td><td>WOLF</td></tr>
+    <tr><td>3</td><td>CUTTING LOOP –SINGLE STEM</td><td>24FR</td><td></td><td>OLUMPUS</td></tr>
+    <tr><td>4</td><td>CUTTING LOOP – DOUBLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>5</td><td>BIPOLAR CUTTING LOOP - SINGLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>6</td><td>BIPOLAR CUTTING LOOP - DOUBLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>7</td><td>COLD KNIFE – SINGLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>8</td><td>COLD KNIFE – DOUBLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>9</td><td>COLLINGS KNIFE – SINGLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>10</td><td>COLLINGS KNIFE – DOUBLE STEM</td><td>24 FR</td><td></td><td></td></tr>
+    <tr><td>11</td><td>BALL ELECTRODE</td><td>24FR (BALL 3MM & 5 MM)</td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h3>GYENECOLOGY</h3>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Endometrial Biopsy Currett With Syrenge</td><td>9 Fr</td><td></td><td>SUCTION</td></tr>
+    <tr><td>2</td><td>Endometrial Biopsy Currett (pipella)</td><td>9 Fr</td><td></td><td>SUCTION</td></tr>
+    <tr><td>3</td><td>Endometrial Biopsy Currett (pipella)</td><td>11 Fr</td><td>21CM</td><td>SUCTION</td></tr>
+    <tr><td>4</td><td>Tubal Recannulation Kit</td><td>5.0FR</td><td>50CM</td><td></td></tr>
+    <tr><td>5</td><td>SSG DEVICE</td><td></td><td>22CM</td><td>LATERAL OPEN</td></tr>
+    <tr><td>6</td><td>HSG Catheter</td><td>5.0 FR & 7.0 FR</td><td>30, 40 CMS</td><td></td></tr>
+    <tr><td>7</td><td>Pesture Pipette</td><td>3ml</td><td></td><td></td></tr>
+    <tr><td>8</td><td>Collection container</td><td>50ml</td><td></td><td></td></tr>
+    <tr><td>9</td><td>Centrifuge Tube</td><td>10ml</td><td></td><td></td></tr>
+    <tr><td>10</td><td>Cyst Aspiration Needle</td><td></td><td></td><td></td></tr>
+    <tr><td>11</td><td>IUI CATHETER -WITH SYRINGE</td><td>6.0 FR</td><td>9,11, CMS</td><td>STRAIGHT</td></tr>
+    <tr><td>12</td><td>IUI CATHETER -WITH SYRINGE</td><td>6.0 FR</td><td>17 CMS</td><td>STRAIGHT</td></tr>
+    <tr><td>13</td><td>IUI CATHETER - LATERAL OPEN -WITH SYRINGE</td><td>6.0 / 8.0 FR</td><td>11 CMS</td><td>LATERAL OPEN</td></tr>
+    <tr><td>14</td><td>IUI CATHETER - LATERAL OPEN -WITH SYRINGE</td><td>6.0 / 8.0 FR</td><td>17CMS</td><td>LATERAL OPEN</td></tr>
+    <tr><td>15</td><td>IUI CATHETER - LATERAL OPEN -WITH SYRINGE</td><td>6.0 /8.0 FR</td><td>11, 17 CMS</td><td>CURVED</td></tr>
+    <tr><td>16</td><td>IUI CATHETER - LATERAL OPEN -WITH SYRINGE</td><td>6.0 /8.0 FR</td><td>17 CMS</td><td>With Stylet</td></tr>
+    <tr><td>17</td><td>IUI CATHETER - LATERAL OPEN -WITH SYRINGE</td><td>6.0 /8.0 FR</td><td>17 CMS</td><td>Vision Tip</td></tr>
+    <tr><td>18</td><td>IUI CATHETER</td><td>6.0 FR</td><td>9,11, CMS</td><td>STRAIGHT</td></tr>
+    <tr><td>19</td><td>IUI CATHETER</td><td>6/8 Fr</td><td>17 CMS</td><td>STRAIGHT</td></tr>
+    <tr><td>20</td><td>IUI CATHETER - LATERAL OPEN</td><td>6/8 Fr</td><td>11 CMS</td><td>LATERAL OPEN</td></tr>
+    <tr><td>21</td><td>IUI CATHETER - LATERAL OPEN</td><td>6/8 Fr</td><td>17CMS</td><td>LATERAL OPEN</td></tr>
+    <tr><td>22</td><td>IUI CATHETER - LATERAL OPEN</td><td>6/8 Fr</td><td>11, 17 CMS</td><td>CURVED</td></tr>
+    <tr><td>23</td><td>IUI CATHETER - LATERAL OPEN</td><td>6/8 Fr</td><td>17 CMS</td><td>With Stylet</td></tr>
+    <tr><td>24</td><td>IUI CATHETER - LATERAL OPEN</td><td>6/8 Fr</td><td>17 CMS</td><td>Vision Tip</td></tr>
+    <tr><td>25</td><td>Ovum Pickup Needle</td><td>17 G</td><td></td><td>Single Lumen, Double Lumen</td></tr>
+    <tr><td>26</td><td>Embryo Transfer Catheter (Metallic)</td><td></td><td>27 CM</td><td></td></tr>
+    <tr><td>27</td><td>Embryo Transfer Catheter (With Bulb Tip)</td><td></td><td></td><td></td></tr>
+    <tr><td>28</td><td>Embryo Transfer Catheter (With Metal Radiopaque Band)</td><td></td><td></td><td></td></tr>
+    <tr><td>29</td><td>Vaginal Speculam - Plastic</td><td></td><td></td><td>Small,Medium,Large</td></tr>
+    <tr><td>30</td><td>IUI Kit</td><td></td><td></td><td></td></tr>
+    <tr><td>31</td><td>Vaginal Dilator (Silicon)</td><td></td><td></td><td></td></tr>
+    <tr><td>32</td><td>Vaginal Ring (Silicon)</td><td></td><td></td><td></td></tr>
+    <tr><td>33</td><td>Nipple Puller</td><td></td><td></td><td></td></tr>
+    <tr><td>34</td><td>IUD Removing Graspers</td><td></td><td></td><td></td></tr>
+    <tr><td>35</td><td>Hysteroscopic Scissor</td><td></td><td></td><td></td></tr>
+    <tr><td>36</td><td>Hysteroscopic Grasping Forceps</td><td></td><td></td><td></td></tr>
+    <tr><td>37</td><td>Hysteroscopic operative Sheath</td><td></td><td></td><td></td></tr>
+    <tr><td>38</td><td>Hysteroscopic diagnostic Sheath</td><td></td><td></td><td></td></tr>
+    <tr><td>39</td><td>Uterine Manupulator</td><td></td><td></td><td></td></tr>
+    <tr><td>40</td><td>Cyto brush</td><td></td><td></td><td></td></tr>
+    <tr><td>41</td><td>Fallopian Ring applicator</td><td></td><td></td><td></td></tr>
+    <tr><td>42</td><td>Karman Cannula</td><td></td><td></td><td></td></tr>
+    <tr><td>43</td><td>Intrauterine Insemination Kit (Catheter,Centrifuge tube,Pippet, Container,Gloves,Drape,Wipe)</td><td></td><td></td><td></td></tr>
+    <tr><td>44</td><td>Urethral Metal Dilator Set</td><td></td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h3>NEPHROLOGY</h3>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>HEMO Dialysis Catheter (Jugular)</td><td></td></tr>
+    <tr><td></td><td>Double Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td></td><td>Triple Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td>2</td><td>HEMO Dialysis Catheter Set (Jugular )</td><td></td></tr>
+    <tr><td></td><td>Double Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td></td><td>Triple Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td>3</td><td>HEMO Dialysis Catheter (Straight)</td><td></td></tr>
+    <tr><td></td><td>Double Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td></td><td>Triple Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td>4</td><td>HEMO Dialysis Catheter Set (Straight)</td><td></td></tr>
+    <tr><td></td><td>Double Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td></td><td>Triple Luman</td><td>8.5 Fr,11.5,12 Fr</td></tr>
+    <tr><td>5</td><td>PERM Catheter Kit (Long Term)</td><td>14.5 Fr -19 cm and 23 cm</td></tr>
+    <tr><td>5</td><td>Femoral Catheter</td><td>7 Fr</td></tr>
+    <tr><td>6</td><td>Central Venous Catheter</td><td></td></tr>
+    <tr><td></td><td>Single Luman</td><td>5 fr and 7 Fr</td></tr>
+    <tr><td></td><td>Double Luman</td><td>7 fr</td></tr>
+    <tr><td></td><td>Triple Luman</td><td>7 fr</td></tr>
+    <tr><td>7</td><td>Central Venous Catheter & Kit</td><td></td></tr>
+    <tr><td></td><td>Single Luman</td><td>5 fr and 7 Fr</td></tr>
+    <tr><td></td><td>Double Luman</td><td>7 fr</td></tr>
+    <tr><td></td><td>Triple Luman</td><td>7 fr</td></tr>
+    <tr><td>8</td><td>Y' Connector Needle</td><td></td></tr>
+    <tr><td>9</td><td>BI-Wire ( Guide Wire)</td><td>0.025", 0.032" & 0.035"</td></tr>
+    <tr><td>10</td><td>Control Syringe</td><td></td></tr>
+    <tr><td>11</td><td>Injection Caps</td><td></td></tr>
+    <tr><td>12</td><td>Dilators</td><td>6 Fr to 14 Fr</td></tr>
+    <tr><td>13</td><td>AV Fistula Needle</td><td>15 G,16 G, 17 G -25 mm</td></tr>
+    <tr><td>14</td><td>Blood Tubing Set</td><td></td></tr>
+  </tbody>
+</table>
+
+<h3>GASTROENTEROLOGY</h3>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>NBDC CATHETER</td><td>5.0,6.0,7.0,8.0,9.0 FR</td><td>250 CMS</td><td>PIGTAIL</td></tr>
+    <tr><td>2</td><td>NBDC CATHETER</td><td>5.0,6.0,7.0,8.0,9.0 FR</td><td>250 CMS</td><td>STRAIGHT</td></tr>
+    <tr><td>3</td><td>BILIARY DRAINAGE STENT</td><td>7.0,10.0 FR</td><td>5,7,9,10,12,15 CM</td><td>AMSTERDOM</td></tr>
+    <tr><td>4</td><td>BILIARY DRAINAGE STENT</td><td>7.0,10.0 FR</td><td>5,7,9,10,12,15 CM</td><td>STRAIGHT</td></tr>
+    <tr><td>5</td><td>BILIARY DRAINAGE STENT</td><td>7.0,10.0 FR</td><td>5,7,9,10,12,15 CM</td><td>SINGLE PIGTAIL</td></tr>
+    <tr><td>6</td><td>BILIARY DRAINAGE STENT</td><td>7.0,10.0 FR</td><td>5,7,9,10,12,15 CM</td><td>DOUBLE PIGTAIL</td></tr>
+    <tr><td>7</td><td>BILIARY DRAINAGE STENT</td><td>5.0,7.0,10.0 FR</td><td>5,7,9,10,12,15 CM</td><td>PANCREATIC</td></tr>
+    <tr><td>8</td><td>BILIARY DRAINAGE STENT</td><td>7.0,8.0,10.0 FR</td><td>5,7,9,10,12,15 CM</td><td>STANDARD</td></tr>
+    <tr><td>9</td><td>BILIARY DRAINAGE INTERNAL EXTERNAL CATHETER</td><td>8,10,14,16 FR</td><td>22,30,40,45 CM</td><td>PIG TAIL</td></tr>
+    <tr><td>10</td><td>BILIARY STUNT PUSHER</td><td>5,6,7 FR</td><td></td><td></td></tr>
+    <tr><td>11</td><td>BILIARY STUNT INTRODUCER SET</td><td>10FR</td><td>230CM</td><td></td></tr>
+    <tr><td>12</td><td>JEJUNAL FEEDING TUBE</td><td>14 FR, 16 FR</td><td>155,200 CM</td><td>NORMAL</td></tr>
+    <tr><td>13</td><td>JEJUNAL FEEDING TUBE with GUIDE WIRE</td><td>14 FR, 16 FR</td><td>155,200 CM</td><td>NORMAL</td></tr>
+    <tr><td>14</td><td>JEJUNAL FEEDING TUBE -PU</td><td>14 FR, 16 FR</td><td>155,200 CM</td><td></td></tr>
+    <tr><td>15</td><td>JEJUNAL FEEDING TUBE with GUIDE WIRE-PU</td><td>14 FR, 16 FR</td><td>155,200 CM</td><td></td></tr>
+    <tr><td>16</td><td>SCELEROTHERAPY NEEDLE [VERICES]</td><td>3/7,4/7 FR</td><td>225 CM</td><td>21 G</td></tr>
+    <tr><td>17</td><td>SCELEROTHERAPY NEEDLE [VERICES]</td><td>3/7,4/7 FR</td><td>225 CM</td><td>23 G</td></tr>
+    <tr><td>18</td><td>PTBD CATHETER -POLYURETHANE</td><td>8.0,8.5,10.0 FR</td><td>45 CM</td><td></td></tr>
+    <tr><td>19</td><td>PTBD CATHETER SET -POLYURETHANE</td><td>8.0,8.5,10.0 FR</td><td>45 CM</td><td></td></tr>
+    <tr><td>20</td><td>ABCESS DRAINAGE CATHETER -PU</td><td>8,8.5,10,12,14,16 FR</td><td>30 TO 40 CMS</td><td>PIGTAIL/J-SHAPE</td></tr>
+    <tr><td>21</td><td>ABCESS DRAINAGE CATHETER WITH NEEDLE -PU</td><td>8,8.5,10,12,14,16 FR</td><td>22 CM,30CM</td><td>PIGTAIL/J-SHAPE</td></tr>
+    <tr><td>22</td><td>ABCESS - LOCKING CATHETER</td><td>8,8.5,10,12 FR</td><td>30 CMS</td><td>PIGTAIL -PU</td></tr>
+    <tr><td>23</td><td>ABCESS DRAINAGE SET - PU<br>(include I.P Needle,Dilators,0.038' -J-Tip guide wire,pigtail/Malecot drainage Catheter Scalpel and Urine bag connector)</td><td>8.0 Fr 10.0 Fr 12.0 Fr</td><td>Dilators 6.0,8.0,10.0 8.0,10.0,12.0 10.0,12.0,14.0</td><td>PIGTAIL MALECOT</td></tr>
+    <tr><td>24</td><td>BILIARY Pusher</td><td>3,5,5.5,6, 7 fr</td><td>180, 200 cm</td><td></td></tr>
+    <tr><td>25</td><td>BILIARY DILATOR (PLASTIC)</td><td>7,8,8.5,10 FR</td><td></td><td></td></tr>
+    <tr><td>26</td><td>BILIARY STONE BASKETS</td><td>4,5,6,7 FR</td><td>240 CM</td><td>HELICAL</td></tr>
+    <tr><td>27</td><td>MULTI WIRE BASKETS</td><td>8 & 10 FR</td><td>240 CM</td><td></td></tr>
+    <tr><td>28</td><td>JEJUNAL TUBE with GUIDE WIRE - PU</td><td>14 FR, 16 FR</td><td>155, 200 CM</td><td>PU</td></tr>
+  </tbody>
+</table>
+
+<h4>REUSEABLE BIOPSY FORCEPS</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>1.2 mm</td><td>120 cm</td><td>Oval Cup With Back Eye</td></tr>
+    <tr><td>2</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>1.2 mm</td><td>180 cm</td><td>Oval Cup With Back Eye</td></tr>
+    <tr><td>3</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>1.8 mm</td><td>120 cm</td><td>Oval Cup With Teeth and Back Eye</td></tr>
+    <tr><td>4</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>1.8 mm</td><td>120 cm</td><td>Oval Cup With Teeth and needle and Back Eye</td></tr>
+    <tr><td>5</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>1.8 mm</td><td>180 cm</td><td>Oval Cup With Teeth and Back Eye</td></tr>
+    <tr><td>6</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>1.8 mm</td><td>180 cm</td><td>Oval Cup With Teeth and needle and Back Eye</td></tr>
+    <tr><td>7</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>2.3 mm</td><td>120 cm</td><td>Oval Cup With Teeth anf Back Eye</td></tr>
+    <tr><td>8</td><td>Reusable Biopsy Forceps , - Grinded Distal Spiral End, Auto-clavable.</td><td>2.3 mm</td><td>120 cm</td><td>Oval Cup With Teeth and needle and Back Eye</td></tr>
+  </tbody>
+</table>
+
+<h4>SPHINCTROTOMES</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Triple Lumen Sphinctrotome cutting wire Monofilament Cutting Wire, Color Marking, Separate Port for Contrast & Guidewire, Pre-curved, Ergonomical Shape Handle.</td><td>20 mm</td><td></td><td>Triple Lumen</td></tr>
+    <tr><td>2</td><td>Triple Lumen Sphinctrotome cutting wire Monofilament Cutting Wire, Color Marking, Separate Port for Contrast & Guidewire, Pre-curved, Ergonomical Shape Handle.</td><td>30 mm</td><td></td><td>Triple Lumen</td></tr>
+    <tr><td>3</td><td>Needle Knife Sphinctrotome cutting wire Monofilament Cutting Wire, Color Marking, Separate Port for Contrast & Guidewire, Pre-curved, Ergonomical Shape Handle.</td><td>7 mm</td><td></td><td>Triple Lumen/Needle Knife</td></tr>
+    <tr><td>4</td><td>Sphinctrotome Insulated cutting wire Monofilament Cutting Wire, , Color Marking, Separate Port for Contrast & Guidewire, Pre-curved, Ergonomical Shape Handle.</td><td>30 mm</td><td></td><td>Triple Lumen/Needle Knife</td></tr>
+  </tbody>
+</table>
+
+<h4>STONE EXTRACTION BASKET</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Biliary Stone Extractor Basket, Braided Wires Hard Steel, Separate Flushing / Constrast Port, Three Ring Easy Grip Handle.</td><td>4 Wire -25 mm</td><td></td><td></td></tr>
+    <tr><td>2</td><td>Biliary Stone Extractor Basket, Braided Wires Hard Steel, Separate Flushing / Constrast Port, Three Ring Easy Grip Handle.</td><td>4 Wire -30 mm</td><td></td><td></td></tr>
+    <tr><td>3</td><td>Pancreatic Stone Extractor Basket, , Braided Wires Hard Steel, Separate Flushing / Constrast Port, Three Ring Easy Grip Handle.</td><td>4 Wire -20 mm</td><td></td><td></td></tr>
+  </tbody>
+</table>
+
+<h4>STONE EXTRACTION BALLOON</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Biliary Stone Extraction Balloon</td><td>7 fr</td><td>200 cm</td><td>Triple Lumen</td></tr>
+  </tbody>
+</table>
+
+<h4>POLYPECTOMY SNARES</h4>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Polypectomy snare, oval shape 25mm Sheath<br>Braided Wire, Adjustable Size, Easily Rotatable.</td><td>2.4 mm</td><td>230 cm</td><td></td></tr>
+    <tr><td>2</td><td>Polypectomy snare, oval shape 30mm Sheath<br>Braided Wire, Adjustable Size, Easily Rotatable.</td><td>2.4 mm</td><td>230 cm</td><td></td></tr>
+  </tbody>
+</table>
+
+<h3>RADIOLOGY</h3>
+<table>
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>PRODUCT NAME</th>
+      <th>SIZE</th>
+      <th>LENGTH</th>
+      <th>TYPE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>PTBD CATHETER -POLYURETHANE</td><td>8.0,8.5,10.0 FR</td><td>60 CMS</td><td></td></tr>
+    <tr><td>2</td><td>PTBD CATHETER SET -POLYURETHANE</td><td></td><td></td><td></td></tr>
+    <tr><td>3</td><td>SUPRAPUBIC CATHETER</td><td>10,12,14,16 FR</td><td>25 CM</td><td></td></tr>
+    <tr><td>4</td><td>PCN CATHETER - POLYURETHANE</td><td>8,8.5,10,12,14,16 FR</td><td>30 TO 40 CMS</td><td>J-SHAPE,PIGTAIL</td></tr>
+    <tr><td>5</td><td>PCN CATHETER WITH NEEDLE - PU</td><td>8,8.5,10,12,14,16 FR</td><td>22 TO 30 CMS</td><td>J-SHAPE,PIGTAIL</td></tr>
+    <tr><td>6</td><td>PCN - LOCKING WITH/WITHOUT NEEDLE</td><td>8,8.5,10,12 FR</td><td>30 CMS</td><td></td></tr>
+    <tr><td>7</td><td>MALECOT CATHETER</td><td>10,12,14,16,18 FR</td><td>30 CMS</td><td></td></tr>
+    <tr><td>8</td><td>IP NEEDLE WITH SHEATH</td><td>6 FR</td><td>25 CMS</td><td>SINGLE</td></tr>
+    <tr><td>9</td><td>IP NEEDLE WITH SHEATH PU</td><td>6 FR</td><td>25 CMS</td><td>SINGLE</td></tr>
+    <tr><td>10</td><td>GUIDE WIRES</td><td>0.018",0.025",0.028"</td><td></td><td></td></tr>
+    <tr><td>11</td><td></td><td>0.032",0.035",0.038"</td><td>150 CMS</td><td></td></tr>
+    <tr><td>12</td><td>STRIPED GUIDE WIRES [ZEBRA ]</td><td>0.035"</td><td>150 CMS</td><td></td></tr>
+    <tr><td>13</td><td>CHIBA NEEDLE</td><td>22G,23G</td><td>15,20,22 CMS</td><td></td></tr>
+    <tr><td>14</td><td>FACIAL DILATORS SET</td><td>6,8,10,12,14,16 FR</td><td>22 CMS</td><td>SET</td></tr>
+    <tr><td>15</td><td>DRANAGE SET- PU - PIGTAIL</td><td></td><td>Dilators</td><td></td></tr>
+    <tr><td>16</td><td>(include I.P Needle,Dilators,0.038" - J - Tip</td><td>8.0 Fr</td><td>6.0,8.0,10.0</td><td>PIGTAIL</td></tr>
+    <tr><td>17</td><td>Guide wire,Pigtail / J - Shape Drainage Catheter</td><td></td><td>8.0,10.0,12.0</td><td>J SHAPE</td></tr>
+    <tr><td>18</td><td>Scalepel and Urine bag Connector)</td><td>12.0 Fr</td><td>10.0,12.0,14.0</td><td></td></tr>
+  </tbody>
+</table>
   `,
-  "Injs": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Pack</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Injex</td><td>Cefotaxime 500mg</td><td>Injection</td></tr>
-      </tbody>
-    </table>
-  `,
-  "INVISAT MED DEVICES PRODUCT LIST": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Device</th><th class="sortable">Description</th><th class="sortable">Use</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Syringe</td><td>Disposable 5ml</td><td>Injection</td></tr>
-      </tbody>
-    </table>
-  `,
-  "INVISAT PRODUCTS 2": `
+      "INVISAT PRODUCTS 2": `
     <table id="productTable">
       <thead>
         <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
@@ -423,127 +1633,897 @@ th.sortable.desc::after {
       </tbody>
     </table>
   `,
-  "LIQUID INJS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Pack</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>LiqInj</td><td>Diclofenac Sodium 75mg/ml</td><td>Ampoule</td></tr>
-      </tbody>
-    </table>
+      "LIQUID INJECTIONS": `
+    <table border="1" border="1" cellspacing="0" cellpadding="6" id="productTable">
+  <thead>
+    <tr style="background-color:#f2f2f2;"
+    >
+      <th class="sortable">S.NO</th>
+      <th class="sortable">PRODUCT</th>
+      <th class="sortable">COMPOSITION</th>
+      <th>STRENGTH</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Aceclofenac Injection</td><td>Each ml contains: Aceclofenac IP-150mg Water for Injection IP-q.s</td><td>150mg</td></tr>
+    <tr><td>2</td><td>Acetylcysteine</td><td>Each ml contains: Acetylcysteine USP 200mg Water for Injection IP-q.s</td><td>200mg</td></tr>
+    <tr><td>3</td><td>Arteether</td><td>Each ml contains: Arteether (Alpha-Beta Arteether) IP-150mg Oily Base-q.s</td><td>150mg</td></tr>
+    <tr><td>4</td><td>Artemether Injection</td><td>Each ml contains: Artemether-80mg Oil base--q.s</td><td>80mg</td></tr>
+    <tr><td>5</td><td>Ascorbic acid</td><td>Each 1.5ml contains: Ascorbic acid IP-150mg Chlorocresrol 0.2% Water for injection q.s.</td><td>150mg</td></tr>
+    <tr><td>6</td><td>Atracurium besylate Injection</td><td>Each 2.5ml contains: Atracurium besylate IP-25mg WFI q.s</td><td>25mg</td></tr>
+    <tr><td>7</td><td>Atracurium besylate Injection</td><td>Each 5ml contains: Atracurium besylate IP 50mg WFI q.s</td><td>50mg</td></tr>
+    <tr><td>8</td><td>Betamethasone Injection</td><td>Each ml contains: Betamethasone Sodium Phosphate Eq to Betamethasone IP 4mg Water for Injection IP q.s</td><td>4mg</td></tr>
+    <tr><td>9</td><td>Cholecalciferol</td><td>Each ml contains: Cholecalciferol IP 600,000 U Ethyl Oleate IP q.s</td><td>600000 IU</td></tr>
+    <tr><td>10</td><td>Citicoline Injection</td><td>Each ml contains: Citicoline Sodium IP eq.to Citicoline 250mg Water for Injection IP q.s</td><td>250mg</td></tr>
+    <tr><td>11</td><td>Clindamycin Phosphate</td><td>Each ml contains: Clindamycin Phosphate IP eq.to Clindamycin 150mg Benzyl Alcohol IP-1% v/v Water for Injection IP q.s</td><td>150mg</td></tr>
+    <tr><td>12</td><td>Dexamethasone Sodium Phosphate Injection I.P</td><td>Each ml contains: Dexamethasone Sodium Phosphate eq.to Dexamethasone Phosphate, Methyl paraben 0.18% w/w, Propyl paraben 0.02% w/w</td><td>4mg</td></tr>
+    <tr><td>13</td><td>Diclofenac Sodium Injection I.P</td><td>Each ml contains: Diclofenac Sodium Benzyl Alcohol (As Preservative) Water for Injection IP q.s</td><td>75mg</td></tr>
+    <tr><td>14</td><td>Diclofenac Sodium Injection I.P</td><td>Each ml contains: Diclofenac Sodium Benzyl Alcohol (As Preservative) Water for Injection IP q.s</td><td>25mg</td></tr>
+    <tr><td>15</td><td>Digoxin Injection</td><td>Each 2ml contains: Digoxin IP 500mcg Water for Injection IP q.s</td><td>500mcg</td></tr>
+    <tr><td>16</td><td>Dobutamine HCL Injection</td><td>Each 5ml contains: Dobutamine HCL USP 250mg WFI q.s</td><td>250mg</td></tr>
+    <tr><td>17</td><td>Dopamine HCL Injection</td><td>Each ml contains: Dopamine HCL USP 40mg WFI q.s</td><td>40mg</td></tr>
+    <tr><td>18</td><td>Drotaverine Hydrochloride</td><td>Each ml contains: Drotaverine HCL IP 20mg Benzyl Alcohol IP 2% v/v Water for Injection IP q.s</td><td>20mg</td></tr>
+    <tr><td>19</td><td>Edaravone Injection</td><td>Each ml contains: Edaravone 1.5mg WFI q.s</td><td>1.5mg</td></tr>
+    <tr><td>20</td><td>Ethamsylate</td><td>Each ml contains: Ethamsylate 125mg Methyl paraben 0.18% v/v, Propyl paraben 0.02% v/v Water for Injection IP q.s</td><td>125mg</td></tr>
+    <tr><td>21</td><td>Fluphenazine decanoate</td><td>Each ml contains: Fluphenazine Decanoate IP 25mg WFI q.s</td><td>25mg</td></tr>
+    <tr><td>22</td><td>Frusemide</td><td>Each ml contains: Frusemide IP 10mg Water for Injection IP q.s</td><td>10mg</td></tr>
+    <tr><td>23</td><td>Glycopyrrolate Injection</td><td>Each ml contains: Glycopyrrolate USP 0.2mg WFI q.s</td><td>0.2mg</td></tr>
+    <tr><td>24</td><td>Granisetron HCL Injection</td><td>Each ml contains: Granisetron HCL USP 1mg WFI q.s</td><td>1mg</td></tr>
+    <tr><td>25</td><td>Iron sucrose injection USP</td><td>Each ml contains: Ferric Hydroxide in complex with sucrose eq. to elemental iron 20mg Water for Injection IP qs.</td><td>20mg</td></tr>
+    <tr><td>26</td><td>Ivermectin Injection</td><td>Each ml contains: Ivermectin USP 10mg Oily base q.s</td><td>10mg</td></tr>
+    <tr><td>27</td><td>Ketorolac Tromethamine</td><td>Each ml contains: Ketorolac Tromethamine IP 30mg Water for Injection q.s</td><td>30mg</td></tr>
+    <tr><td>28</td><td>Labetalol HCL Injection</td><td>Each ml contains: Labetalol HCL USP 5mg WFI q.s</td><td>5mg</td></tr>
+    <tr><td>29</td><td>Levocarnitine Injection</td><td>Each 5ml contains: Levocarnitine USP 1gm WFI q.s</td><td>1gm</td></tr>
+    <tr><td>30</td><td>Lignocaine HCL Injection</td><td>Each ml contains: Lignocaine HCL IP 10mg WFI q.s</td><td>10mg</td></tr>
+    <tr><td>31</td><td>Lincomycin Injection</td><td>Each ml contains: Lincomycin HCL USP eq. to Lincomycin 300mg WFI q.s</td><td>300mg</td></tr>
+    <tr><td>32</td><td>Lincomycin Injection</td><td>Each ml contains: Lincomycin HCL USP eq. to Lincomycin 600mg WFI q.s</td><td>600mg</td></tr>
+    <tr><td>33</td><td>L-ornithine-L-aspartate Injection</td><td>Each 10ml contains: L-ornithine-L-aspartate 5gm WFI q.s</td><td>5gm</td></tr>
+    <tr><td>34</td><td>Meloxicam Injection</td><td>Each ml contains: Meloxicam 5mg Water for Injection IP q.s</td><td>5mg</td></tr>
+    <tr><td>35</td><td>Methylcobalamin 1000mg</td><td>Each 2ml contains: Methylcobalamin USP 1000mcg Pyridoxine HCL 100mg Niacinamide IP 100mg D-panthenol IP 50mg Benzyl Alcohol IP 2% v/v Water for injection q.s</td><td>1000mg</td></tr>
+    <tr><td>36</td><td>Methylcobalamin 1000mg</td><td>Each ml contains: Methylcobalamin USP 1000mcg Benzyl Alcohol IP 2% v/v Water for injection q.s</td><td>1000mg</td></tr>
+    <tr><td>37</td><td>Methylcobalamin 1500mcg</td><td>Each 2ml contains: Methylcobalamin USP 1500mcg Thiamine HCL 10mg Pyridoxine HCL 3mg Niacinamide 48mg D-panthenol 50mg Folic Acid 10mg Benzyl Alcohol IP 1.5% v/v Water for injection q.s</td><td>1500mg</td></tr>
+    <tr><td>38</td><td>Methylcobalamin 1500mg</td><td>Each 2ml contains: Methylcobalamin USP 1500mcg Niacinamide IP 12mg Folic Acid IP 0.7mg Benzyl Alcohol IP 2% v/v Water for injection q.s</td><td>1500mg</td></tr>
+    <tr><td>39</td><td>Methylcobalamin injection</td><td>Each 2ml contains: Methylcobalamin Benzyl Alcohol (As Preservative) Water for Injection</td><td>2500mcg</td></tr>
+    <tr><td>40</td><td>Milrinone Lactate Injection</td><td>Each ml contains: Milrinone Lactate USP 1mg WFI q.s</td><td>1mg</td></tr>
+    <tr><td>41</td><td>Nandrolone Decanoate</td><td>Each ml contains: Nandrolone Decanoate IP 50mg Oil base q.s</td><td>50mg</td></tr>
+    <tr><td>42</td><td>Nandrolone decanoate Injection I.P</td><td>Each ml contains: Nandrolone decanoate Oil base 25mg q.s</td><td>25mg</td></tr>
+    <tr><td>43</td><td>Nandrolone Phenylpropionate</td><td>Each ml contains: Nandrolone Phenylpropionate IP 25mg Oily Base q.s</td><td>25mg</td></tr>
+    <tr><td>44</td><td>Nandrolone Phenylpropionate</td><td>Each ml contains: Nandrolone Phenylpropionate IP 50mg Oily Base q.s</td><td>50mg</td></tr>
+    <tr><td>45</td><td>Octreotide Injection</td><td>Each ml contains: Octreotide Acetate 50mcg, Sodium Chloride USP 7mg, Glacial Acetic acid USP 2mg, Sodium Acetate trihydrate USP 2mg, Phenol USP 5mg, WFI q.s</td><td>50mcg</td></tr>
+    <tr><td>46</td><td>Octreotide Injection</td><td>Each ml contains: Octreotide Acetate 100mcg, Sodium Chloride USP 7mg, Glacial Acetic acid USP 2mg, Sodium Acetate trihydrate USP 2mg, Phenol USP 5mg, WFI q.s</td><td>100mcg</td></tr>
+    <tr><td>47</td><td>Octreotide Injection</td><td>Each ml contains: Octreotide Acetate 200mcg, Sodium Chloride USP 7mg, Glacial Acetic acid USP 2mg, Sodium Acetate trihydrate USP 2mg, Phenol USP 5mg, WFI q.s</td><td>200mcg</td></tr>
+    <tr><td>48</td><td>Ondansetron Injection I.P.</td><td>Each ml contains: Ondansetron Hydrochloride eq. to Ondansetron, Water For Injection q.s</td><td>2mg</td></tr>
+    <tr><td>49</td><td>Piracetam Injection</td><td>Each ml contains: Piracetam IP 200mg Water for Injection IP q.s</td><td>200mg</td></tr>
+    <tr><td>50</td><td>Promethazine Hydrochloride</td><td>Each ml contains: Promethazine HCL USP 25mg, Phenol Liquefied IP 5mg, Water for Injection IP q.s</td><td>25mg</td></tr>
+    <tr><td>51</td><td>Propranolol Hydrochloride</td><td>Each ml contains: Propranolol Hydrochloride BP 1mg Water for Injection IP q.s</td><td>1mg</td></tr>
+    <tr><td>52</td><td>Ranitidine</td><td>Each ml contains: Ranitidine Hydrochloride IP eq. to Ranitidine 25mg, Phenol IP 0.5% w/v, Water for Injection IP q.s</td><td>25mg</td></tr>
+    <tr><td>53</td><td>Sodium bicarbonate</td><td>Each ml contains: Sodium Bicarbonate IP 5% Water for Injection IP q.s</td><td>0.05</td></tr>
+    <tr><td>54</td><td>Terlipressin Acetate</td><td>Each 10ml contains: Terlipressin Acetate 1mg Water for Injection q.s</td><td>1mg</td></tr>
+    <tr><td>55</td><td>Thiamine Hydrochloride</td><td>Each ml contains: Thiamine Hydrochloride IP 100mg Chlorbutol IP 0.5% w/v Water for Injection q.s</td><td>100mg</td></tr>
+    <tr><td>56</td><td>Vasopressin Injection</td><td>Each ml contains: Vasopressin USP 20 Units WFI q.s</td><td>20 Units</td></tr>
+    <tr><td>57</td><td>Verapamil Injection</td><td>Each 2ml contains: Verapamil Hydrochloride BP 5mg Water for Injection IP q.s</td><td>5mg</td></tr>
+  </tbody>
+</table>
+
   `,
-  "NEURO PSYCHETRIC RANGE": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>NeuroCalm</td><td>Clonazepam 0.5mg</td><td>Tablet</td></tr>
-      </tbody>
-    </table>
+      "NEURO PSYCHETRIC RANGE": `
+   <table border="1" id="productTable" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr style="background-color:#f2f2f2;">
+      <th class="sorting">S.NO</th>
+      <th class="sorting">PRODUCT</th>
+      <th  class="sorting">STRENGTH / PACK SIZE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>LACOSAMIDE</td><td>50 MG 10*10</td></tr>
+    <tr><td>2</td><td>LACOSAMIDE</td><td>100 MG 10*10</td></tr>
+    <tr><td>3</td><td>LACOSAMIDE</td><td>200 MG 10*10</td></tr>
+    <tr><td>4</td><td>PIRACETAM</td><td>800 MG 10*10</td></tr>
+    <tr><td>5</td><td>ACECLOFENAC + RABEPRAZOLE</td><td>200 MG + 20 MG 10*10</td></tr>
+    <tr><td>6</td><td>ARIPIPRAZOLE</td><td>5 MG 20*10</td></tr>
+    <tr><td>7</td><td>ARIPIPRAZOLE</td><td>10 MG 20*10</td></tr>
+    <tr><td>8</td><td>ESCITALOPRAM</td><td>10 MG 20*10</td></tr>
+    <tr><td>9</td><td>PAROXETINE HYDROCHLORIDE</td><td>12.5 MG 10*10</td></tr>
+    <tr><td>10</td><td>PAROXETINE HYDROCHLORIDE</td><td>25 MG 10*10</td></tr>
+    <tr><td>11</td><td>FLUPENTIXOL + MELITRACEN</td><td>0.5 MG + 10 MG 20*10</td></tr>
+    <tr><td>12</td><td>AMISULPRIDE</td><td>50 MG 10*10</td></tr>
+    <tr><td>13</td><td>AMISULPRIDE</td><td>200 MG 10*10</td></tr>
+    <tr><td>14</td><td>AMISULPRIDE</td><td>100 MG 10*10</td></tr>
+    <tr><td>15</td><td>ATOMOXETINE</td><td>10 MG 10*10</td></tr>
+    <tr><td>16</td><td>BENFOTIAMINE + MECOBALAMIN + ALPHA LIPOIC ACID + CHROMIUM + INOSITOL</td><td>150 MG + 1500 MCG + 100 MG + 200 MCG + 150 MG 10*1*10</td></tr>
+    <tr><td>17</td><td>CALCIUM CARBONATE + ALA + BENFOTIAMINE + INOSITOL + PYRIDOXINE + METHYLCOBALAMIN + VITAMIN D3 + FOLIC ACID + CHROMIUM + INOSITOL</td><td>500 MG + 100 MG + 150 MG + 100 MG + 3 MG + 1500 MCG + 1000 IU + 1.5 MG + 200 MCG + 100 MG 10*1*10</td></tr>
+    <tr><td>18</td><td>BUPROPION HYDROCHLORIDE PR TABLET</td><td>10*10</td></tr>
+    <tr><td>19</td><td>CEREBROPROTEIN HYDROLYSATE</td><td>90 MG 10*10</td></tr>
+    <tr><td>20</td><td>CINNARIZINE</td><td>25 MG 10*10</td></tr>
+    <tr><td>21</td><td>CINNARIZINE + DOMPERIDONE</td><td>20 MG + 15 MG 10*10</td></tr>
+    <tr><td>22</td><td>CLONIDINE HYDROCHLORIDE</td><td>100 MCG 20*10</td></tr>
+    <tr><td>23</td><td>CITICOLIN</td><td>500 MG 10*10</td></tr>
+    <tr><td>24</td><td>CITICOLIN + PIRACETAM</td><td>500 MG + 800 MG 10*10</td></tr>
+    <tr><td>25</td><td>DESVENLAFAXINE</td><td>50 MG 10*10</td></tr>
+    <tr><td>26</td><td>DESVENLAFAXINE</td><td>100 MG 10*10</td></tr>
+    <tr><td>27</td><td>DICLOFENAC + PARACETAMOL + SERRATIOPEPTIDASE</td><td>50 MG + 325 MG + 15 MG 10*10</td></tr>
+    <tr><td>28</td><td>DONEPEZIL</td><td>5 MG 10*10</td></tr>
+    <tr><td>29</td><td>DONEPEZIL + MEMANTINE</td><td>5 MG + 5 MG 10*10</td></tr>
+    <tr><td>30</td><td>DIVALPROEX SODIUM</td><td>250 MG 10*10</td></tr>
+    <tr><td>31</td><td>DIVALPROEX SODIUM</td><td>500 MG 10*10</td></tr>
+    <tr><td>32</td><td>DIVALPROEX SODIUM</td><td>750 MG 10*10</td></tr>
+    <tr><td>33</td><td>DOXEPIN</td><td>10 MG 10*10</td></tr>
+    <tr><td>34</td><td>DOXEPIN</td><td>25 MG 10*10</td></tr>
+    <tr><td>35</td><td>LEVO CARNITINE + VITAMIN E</td><td>150 MG + 200 MG 10*10</td></tr>
+    <tr><td>36</td><td>DULOXETINE HCL</td><td>20 MG 10*10</td></tr>
+    <tr><td>37</td><td>DULOXETINE HCL</td><td>30 MG 10*10</td></tr>
+    <tr><td>38</td><td>MULTIVITAMIN + MULTIMINERALS + GINSENG</td><td>60*1</td></tr>
+    <tr><td>39</td><td>MULTIVITAMIN + MULTIMINERALS + GINSENG</td><td>10*1*10</td></tr>
+    <tr><td>40</td><td>MULTIVITAMIN + MULTIMINERALS + NIACINAMIDE + PANTOTHENIC ACID + VITAMIN A + GINSENG + GRAPE SEED EXTRACT + GINKGO BILOBA + GREEN TEA EXTRACT</td><td>10*1*10</td></tr>
+    <tr><td>41</td><td>LYCOPENE + GINSENG + GRAPE SEED + SOYA ISOFLAVONE + L-CARNITINE + BIOTIN + FOLIC ACID + CALCIUM + IRON + ZINC + EVENING PRIMROSE OIL + ELEMENTAL IRON + ALL VITAMINS</td><td>10*1*10</td></tr>
+    <tr><td>42</td><td>FLUOXETINE</td><td>20 MG 10*10</td></tr>
+    <tr><td>43</td><td>FLUOXETINE</td><td>40 MG 10*10</td></tr>
+    <tr><td>44</td><td>FLUOXETINE</td><td>60 MG 10*10</td></tr>
+    <tr><td>45</td><td>FLUVOXAMINE</td><td>50 MG 10*10</td></tr>
+    <tr><td>46</td><td>FLUVOXAMINE</td><td>100 MG 10*10</td></tr>
+    <tr><td>47</td><td>GABAPENTIN + NORTRIPTYLINE + METHYLCOBALAMIN</td><td>400 MG + 10 MG + 1500 MCG 10*1*10</td></tr>
+    <tr><td>48</td><td>GABAPENTIN + METHYLCOBALAMIN</td><td>100 MG + 500 MCG 10*10</td></tr>
+    <tr><td>49</td><td>GABAPENTIN + METHYLCOBALAMIN</td><td>300 MG + 500 MCG 10*10</td></tr>
+    <tr><td>50</td><td>GABAPENTIN</td><td>100 MG 10*10</td></tr>
+    <tr><td>51</td><td>GABAPENTIN</td><td>300 MG 10*10</td></tr>
+    <tr><td>52</td><td>GABAPENTIN + NORTRIPTYLINE</td><td>200 + 10 MG 10*15</td></tr>
+    <tr><td>53</td><td>GABAPENTIN + NORTRIPTYLINE</td><td>300 + 10 MG 10*10</td></tr>
+    <tr><td>54</td><td>GABAPENTIN + NORTRIPTYLINE</td><td>100 + 10 MG 10*10</td></tr>
+    <tr><td>55</td><td>GABAPENTIN + NORTRIPTYLINE</td><td>400 MG + 10 MG 10*10</td></tr>
+    <tr><td>56</td><td>S-ADENOSYL METHIONINE METHIONINE</td><td>400 MG 10*10</td></tr>
+    <tr><td>57</td><td>MELATONIN</td><td>3 MG 10*10</td></tr>
+    <tr><td>58</td><td>MELATONIN</td><td>10 MG 10*10</td></tr>
+    <tr><td>59</td><td>LEVODOPA + CARBIDOPA</td><td>100 MG + 25 MG 10*10</td></tr>
+    <tr><td>60</td><td>LEVODOPA + CARBIDOPA</td><td>200 MG + 50 MG 10*10</td></tr>
+    <tr><td>61</td><td>LAMOTRIGINE</td><td>50 MG 20*10</td></tr>
+    <tr><td>62</td><td>LAMOTRIGINE DT TABLET</td><td>100 MG 20*10</td></tr>
+    <tr><td>63</td><td>MIRTAZAPINE</td><td>7.5 MG 10*10</td></tr>
+    <tr><td>64</td><td>MIRTAZAPINE</td><td>15 MG 10*10</td></tr>
+    <tr><td>65</td><td>MEMANTINE</td><td>5 MG 10*10</td></tr>
+    <tr><td>66</td><td>MEMANTINE</td><td>10 MG 10*10</td></tr>
+  </tbody>
+</table>
+
   `,
-  "OINTMENTS & CREAMS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>SkinSoft</td><td>Hydrocortisone 1%</td><td>Cream</td></tr>
-      </tbody>
-    </table>
+      "OINTMENTS & CREAMS": `
+   <table border="1" id="productTable" cellspacing="0" cellpadding="6">
+  <thead>
+    <tr  style="background-color:#f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sorting">Product</th>
+      <th>Strength / Pack Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>ADAPALENE + CLINDAMYCIN</td><td>0.1% + 1% 20 GM</td></tr>
+    <tr><td>2</td><td>AZELAIC ACID</td><td>20% 15 GM</td></tr>
+    <tr><td>3</td><td>AMOROLFINE CREAM</td><td>0.25% 15 GM</td></tr>
+    <tr><td>4</td><td>POVIDONE IODINE</td><td>10% w/w 24*1*20</td></tr>
+    <tr><td>5</td><td>BETAMETHASONE + NEOMYCIN</td><td>0.1% + 0.5% 25 G</td></tr>
+    <tr><td>6</td><td>ANTISEPTIC CREAM (BORO PLUS LIKE)</td><td>30 GM</td></tr>
+    <tr><td>7</td><td>CHLORHEXIDINE GLUCONATE + CETRIMIDE CREAM</td><td>25 G</td></tr>
+    <tr><td>8</td><td>SILVER SULPHADIAZINE + CHLORHEXIDINE + METRONIDAZOLE</td><td>1% + 0.2% + 1% 10 GM</td></tr>
+    <tr><td>9</td><td>CHLORHEXIDINE GLUCONATE + SILVER NITRATE</td><td>0.2% + 0.2% 20*1*15</td></tr>
+    <tr><td>10</td><td>CLOTRIMAZOLE</td><td>1% 30 GM</td></tr>
+    <tr><td>11</td><td>BECLOMETASONE + CLOTRIMAZOLE</td><td>0.025% + 1% 20 GM</td></tr>
+    <tr><td>12</td><td>CLINDAMYCIN GEL</td><td>1% 20*20 GM</td></tr>
+    <tr><td>13</td><td>CLINDAMYCIN PHOSPHATE + NICOTINAMIDE</td><td>1% + 4% 20 GM</td></tr>
+    <tr><td>14</td><td>CLOBETASOL</td><td>0.05% 30 GM</td></tr>
+    <tr><td>15</td><td>CLOBETASOL PROPIONATE + MICONAZOLE + NEOMYCIN + CHLOROCRESOL</td><td>0.05% + 2% + 0.5% + 0.1% 1*20</td></tr>
+    <tr><td>16</td><td>DESONIDE</td><td>0.05% 10 GM</td></tr>
+    <tr><td>17</td><td>CHLORHEXIDINE GLUCONATE + CLOBETASOL + MICONAZOLE + NEOMYCIN</td><td>0.2% + 0.05% + 2% + 0.5% 20*1*20</td></tr>
+    <tr><td>18</td><td>AMLA + JAIPHAL + RAKTA CHANDAN + ANANTMOOL + YASHTIMADHU + HARIDRA + KALI MIRCH</td><td>4G + 2G + 2G + 2G + 2G + 1G + 10MG 20*1*30</td></tr>
+    <tr><td>19</td><td>DESONIDE</td><td>0.05% 20*10 GM</td></tr>
+    <tr><td>20</td><td>CLOBETASOL + TERBINAFINE + CIPROFLOXACIN + METRONIDAZOLE</td><td>0.05% + 1% + 1% + 2% 25*1*15</td></tr>
+    <tr><td>21</td><td>OFLOXACIN + ORNIDAZOLE + ITRACONAZOLE + CLOBETASOL PROPIONATE GEL</td><td>0.75% + 2% + 1% + 0.05% 42*1</td></tr>
+    <tr><td>22</td><td>KETOCONAZOLE + CLOBETASOL + NEOMYCIN + TOLNAFTATE + LODOCHLORHYDROXYQUINOLINE + DEXPANTHENOL</td><td>20 MG + 0.05 MG + 1 MG + 10 MG + 10 MG + 0.5 MG 30*1</td></tr>
+    <tr><td>23</td><td>CLOBETASOL PROPIONATE + MICONAZOLE + NEOMYCIN + CHLOROCRESOL</td><td>0.05% + 2% + 0.5% + 0.1% 24*1</td></tr>
+    <tr><td>24</td><td>FUSIDIC ACID</td><td>2% 10 GM</td></tr>
+    <tr><td>25</td><td>CALCIUM DOBESILATE + ANHYDROUS LIGNOCAINE + HYDROCORTISONE ACETATE + ZINC</td><td>0.25% + 3% + 0.25% + 5% 20*1*30</td></tr>
+    <tr><td>26</td><td>GABAPENTIN + LIDOCAINE OINTMENT</td><td>6% + 5% 20*1*30</td></tr>
+    <tr><td>27</td><td>GABAPENTIN + LIDOCAINE + BECLOFEN</td><td>6% + 5% + 2% 20*1*30</td></tr>
+    <tr><td>28</td><td>HYDROQUINONE + MOMETASONE + TRETINOIN</td><td>2% + 0.1% + 0.025% 20 GM</td></tr>
+    <tr><td>29</td><td>VITAMIN E ACETATE + ALOEVERA</td><td>0.5% 60 GM</td></tr>
+    <tr><td>30</td><td>GLYCOLIC ACID</td><td>6% 30 GM</td></tr>
+    <tr><td>31</td><td>HALOBETASOL</td><td>0.05% 30 GM</td></tr>
+    <tr><td>32</td><td>HALOBETASOL + SALICYLIC ACID</td><td>0.05% + 3% 30 GM</td></tr>
+    <tr><td>33</td><td>CLOBETASOL PROPIONATE + SALICYLIC ACID + BUTYLATED HYDROXYTOLUENE</td><td>0.05% + 3% + 0.01% 20*1*20</td></tr>
+    <tr><td>34</td><td>BACITRACIN + NEOMYCIN + POLYMYXIN B (NEOSPORIN)</td><td>400 IU + 3400 IU + 5000 IU 30 GM</td></tr>
+    <tr><td>35</td><td>PROPYLENE GLYCOL + CARBOMER + COLLOIDAL SILVER + TRIETHANOLAMINE</td><td>4.96% + 0.76% + 32 PPM + 0.32% 15 GM</td></tr>
+    <tr><td>36</td><td>KETOCONAZOLE CREAM</td><td>2% 30 GM</td></tr>
+    <tr><td>37</td><td>LULICONAZOLE CREAM</td><td>1% 25*1</td></tr>
+    <tr><td>38</td><td>LULICONAZOLE CREAM</td><td>1% 20*1</td></tr>
+    <tr><td>39</td><td>LULICONAZOLE CREAM</td><td>1% 10*50</td></tr>
+    <tr><td>40</td><td>ACICLOVIR</td><td>5% 25*1*10G</td></tr>
+    <tr><td>41</td><td>MOMETASONE</td><td>0.1% 30 GM</td></tr>
+    <tr><td>42</td><td>N-DIETHYL BENZAMIDE</td><td>12% 50 GM</td></tr>
+    <tr><td>43</td><td>ZINC OXIDE + CALENDULA OIL + OMEGA 6</td><td>30 GM</td></tr>
+    <tr><td>44</td><td>MUPIROCIN</td><td>2% 20*1*5 GM</td></tr>
+    <tr><td>45</td><td>HYDROUS BENZOYL PEROXIDE GEL</td><td>2.5% 20 GM</td></tr>
+    <tr><td>46</td><td>PERMETHRIN CREAM</td><td>5% 30 GM</td></tr>
+    <tr><td>47</td><td>FRADIOMYCIN SULPHATE CREAM</td><td>1% 25*1*15</td></tr>
+    <tr><td>48</td><td>TACROLIMUS</td><td>0.1% 20*1*20</td></tr>
+    <tr><td>49</td><td>TERBINAFINE</td><td>15 GM 20*1</td></tr>
+    <tr><td>50</td><td>MOMETASONE FUROATE + TERBINAFINE</td><td>0.1% + 1% 15 GM</td></tr>
+    <tr><td>51</td><td>CLOBETASOL + NEOMYCIN</td><td>0.05% + 0.5% 20 GM</td></tr>
+    <tr><td>52</td><td>UREA + LACTIC ACID + PROPYLENE GLYCOL + LIQUID PARAFFIN + METHYL PARABEN + PROPYL PARABEN CREAM</td><td>10%, 10%, 10%, 10%, 0.15%, 0.05% 25 GM</td></tr>
+    <tr><td>53</td><td>TOFACITINIB OINTMENT</td><td>2% 20*1*15 GM</td></tr>
+    <tr><td>54</td><td>LINSEED OIL + DICLOFENAC + METHYL SALICYLATE + MENTHOL + BENZYL</td><td>3% + 1.16% + 10% + 0.5% + 1% 20*1</td></tr>
+    <tr><td>55</td><td>MENTHOL + CAPSAICIN + METHYL SALICYLATE + CAMPHOR + EUCALYPTUS OIL + ROSEMARY OIL + THYME OIL</td><td>6% + 0.025% + 2.5% + 1% + 0.3% + 0.1% + 0.1% 20*1</td></tr>
+    <tr><td>56</td><td>LINSEED OIL + DICLOFENAC + METHYL SALICYLATE + MENTHOL + BENZYL + LIDOCAINE</td><td>3% + 3.48% + 10% + 5% + 1% + 2.5% 20*30</td></tr>
+    <tr><td>57</td><td>DICLOFENAC DIETHYLAMINE + THIOCOLCHICOSIDE + LINSEED OIL + METHYL SALICYLATE + MENTHOL + BENZYL ALCOHOL</td><td>1.16% + 0.125% + 3% + 10% + 5% + 1% 20*1*30</td></tr>
+    <tr><td>58</td><td>BECLOMETHASONE + CLOTRIMAZOLE + NEOMYCIN + CHLOROCRESOL</td><td>0.025% + 1% + 0.5% + 0.1% 20*15</td></tr>
+  </tbody>
+</table>
+
   `,
-  "ONCOLOGY": `
+      "ONCOLOGY": `
     <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Strength</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>OncoMed</td><td>Cisplatin</td><td>50mg Vial</td></tr>
-      </tbody>
-    </table>
+      <thead>
+        <tr><th class="sortable">S. No.</th><th class="sortable">Genric Name</th><th class="sortable">Packing</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Abiraterone 250mg Tablet</td><td>Bottle of 120 Tablet</td></tr>
+<tr><td>2</td><td>Abiraterone 500 Mg Tabs</td><td>Bottle of 60 Tablet</td></tr>
+<tr><td>3</td><td>Aprepitant 125/80 Mg Capsule KIt</td><td>Pack</td></tr>
+<tr><td>4</td><td>Anastrazole 1mg Tablets</td><td>Strip of 10 Tab</td></tr>
+<tr><td>5</td><td>Bleomycin 15 Unit Injection</td><td>Vial</td></tr>
+<tr><td>6</td><td>Carboplatin 150 mg IP Injection</td><td>Vial</td></tr>
+<tr><td>7</td><td>Carboplatin 450 mg IP Injection</td><td>Vial</td></tr>
+<tr><td>8</td><td>Capcitabine 500mg Tablet</td><td>Vial</td></tr>
+<tr><td>9</td><td>Cisplatin - 50mg</td><td>Vial</td></tr>
+<tr><td>10</td><td>Cytrabin 100 mg Injection BP</td><td>Vial</td></tr>
+<tr><td>11</td><td>Cytrabin 500 mg Injection BP</td><td>Vial</td></tr>
+<tr><td>12</td><td>Cytrabin 1000 mg Injection BP</td><td>Vial</td></tr>
+<tr><td>13</td><td>Chlorambucil 2mg Caps IP</td><td>Bottle Of 30 Tablet</td></tr>
+<tr><td>14</td><td>Doxorubicin 50mg IP Injection</td><td>Vial</td></tr>
+<tr><td>15</td><td>Docetaxel 20mg injection</td><td></td></tr>
+<tr><td>16</td><td>Docetaxel 80 mg IP Injection</td><td>Vial</td></tr>
+<tr><td>17</td><td>Docetaxel 120 Mg Injection</td><td>Vial</td></tr>
+<tr><td>18</td><td>Dacarabazine 200mg</td><td>Vial</td></tr>
+<tr><td>19</td><td>Etoposide 100mg IP Injection</td><td>Vial</td></tr>
+<tr><td>20</td><td>Epirubicine 50 Mg Injection</td><td>Vial</td></tr>
+<tr><td>21</td><td>Eltrombopag 50mg Tablet</td><td>Strip of 7 Tablet</td></tr>
+<tr><td>22</td><td>Flurouracil 500 Mg Injection</td><td>Vial</td></tr>
+<tr><td>23</td><td>Gemcitabine 200mg Injection</td><td>Vial</td></tr>
+<tr><td>24</td><td>Gemcitabine-1000 Injection IP</td><td>Vial</td></tr>
+<tr><td>25</td><td>Gefitinib 200mg Tablet</td><td>Bottle Pack of 10 Tablet</td></tr>
+<tr><td>26</td><td>Hydroxyurea 500 mg Capsules IP</td><td>Strip of 10 Capsule</td></tr>
+<tr><td>27</td><td>Ifosfamide 1gm + Mesana 200 Mg Injection</td><td>Pack</td></tr>
+<tr><td>28</td><td>Ifosfamide 2gm + Mesana 400 Mg Injection</td><td>Pack</td></tr>
+<tr><td>29</td><td>Imatinib 100 Mg Tabs</td><td>Strip of 10 Tablet</td></tr>
+<tr><td>30</td><td>Imatinib 400 Mg Tabs</td><td>Strip of 10 Tablet</td></tr>
+<tr><td>31</td><td>Irnotecan 100 Mg Injection</td><td>Vial</td></tr>
+<tr><td>32</td><td>Lenalidomide 10 mg Capsules</td><td>Bottle of 10 Capsule</td></tr>
+<tr><td>33</td><td>Lenalidomide 25 Mg Capsules</td><td>Bottle of 10 Capsule</td></tr>
+<tr><td>34</td><td>Lenvatinib 4 Mg Capsule</td><td>Bottle Of 10 Capsule</td></tr>
+<tr><td>35</td><td>Letrozole 2.5mg Tablets</td><td>Strip of 10 Tablet</td></tr>
+<tr><td>36</td><td>Leucovorin Calcium 50mg Injection</td><td>Vial</td></tr>
+<tr><td>37</td><td>Melphalan 2mg Tablets IP</td><td>Bottle of 25 Tablets</td></tr>
+<tr><td>38</td><td>Methotrexate 50 mg Injection IP</td><td>Vial</td></tr>
+<tr><td>39</td><td>Methotrexate 500 mg Injection IP</td><td>Vial</td></tr>
+<tr><td>40</td><td>Methotrexate 2.5mg Tablets</td><td>Strip of 10 Tab</td></tr>
+<tr><td>41</td><td>Megestrol 160mg Tablet</td><td>Strip of 10 Tab</td></tr>
+<tr><td>42</td><td>Oxaliplatin 100 mg Injection USP</td><td>Vial</td></tr>
+<tr><td>43</td><td>Oxaliplatin 50mg Injection</td><td>Vial</td></tr>
+<tr><td>44</td><td>Paclitaxel 100 Mg Injection</td><td>Vial</td></tr>
+<tr><td>45</td><td>Paclitaxel 260 Mg Injection</td><td>Vial</td></tr>
+<tr><td>46</td><td>Paclitaxel 300 Mg Injection</td><td>Vial</td></tr>
+<tr><td>47</td><td>Pemetrexed 500 mg Injection IP</td><td>Vial</td></tr>
+<tr><td>48</td><td>Palbociclib 75mg Capsule</td><td>Bottle Pack of 21 Capsule</td></tr>
+<tr><td>49</td><td>Palbociclib 125mg Capsule</td><td>Bottle Pack of 21 Capsule</td></tr>
+<tr><td>50</td><td>Sorafenib 200 mg Tablet IP</td><td>Bottle of 30 Tablets</td></tr>
+<tr><td>51</td><td>Sunitinib 50mg Capsule</td><td>Bottle Pack of 28 Cap</td></tr>
+<tr><td>52</td><td>Sunitinib 25mg Capsule</td><td>Bottle Pack of 28 Cap</td></tr>
+<tr><td>53</td><td>Sunitinib 12mg Capsule</td><td>Bottle Pack of 28 Cap</td></tr>
+<tr><td>54</td><td>Temoxifen 20 mg Tablets IP</td><td>Strip of 10 Tablet</td></tr>
+<tr><td>55</td><td>Temozolamide-100mg Capsules IP</td><td>Bottle Of 5 Capsule</td></tr>
+<tr><td>56</td><td>Temozolamide-20mg Capsules</td><td>Bottle Of 5 Capsule</td></tr>
+<tr><td>57</td><td>Temozolamide-250mg Capsules</td><td>Bottle Of 5 Capsule</td></tr>
+<tr><td>58</td><td>Vincristine 1 mg Injection USP</td><td>Vial</td></tr>
+<tr><td>59</td><td>Vinorelbine 50 mg Injection IP</td><td>Vial</td></tr>
+<tr><td>60</td><td>Vinblastin 10mg Injection</td><td>Vial</td></tr>
+<tr><td>61</td><td>Zoledronic 4 Acid Injection IP</td><td>Vial</td></tr>
+<tr><td>1</td><td>Albumin bound paclitaxel 100 mg inj</td><td>1 Vial</td></tr>
+<tr><td>2</td><td>Bendaustine Hydrochloride 100 mg</td><td>1 Vial</td></tr>
+<tr><td>3</td><td>BUSULPHAN 60 MG</td><td>1 VIAL</td></tr>
+<tr><td>4</td><td>Bortezomib 2 Mg Inj</td><td>1 Vial</td></tr>
+<tr><td>5</td><td>Bortezomib 3.5 Mg Inj</td><td>1 Vial</td></tr>
+<tr><td>6</td><td>Bleomycin 15iu</td><td>2 Vial</td></tr>
+<tr><td>7</td><td>Cisplatin Injection 10 mg</td><td>1 Vial</td></tr>
+<tr><td>8</td><td>Cisplatin Injection 50 mg</td><td>1 Vial</td></tr>
+<tr><td>9</td><td>Ca. Leucovorin 50 Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>10</td><td>Carboplatin 150Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>11</td><td>Carboplatin 450Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>12</td><td>carfizomib 60mg</td><td>1 Vial</td></tr>
+<tr><td>13</td><td>CYTARABINE 100 MG</td><td>1 Vial</td></tr>
+<tr><td>14</td><td>CYTARABINE 1 GM</td><td>1 Vial</td></tr>
+<tr><td>15</td><td>CYTARABINE 500GM</td><td></td></tr>
+<tr><td>16</td><td>Docetaxel 120Mg Inj</td><td>1 Vial</td></tr>
+<tr><td>17</td><td>Docetaxel 120Mg Inj RTU</td><td>1 Vial</td></tr>
+<tr><td>18</td><td>Docetaxel 20Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>19</td><td>Docetaxel 80Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>20</td><td>Docetaxel Rtu 20 Mg Inj.</td><td>1 vial</td></tr>
+<tr><td>21</td><td>Docetaxel Rtu 80 Mg Inj.</td><td>1 vial</td></tr>
+<tr><td>22</td><td>Doxorubicin Hydrochloride Injection IP 50mg</td><td>1 Vial</td></tr>
+<tr><td>23</td><td>Doxorubicin Hydrochloride Injection IP 10mg</td><td>1 Vial</td></tr>
+<tr><td>24</td><td>Dacarbzine 200mg</td><td>1 Vial</td></tr>
+<tr><td>25</td><td>Dacarbazine 500 mg</td><td>1 Vial</td></tr>
+<tr><td>26</td><td>Dounrobucin 20mg</td><td>1 vial</td></tr>
+<tr><td>27</td><td>Epirubicin 10 Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>28</td><td>Epirubicin 50 Mg Inj</td><td>1 Vial</td></tr>
+<tr><td>29</td><td>Etopside 100mg</td><td>1 Vial</td></tr>
+<tr><td>30</td><td>Flouracil 500mg</td><td></td></tr>
+<tr><td>31</td><td>Fosaprepitant 150 mg</td><td>1 ViAL</td></tr>
+<tr><td>32</td><td>Gemcitabine 1000Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>33</td><td>Gemcitabine 200Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>34</td><td>Gemcitabine Rtu 1000Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>35</td><td>Gemcitabine Rtu 200Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>36</td><td>Ifosfamide 1gm with mesna</td><td>1 Vial</td></tr>
+<tr><td>37</td><td>Ifosfamide 2gm with mesna</td><td>1 Vial</td></tr>
+<tr><td>38</td><td>irinotecan 100mg inj</td><td>1 Vial</td></tr>
+<tr><td>39</td><td>irinotecan 40mg inj</td><td>1 Vial</td></tr>
+<tr><td>40</td><td>L-Asparaginase 5000 i.u</td><td>1 Vial</td></tr>
+<tr><td>41</td><td>L-Asperaginase 10000</td><td>1 Vial</td></tr>
+<tr><td>42</td><td>Leucovorine - 50mg</td><td>1 Vial</td></tr>
+<tr><td>43</td><td>Methotrexate 50 mg</td><td>1 Vial</td></tr>
+<tr><td>44</td><td>Methotrexate 500 mg</td><td>1 Vial</td></tr>
+<tr><td>45</td><td>Oxaliplatin 100Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>46</td><td>Oxaliplatin 50Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>47</td><td>PLERIXAFOR 24 MG</td><td>1 VIAL</td></tr>
+<tr><td>48</td><td>PALONOSETRON</td><td>1 VIAL</td></tr>
+<tr><td>49</td><td>Paclitaxel 100Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>50</td><td>Paclitaxel 260Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>51</td><td>Paclitaxel 300 Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>52</td><td>Paclitaxel 30Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>53</td><td>Paclitaxel Protein bound 100 mg</td><td>1 Vial</td></tr>
+<tr><td>54</td><td>Pemetrexed 100 Mg</td><td>1 Vial</td></tr>
+<tr><td>55</td><td>Pemetrexed 500 Mg</td><td>1 Vial</td></tr>
+<tr><td>56</td><td>thiotepa 100mg inj</td><td>1 Vial</td></tr>
+<tr><td>57</td><td>thiotepa 15mg inj</td><td>1 Vial</td></tr>
+<tr><td>58</td><td>Vincristine 1mg</td><td>1 Vial</td></tr>
+<tr><td>59</td><td>Vinorlbine - 50mg</td><td></td></tr>
+<tr><td>60</td><td>Vinorlbine - 10mg</td><td></td></tr>
+<tr><td>61</td><td>Vinblastin 10mg</td><td></td></tr>
+<tr><td>62</td><td>Zoledronic Acid 4Mg Inj.</td><td>1 Vial</td></tr>
+<tr><td>63</td><td>Afatinib 20 mg Tablet</td><td>Bottle of 28's</td></tr>
+<tr><td>64</td><td>Afatinib 30 mg Tablet</td><td>Bottle of 28's</td></tr>
+<tr><td>65</td><td>Afatinib 40 mg Tablet</td><td>Bottle of 28's</td></tr>
+<tr><td>66</td><td>Afatinib 50 mg Tablet</td><td>Bottle of 28's</td></tr>
+<tr><td>67</td><td>Axitinib 1 mg Tablet</td><td>Bottle of 14's</td></tr>
+<tr><td>68</td><td>Axitinib 5 mg Tablet</td><td>Bottle of 14's</td></tr>
+<tr><td>69</td><td>ABIRATERONE ACETATE TABLETS 250 MG</td><td>1*120</td></tr>
+<tr><td>70</td><td>ABIRATERONE ACETATE TABLETS 500 MG</td><td>1*60</td></tr>
+<tr><td>71</td><td>Aprepitant kit</td><td>1*3</td></tr>
+<tr><td>72</td><td>Anastrozole 1Mg Tab.</td><td>1*10</td></tr>
+<tr><td>73</td><td>Bicalutamide 50 Mg Tab</td><td>1*10</td></tr>
+<tr><td>74</td><td>Capcitabine 500Mg Tab.</td><td>1*10</td></tr>
+<tr><td>75</td><td>Chlorambucil 2mg Cap</td><td>1x30</td></tr>
+<tr><td>76</td><td>Enzalutamide 40 mg Cap</td><td>1*28</td></tr>
+<tr><td>77</td><td>ELTROMBOPAG OLAMINE 25 MG</td><td>1*28</td></tr>
+<tr><td>78</td><td>ELTROMBOPAG OLAMINE 50 MG</td><td>4*7</td></tr>
+<tr><td>79</td><td>Gefitinib 250Mg Tab.</td><td>1*10</td></tr>
+<tr><td>80</td><td>Imatinib 400Mg Tab.</td><td>1*10</td></tr>
+<tr><td>81</td><td>Imatinib 100 Mg tab</td><td>1*10</td></tr>
+<tr><td>82</td><td>Melphlan 2mg Tablet</td><td></td></tr>
+<tr><td>83</td><td>magesterol acetate tablets</td><td>1*10</td></tr>
+<tr><td>84</td><td>Nilotinib 150 mg Capsule</td><td>Bottle of 28's</td></tr>
+<tr><td>85</td><td>Nilotinib 200 mg Capsule</td><td>Bottle of 28's</td></tr>
+<tr><td>86</td><td>OLAPARIB 150 MG</td><td>1*60</td></tr>
+<tr><td>87</td><td>lapatinib tablets 250 mg</td><td>1*30</td></tr>
+<tr><td>88</td><td>Letrozole 2.5mg</td><td>Strip of 10's</td></tr>
+<tr><td>89</td><td>lenvatinib 4 MG</td><td>1*10</td></tr>
+<tr><td>90</td><td>lenvatinib 10 MG</td><td>1*10</td></tr>
+<tr><td>91</td><td>Lenalidomide Capsules 5 mg</td><td>1*10</td></tr>
+<tr><td>92</td><td>Lenalidomide Capsules 10 mg</td><td>1*10</td></tr>
+<tr><td>93</td><td>Lenalidomide Capsules 25 mg</td><td>1*10</td></tr>
+<tr><td>94</td><td>Palbociclib 75 mg</td><td>Bottle of 21's</td></tr>
+<tr><td>95</td><td>Palbociclib 100 mg</td><td>Bottle of 21's</td></tr>
+<tr><td>96</td><td>Palbociclib 125 mg</td><td>1*21</td></tr>
+<tr><td>97</td><td>Pomalidomide 1 mg</td><td>Bottle of 21's</td></tr>
+<tr><td>98</td><td>Pomalidomide 2 mg</td><td>Bottle of 21's</td></tr>
+<tr><td>99</td><td>Pomalidomide 4 mg</td><td>Bottle of 21's</td></tr>
+<tr><td>100</td><td>sunitinib capsules 12.5 mg</td><td>1*28</td></tr>
+<tr><td>101</td><td>sunitinib capsules 25 mg</td><td>1*28</td></tr>
+<tr><td>102</td><td>sunitinib capsules 50 mg</td><td>1*28</td></tr>
+<tr><td>103</td><td>sorafenib tablets</td><td>1*30</td></tr>
+<tr><td>104</td><td>Thalidomide 50 mg</td><td>1x10</td></tr>
+<tr><td>105</td><td>Thalidomide 100Mg Capsule</td><td>1*10</td></tr>
+<tr><td>106</td><td>Temozolamide 20 Mg Capsule</td><td>1*5</td></tr>
+<tr><td>107</td><td>Temozolamide 100 Mg Capsule</td><td>1*5</td></tr>
+<tr><td>108</td><td>Temozolamide 250 Mg Capsule</td><td>1*5</td></tr>
+<tr><td>109</td><td>Hydroxyurea capsules 500 mg</td><td>1*10</td></tr>
+<tr><td>110</td><td>Methotrexate 2.5 mg tablet</td><td>1*10</td></tr>
+<tr><td>111</td><td>TAMOXIFEN 20 MG</td><td>1*10</td></tr>
+<tr><td>112</td><td>Warffrin Tablet 5mg</td><td></td></tr>
+<tr><td>113</td><td>Leucovorin Calcium 15</td><td>Strip of 10's</td></tr>
+<tr><td>114</td><td>Mercaptopurine 10</td><td>Strip of 10's</td></tr>
+<tr><td>115</td><td>Pazopanib 200 mg</td><td>Bottle of 30's</td></tr>
+<tr><td>116</td><td>Pazopanib 400 mg</td><td>Bottle of 30's</td></tr>
+<tr><td>117</td><td>Erotinib 150 mg</td><td>Strip of 10's</td></tr>
+<tr><td>118</td><td>Exemestane 25 mg</td><td>Bottle of 30's</td></tr>
+<tr><td>119</td><td>Dasatinib 50 mg</td><td>Bottle of 60's</td></tr>
+<tr><td>120</td><td>Dasatinib 70 mg</td><td>Bottle of 60's</td></tr>
+<tr><td>121</td><td>Fosaperipitant 150 mg</td><td>Each Vial</td></tr>
+<tr><td>122</td><td>Gemcitabine 200 mg</td><td>Each Vial</td></tr>
+<tr><td>123</td><td>Gemcitabine 1000 mg</td><td>Each Vial</td></tr>
+<tr><td>124</td><td>Fulvestrant 250 mg</td><td>Each Vial</td></tr>
+<tr><td>125</td><td>Peg L-Asparaginase 3750 iu</td><td>Each Vial</td></tr>
+<tr><td>126</td><td>Plerixafor 24 mg</td><td>Each Vial</td></tr>
+<tr><td>127</td><td>Topotecan 2.5 mg</td><td>Each Vial</td></tr>
+      </tbody>
+    </table>
   `,
-  "OPTHOMOLOGY": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>EyeClear</td><td>Moxifloxacin</td><td>Eye Drops</td></tr>
-      </tbody>
-    </table>
+      "OPTHOMOLOGY": `
+  <table border="1" id="productTable" style="border-collapse: collapse; width: 100%;">
+  <thead >
+    <tr style="background-color: #f2f2f2;">
+      <th class="sortable">S.No</th>
+      <th class="sortable">Product</th>
+      <th>Strength / Pack Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>BRIMONIDINE</td><td>0.2% 5 ML</td></tr>
+    <tr><td>2</td><td>BRIMONIDINE + TIMOLOL</td><td>0.2% + 0.5% 5 ML</td></tr>
+    <tr><td>3</td><td>DORZOLAMIDE</td><td>2% 5 ML</td></tr>
+    <tr><td>4</td><td>DORZOLAMIDE + TIMOLOL</td><td>2% + 0.5% 5 ML</td></tr>
+    <tr><td>5</td><td>LATANOPROST</td><td>0.005% 2.5 ML</td></tr>
+    <tr><td>6</td><td>BIMATOPROST</td><td>0.03% 3 ML</td></tr>
+    <tr><td>7</td><td>BIMATOPROST + TIMOLOL</td><td>0.03% + 5% 3 ML</td></tr>
+    <tr><td>8</td><td>BEPOTASTINE</td><td>1.5% 5 ML</td></tr>
+    <tr><td>9</td><td>FLUBIPROFEN</td><td>0.03% 5 ML</td></tr>
+    <tr><td>10</td><td>TOBRAMYCIN</td><td>0.3% 5 ML</td></tr>
+    <tr><td>11</td><td>TIMOLOL</td><td>0.5% 5 ML</td></tr>
+    <tr><td>12</td><td>BROMFENAC</td><td>0.9% 5 ML</td></tr>
+    <tr><td>13</td><td>POLYETHYLENE GLYCOL + PROPYLENE GLYCOL</td><td>0.4% + 0.3% 10 ML</td></tr>
+    <tr><td>14</td><td>SODIUM HYALURONATE</td><td>0.1% 10 ML</td></tr>
+    <tr><td>15</td><td>BROMFENAC + MOXIFLOXACIN</td><td>0.09% + 0.5% 5 ML</td></tr>
+    <tr><td>16</td><td>LOTEPREDNOL ETABONATE + MOXIFLOXACIN</td><td>0.5% + 0.5% 5 ML</td></tr>
+    <tr><td>17</td><td>TRAVOPROST</td><td>0.04% 3 ML</td></tr>
+    <tr><td>18</td><td>TROPICAMIDE + PHENYLEPHRINE</td><td>0.8% + 5% 5 ML</td></tr>
+    <tr><td>19</td><td>FLUOROMETHOLONE</td><td>0.1% 5 ML</td></tr>
+    <tr><td>20</td><td>SODIUM CARBOXYMETHYL-CELLOLOSE</td><td>1% 10 ML</td></tr>
+    <tr><td>21</td><td>OFLOXACIN + DEXAMETHASONE</td><td>0.3% + 0.1% 10 ML</td></tr>
+    <tr><td>22</td><td>CIPROFLOXACIN + BENZALKONIUM CHLORIDE</td><td>0.3% + 0.02% 35*1</td></tr>
+    <tr><td>23</td><td>CIPROFLOXACIN + DEXAMETHASONE</td><td>0.3% + 0.1% 35*1</td></tr>
+    <tr><td>24</td><td>BENZOCAINE + CHLORBUTOL + PARADICHLOROBENZENE + TURPENTINE OIL</td><td>2.7% + 5% + 2% + 15% 35*1</td></tr>
+    <tr><td>25</td><td>POLYETHYLENE GLYCOL + PROPYLENE GLYCOL W/V</td><td>0.4% + 0.3% 35*1</td></tr>
+    <tr><td>26</td><td>VITAMIN C + ZINC + VITAMIN E + LUTEIN + ASTAXANTHIN + CUPRIC SULPHATE + ZEAXANTHIN + VITAMIN A + SELENIUM</td><td>40 MG + 12 MG + 7.5 MG + 5 MG + 4 MG + 1.7 MG + 1 MG + 600 MCG + 40 MCG 10*1*10</td></tr>
+    <tr><td>27</td><td>TANNIC ACID + CHOLINE SALICYLATE + CETRIMIDE + METHYL PARABAN + PROPYL PARABAN</td><td>5% + 8% + 0.01% + 0.2% + 0.05% 15 ML</td></tr>
+    <tr><td>28</td><td>HYDROXYPROPYL METHYLCELLULOSE</td><td>0.3% 35*1*10 ML</td></tr>
+    <tr><td>29</td><td>MOUTH ULCER RELIEF GEL (WINDOW PACK)</td><td>20*1*10 GM</td></tr>
+    <tr><td>30</td><td>CHLORHEXIDINE MOUTH WASH</td><td>100 ML</td></tr>
+    <tr><td>31</td><td>SODIUM CARBOXYMETHYL-CELLULOSE</td><td>0.5% 25*1</td></tr>
+    <tr><td>32</td><td>MOXIFLOXACIN</td><td>0.5% 35*1</td></tr>
+    <tr><td>33</td><td>MOXIFLOXACIN + KETOROLAC TROMETHAMINE</td><td>0.5% + 0.5% 35*1</td></tr>
+    <tr><td>34</td><td>NEPAFENAC</td><td>0.1% 35*1</td></tr>
+    <tr><td>35</td><td>OFLOXACIN</td><td>0.3% 35*1</td></tr>
+    <tr><td>36</td><td>POTASSIUM IODIDE + SODIUM CHLORIDE + CALCIUM CHLORIDE + PHENYLMERCURIC NITRATE</td><td>3.3% + 0.83% + 1.325% + 0.001% 35*1</td></tr>
+    <tr><td>37</td><td>XYLOMETAZOLINE</td><td>0.1% 10 ML 10*1</td></tr>
+    <tr><td>38</td><td>POTASSIUM NITRATE + SODIUM MONOFLUOROPHOSPHATE + TRICLOSAN</td><td>5% + 0.7% + 0.3% 20*1</td></tr>
+    <tr><td>39</td><td>POTASSIUM NITRATE + SODIUM MONOFLUOROPHOSPHATE + TRICLOSAN</td><td>5% + 0.7% + 0.3% 20*1</td></tr>
+    <tr><td>40</td><td>MOXIFLOXACIN + DEXAMETHASONE</td><td>0.5% + 0.1% 35*1</td></tr>
+    <tr><td>41</td><td>MOXIFLOXACIN HCL + LOTEPREDNOL ETABONATE</td><td>0.5% + 0.5% 35*1</td></tr>
+    <tr><td>42</td><td>CARBOXYMETHYL-CELLULOSE + GLYCERIN + N-ACETYLCARNOSINE + OXYCHLORO COMPLEX</td><td>0.5% + 1% + 1% + 0.005% 35*1</td></tr>
+    <tr><td>43</td><td>OLOPATADINE HYDROCHLORIDE</td><td>0.1% 35*1</td></tr>
+  </tbody>
+</table>
+
   `,
-  "ORTHOPEDIC": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>BoneStrong</td><td>Calcium + Vitamin D3</td><td>Tablet</td></tr>
-      </tbody>
-    </table>
+      "ORTHOPEDIC": `
+  <table border="1" cellspacing="0" cellpadding="5" id="productTable" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sorting">Product</th>
+      <th class="sorting">Strength / Composition</th>
+      <th>Pack Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>ACECLOFENAC + THIOCOLCHICOSIDE</td>
+      <td>100 MG + 4 MG</td>
+      <td>10*10</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>ACECLOFENAC + THIOCOLCHICOSIDE</td>
+      <td>100 MG + 8 MG</td>
+      <td>10*10</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>ACECLOFENAC + THIOCOLCHICOSIDE + PARACETAMOL</td>
+      <td>100 MG + 4 MG + 325 MG</td>
+      <td>10*10</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>BOSWELLIA SERRATA + VITAX NEGUNDO</td>
+      <td>350 MG + 250 MG</td>
+      <td>10*10</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>CHOLECALCIFEROL</td>
+      <td>60,000 IU</td>
+      <td>10*1*4</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>CHOLECALCIFEROL NANO SHOT</td>
+      <td>60,000 IU Butter Scotch Flavour</td>
+      <td>1*4</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>CHOLECALCIFEROL NANO SHOT</td>
+      <td>60,000 IU Lichi Flavour</td>
+      <td>1*4</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>CALCIUM CITRATE + VIT D3 + ZINC + MAGNESIUM</td>
+      <td>1000 MG + 200 IU + — + —</td>
+      <td>10*15</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>CALCIUM CITRATE + VIT D3 + FOLIC ACID</td>
+      <td>250 MG + 100 IU + 50 MCG</td>
+      <td>1*30</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>CALCITRIOL + CALCIUM CARBONATE + ZINC</td>
+      <td>0.25 MCG + 500 MG + 7.5 MG Soft Gel</td>
+      <td>10*10</td>
+    </tr>
+  </tbody>
+</table>
+
   `,
-  "OTC": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>ColdAway</td><td>Paracetamol + Phenylephrine</td><td>Tablet</td></tr>
-      </tbody>
-    </table>
+      "OTC": `
+    <table border="1" cellspacing="0" cellpadding="5" id="productTable" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sorting">Product</th>
+      <th class="sorting">Strength / Composition</th>
+      <th>Pack Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>DOXYCYCLINE + LACTIC ACID BACILUS</td><td>100 MG + —</td><td>20*8</td></tr>
+    <tr><td>2</td><td>DOXYCYCLINE + LACTIC ACID BACILUS</td><td>100 MG + —</td><td>20*10</td></tr>
+    <tr><td>3</td><td>FAROPENEM</td><td>200 MG</td><td>10*1*6</td></tr>
+    <tr><td>4</td><td>FAROPENEM</td><td>300 MG</td><td>10*1*6</td></tr>
+    <tr><td>5</td><td>FAROPENEM + CLAVULANATE</td><td>200 MG + 125 MG</td><td>10*1*6</td></tr>
+    <tr><td>6</td><td>CEFADROXIL + LB</td><td>250 MG</td><td>20*10</td></tr>
+    <tr><td>7</td><td>CEFADROXIL + LB</td><td>500 MG</td><td>20*10</td></tr>
+    <tr><td>8</td><td>IVERMECTIN + ALBENDAZOLE</td><td>6 MG + 400 MG</td><td>10*10</td></tr>
+    <tr><td>9</td><td>LEVOFLOXACIN</td><td>500 MG</td><td>10*10</td></tr>
+    <tr><td>10</td><td>METRONIDAZOLE ER</td><td>600 MG</td><td>10*10</td></tr>
+    <tr><td>11</td><td>METRONIDAZOLE</td><td>400 MG</td><td>10*15</td></tr>
+    <tr><td>12</td><td>MOXIFLOXACIN</td><td>400 MG</td><td>10*5</td></tr>
+    <tr><td>13</td><td>NORFLOXACIN</td><td>400 MG</td><td>30*10</td></tr>
+    <tr><td>14</td><td>NORFLOXACIN + TINIDAZOLE</td><td>200 MG + 300 MG</td><td>6*5*6</td></tr>
+    <tr><td>15</td><td>NORFLOXACIN + TINIDAZOLE</td><td>400 MG + 600 MG</td><td>10*10</td></tr>
+    <tr><td>16</td><td>RIFAXIMIN</td><td>200 MG</td><td>10*10</td></tr>
+    <tr><td>17</td><td>RIFAXIMIN</td><td>400 MG</td><td>10*10</td></tr>
+    <tr><td>18</td><td>SULTAMICILLIN TOSILATE</td><td>375 MG</td><td>1*10</td></tr>
+    <tr><td>19</td><td>OFLOXACIN</td><td>200 MG</td><td>20*10</td></tr>
+    <tr><td>20</td><td>CEFUROXIME</td><td>250 MG</td><td>10*10</td></tr>
+    <tr><td>21</td><td>CEFUROXIME + CLAVULANATE MONO PACK</td><td>500 MG + 125 MG</td><td>10*1*10</td></tr>
+    <tr><td>22</td><td>CEFUROXIME + CLAVULANATE</td><td>250 MG + 125 MG</td><td>10*10</td></tr>
+    <tr><td>23</td><td>FLUPIRTINE + PARACETAMOL</td><td>100 MG + 325 MG</td><td>10*10</td></tr>
+    <tr><td>24</td><td>FLUPIRTINE CAPSULE</td><td>100 MG</td><td>10*10</td></tr>
+    <tr><td>25</td><td>SUMATRIPTAN + NAPROXEN</td><td>85 MG + 500 MG</td><td>10*1*3</td></tr>
+    <tr><td>26</td><td>IBUPROFEN + PARACETAMOL</td><td>400 MG + 325 MG</td><td>20*10</td></tr>
+    <tr><td>27</td><td>INDOMETHACIN SR</td><td>75 MG</td><td>10*10</td></tr>
+    <tr><td>28</td><td>KETOROLAC DT</td><td>10 MG</td><td>10*15</td></tr>
+    <tr><td>29</td><td>KETOPROFEN + THIOCOLCHICOSIDE</td><td>50 MG + 4 MG</td><td>10*10</td></tr>
+    <tr><td>30</td><td>NIMESULIDE DISPERSIBLE</td><td>100 MG</td><td>10*10</td></tr>
+    <tr><td>31</td><td>NIMESULIDE + PARACETAMOL</td><td>100 MG + 325 MG</td><td>20*15</td></tr>
+    <tr><td>32</td><td>NIMESULIDE + PARACETAMOL + SERRATIOPEPTIDASE</td><td>100 MG + 325 MG + 15 MG</td><td>10*10</td></tr>
+    <tr><td>33</td><td>LORNOXICAM + PCM</td><td>8 MG + 325 MG</td><td>10*10</td></tr>
+    <tr><td>34</td><td>PARACETAMOL + CAFFEINE</td><td>650 MG + 50 MG</td><td>10*15</td></tr>
+    <tr><td>35</td><td>PARACETAMOL</td><td>650 MG</td><td>30*15</td></tr>
+    <tr><td>36</td><td>PARACETAMOL</td><td>500 MG</td><td>50*10</td></tr>
+    <tr><td>37</td><td>PARACETAMOL SR</td><td>1000 MG</td><td>10*10</td></tr>
+    <tr><td>38</td><td>PIROXICAM DT</td><td>20</td><td>10*10</td></tr>
+    <tr><td>39</td><td>ETORICOXIB + PARACETAMOL</td><td>60 MG + 325 MG</td><td>10*10</td></tr>
+    <tr><td>40</td><td>ETORICOXIB + THIOCOLCHICOSIDE</td><td>60 MG + 4 MG</td><td>10*10</td></tr>
+    <tr><td>41</td><td>TRYPSIN + BROMELAIN + RUTOSIDE</td><td>48 MG + 90 MG + 100 MG</td><td>10*10</td></tr>
+    <tr><td>42</td><td>TRYPSIN + BROMELAIN + DICLOFENAC + RUTOSIDE</td><td>48 MG + 90 MG + 50 MG + 100 MG</td><td>10*10</td></tr>
+    <tr><td>43</td><td>TRYPSIN + BROMELAIN + RUTOSIDE</td><td>96 MG + 180 MG + 200 MG</td><td>10*10</td></tr>
+    <tr><td>44</td><td>TRYPSIN + BROMELAIN + RUTOSIDE + PAPAIN</td><td>48 MG + 90 MG + 100 MG + 60 MG</td><td>10*10</td></tr>
+    <tr><td>45</td><td>TOLPERISONE</td><td>150 MG</td><td>10*10</td></tr>
+    <tr><td>46</td><td>TOLPERISONE + DICLOFENAC</td><td>150 MG + 50 MG</td><td>10*10</td></tr>
+    <tr><td>47</td><td>VIRGIN LINSEED OIL + DICLOFENAC DIETHYLAMINE</td><td>3% + 1.16% + other excipients</td><td>55 GM</td></tr>
+    <tr><td>48</td><td>DICLOFENAC DIETHYLAMINE + ABSOLUTE ALCOHOL</td><td>4.64% + 10%</td><td>30 ML</td></tr>
+    <tr><td>49</td><td>SILDENAFIL + DAPOXETINE</td><td>100 MG + 60 MG</td><td>30*1*4</td></tr>
+    <tr><td>50</td><td>SHILAJEET + SAFED MUSLI + ASHWAGANDHA + KAUNJ + AKARKARA + GINSENG + PIPERINE</td><td>240 MG + 300 MG + 200 MG + 140 MG + 120 MG + 100 MG + 10 MG</td><td>60 CAP</td></tr>
+    <tr><td>51</td><td>AMLODIPINE</td><td>2.5 MG</td><td>20*10</td></tr>
+  </tbody>
+</table>
+
   `,
-  "PEDIATRICS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>PediaCare</td><td>Paracetamol 120mg/5ml</td><td>Syrup</td></tr>
-      </tbody>
-    </table>
+      "PEDIATRICS": `
+   <table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;" id="productTable">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sorting">Product</th>
+      <th class="sorting">Strength / Composition</th>
+      <th>Pack Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>ACECLOFENAC + PARACETAMOL</td><td>50 MG + 125 MG</td><td>60 ML</td></tr>
+    <tr><td>2</td><td>AMOXYCILLIN + CLAVULANATE DS</td><td>200 MG + 28.5 MG (Glass Bottle with Water)</td><td>30 ML</td></tr>
+    <tr><td>3</td><td>AMOXYCILLIN + CLAVULANATE DS</td><td>400 MG + 57 MG (Glass Bottle)</td><td>30 ML</td></tr>
+    <tr><td>4</td><td>AMOXYCILLIN + CLAVULANATE DS</td><td>600 MG + 42.9 MG (Glass Bottle)</td><td>50 ML</td></tr>
+    <tr><td>5</td><td>AMOXYCILLIN + CLAVULANATE</td><td>200 MG + 28.5 MG</td><td>10*10</td></tr>
+    <tr><td>6</td><td>AZITHROMYCIN ORAL SUSPENSION</td><td>100 MG</td><td>30 ML</td></tr>
+    <tr><td>7</td><td>AZITHROMYCIN ORAL SUSPENSION</td><td>200 MG</td><td>30 ML</td></tr>
+    <tr><td>8</td><td>VITAMIN + MULTIVITAMINS</td><td>A: 3000 IU, B1: 1 MG, B2: 1.5 MG, B6: 1.5 MG, D3: 400 MG, NICOTINAMIDE: 15 MG, METHYLCOBALAMIN 1 MCG</td><td>25*1</td></tr>
+    <tr><td>9</td><td>CEFALEXIN SYRUP</td><td>250 MG / 5 ML</td><td>30 ML</td></tr>
+    <tr><td>10</td><td>CETRIZINE SYRUP</td><td>5 MG / 5 ML</td><td>30 ML</td></tr>
+    <tr><td>11</td><td>CEFIXIME DROPS</td><td>25 MG</td><td>—</td></tr>
+    <tr><td>12</td><td>CEFIXIME DS</td><td>100 MG</td><td>30 ML</td></tr>
+    <tr><td>13</td><td>CEFIXIME</td><td>50 MG</td><td>30 ML</td></tr>
+    <tr><td>14</td><td>CEFIXIME + OFLOXACIN DS</td><td>50 MG + 50 MG</td><td>30 ML</td></tr>
+    <tr><td>15</td><td>CEFPODOXIME DROPS</td><td>25 MG</td><td>—</td></tr>
+    <tr><td>16</td><td>CEFPODOXIME D/S WITH WATER</td><td>—</td><td>30 ML</td></tr>
+    <tr><td>17</td><td>CEFPODOXIME 100 MG D/S WITH WATER</td><td>100 MG</td><td>30 ML</td></tr>
+    <tr><td>18</td><td>CEFPODOXIME + CLAVULANATE</td><td>50 MG + 31.25 MG</td><td>30 ML</td></tr>
+    <tr><td>19</td><td>CEFPODOXIME + CLAVULANATE</td><td>100 MG + 62.50 MG</td><td>30 ML</td></tr>
+    <tr><td>20</td><td>DEFLAZACORT SYRUP</td><td>6 MG</td><td>30 ML</td></tr>
+    <tr><td>21</td><td>FAROPENEM D/S</td><td>50 MG</td><td>30 ML</td></tr>
+    <tr><td>22</td><td>FAROPENEM D/S</td><td>100 MG</td><td>30 ML</td></tr>
+    <tr><td>23</td><td>ELEMENTAL IRON + FOLIC ACID</td><td>10 MG + 100 MCG / ML</td><td>25*1</td></tr>
+    <tr><td>24</td><td>SIMETHICONE + DIL OIL + FENNEL OIL</td><td>40 MG + 0.005 ML + 0.0007 ML</td><td>20*1</td></tr>
+    <tr><td>25</td><td>HYDROXYZINE SYRUP</td><td>—</td><td>100 ML</td></tr>
+    <tr><td>26</td><td>IBUPROFEN + PARACETAMOL</td><td>100 MG + 162.5 MG</td><td>60 ML</td></tr>
+    <tr><td>27</td><td>LEVOCETIRIZINE + MONTELUKAST DISPERSIBLE</td><td>2.5 + 4 MG</td><td>10*1*10</td></tr>
+    <tr><td>28</td><td>MEFENAMIC ACID DT</td><td>100 MG</td><td>20*10</td></tr>
+    <tr><td>29</td><td>MEFENAMIC ACID + PARACETAMOL</td><td>100 MG + 250 MG</td><td>30*1</td></tr>
+    <tr><td>30</td><td>DICYCLOMINE HCL + ACTIVATED DIMETHICONE</td><td>10 MG + 40 MG</td><td>60 ML</td></tr>
+    <tr><td>31</td><td>FEXOFENADINE + MONTELUKAST</td><td>30 MG + 4 MG</td><td>60 ML</td></tr>
+    <tr><td>32</td><td>KIDS TOOTHPASTE</td><td>Bubble Gum Flavor</td><td>100 GM</td></tr>
+    <tr><td>33</td><td>LANSOPRAZOLE MOUTH DISSOLVING</td><td>15 MG</td><td>10*15</td></tr>
+    <tr><td>34</td><td>MULTIVITAMINS + MULTIMINERALS SYRUP</td><td>—</td><td>72*1</td></tr>
+    <tr><td>35</td><td>POLYETHYLENE GLYCOL 3350 POWDER</td><td>—</td><td>119 G</td></tr>
+    <tr><td>36</td><td>OFLOXACIN + ORNIDAZOLE + RACECADOTRIL</td><td>50 MG + 125 MG + 15 MG</td><td>25*1</td></tr>
+    <tr><td>37</td><td>OFLOXACIN + METRONIDAZOLE + SIMETHICONE</td><td>50 MG/5ML + 120 MG/5ML + 10 MG/5ML</td><td>25*1</td></tr>
+    <tr><td>38</td><td>PARACETAMOL DROPS</td><td>100 MG / ML</td><td>25*1</td></tr>
+    <tr><td>39</td><td>PARACETAMOL</td><td>250 MG / 5 ML</td><td>60 ML</td></tr>
+    <tr><td>40</td><td>RENITIDINE SYRUP</td><td>—</td><td>100 ML</td></tr>
+    <tr><td>41</td><td>DEXTROMETHORPHAN + CHLORPHENIRAMINE</td><td>5 MG + 2 MG</td><td>60 ML</td></tr>
+    <tr><td>42</td><td>AMBROXOL + LEVOSALBUTAMOL + GUAIPHENESIN</td><td>15 MG + 0.5 MG + 50 MG</td><td>60 ML</td></tr>
+    <tr><td>43</td><td>AMBROXOL + TERBUTALINE + GUAIPHENESIN</td><td>10 MG + 0.5 MG + 25 MG</td><td>60 ML</td></tr>
+    <tr><td>44</td><td>AMBROXOL + GUAIFENESIN + LEVOSALBUTAMOL</td><td>7.5 MG + 12.5 MG + 0.25 MG</td><td>15 ML</td></tr>
+    <tr><td>45</td><td>PCM + PHENYLEPHRINE + CPM</td><td>250 MG + 5 MG + 2 MG</td><td>30*1</td></tr>
+    <tr><td>46</td><td>PARACETAMOL + PHENYLEPHRINE + CPM + OTHER</td><td>250 MG + 5 MG + 2 MG + 120 MG + 60 MG + 1 MG / 5 ML</td><td>100 ML</td></tr>
+    <tr><td>47</td><td>CPM + DEXTROMETHORPHAN</td><td>2 MG + 5 MG</td><td>60 ML</td></tr>
+    <tr><td>48</td><td>CHLORPHENIRAMINE + PHENYLEPHRINE</td><td>2 MG/ML + 5 MG/ML</td><td>25*1</td></tr>
+    <tr><td>49</td><td>CHLORPHENIRAMINE + PHENYLEPHRINE</td><td>2 MG/5ML + 5 MG/5ML</td><td>25*1</td></tr>
+    <tr><td>50</td><td>COLISTIN SULPHATE WITH STERILE WATER</td><td>12.50 MG</td><td>30 ML</td></tr>
+    <tr><td>51</td><td>ONDANSETRON</td><td>2 MG / 5 ML</td><td>30 ML</td></tr>
+    <tr><td>52</td><td>ZINC GLUCONATE DROPS</td><td>20 MG / 5 ML</td><td>60 ML</td></tr>
+  </tbody>
+</table>
+
   `,
-  "REGULAR INJECTIONS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Strength</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>RegiInj</td><td>Cefuroxime</td><td>750mg Vial</td></tr>
-      </tbody>
-    </table>
+      "REGULAR INJECTIONS": `
+  <table border="1" cellspacing="0" cellpadding="5"  style="border-collapse: collapse; width: 100%;" id="productTable">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th class="sorting">S.No</th>
+      <th class="sorting">Generic Name / Product</th>
+      <th class="sorting">Strength</th>
+      <th>Packing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Amoxicillin Sodium + Clavulanate Potassium inj.</td><td>1000mg + 200mg</td><td>10ml WFI</td></tr>
+    <tr><td>2</td><td>Amikacin Sulphate inj.</td><td>250mg/ml</td><td>Vial</td></tr>
+    <tr><td>3</td><td>Aztreonam for inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>4</td><td>Aztreonam for inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>5</td><td>Aztreonam for inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>6</td><td>Cefepime Hydrochloride inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>7</td><td>Cefepime Hydrochloride inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>8</td><td>Cefepime Hydrochloride inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>9</td><td>Cefepime + Tazobactam inj.</td><td>250mg + 31.25mg</td><td>5ml WFI</td></tr>
+    <tr><td>10</td><td>Cefepime + Tazobactam inj.</td><td>500mg + 62.50mg</td><td>10ml WFI</td></tr>
+    <tr><td>11</td><td>Cefepime + Tazobactam inj.</td><td>1000mg + 125mg</td><td>10ml WFI</td></tr>
+    <tr><td>12</td><td>Cefoperazone inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>13</td><td>Cefoperazone inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>14</td><td>Cefoperazone inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>15</td><td>Cefoperazone + Sulbactam inj.</td><td>500mg + 500mg</td><td>10ml WFI</td></tr>
+    <tr><td>16</td><td>Cefoperazone + Sulbactam inj.</td><td>1000mg + 500mg</td><td>10ml WFI</td></tr>
+    <tr><td>17</td><td>Cefoperazone + Sulbactam inj.</td><td>3000mg + 1500mg</td><td>20ml WFI</td></tr>
+    <tr><td>18</td><td>Cefotaxime sodium inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>19</td><td>Cefotaxime sodium inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>20</td><td>Cefotaxime sodium inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>21</td><td>Cefotaxime sodium inj.</td><td>4000mg</td><td>20ml WFI</td></tr>
+    <tr><td>22</td><td>Ceftazidime inj.</td><td>125mg</td><td>5ml WFI</td></tr>
+    <tr><td>23</td><td>Ceftazidime inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>24</td><td>Ceftazidime inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>25</td><td>Ceftazidime inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>26</td><td>Ceftazidime + Tazobactam inj.</td><td>250mg + 31.25mg</td><td>5ml WFI</td></tr>
+    <tr><td>27</td><td>Ceftazidime + Tazobactam inj.</td><td>1000mg + 125mg</td><td>10ml WFI</td></tr>
+    <tr><td>28</td><td>Ceftriaxone Sodium inj.</td><td>125mg</td><td>5ml WFI</td></tr>
+    <tr><td>29</td><td>Ceftriaxone Sodium inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>30</td><td>Ceftriaxone Sodium inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>31</td><td>Ceftriaxone Sodium inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>32</td><td>Ceftriaxone Sodium inj.</td><td>2000mg</td><td>10ml WFI</td></tr>
+    <tr><td>33</td><td>Ceftriaxone + Sulbactam inj.</td><td>150mg + 37.5mg</td><td>5ml WFI</td></tr>
+    <tr><td>34</td><td>Ceftriaxone + Sulbactam inj.</td><td>250mg + 125mg</td><td>5ml WFI</td></tr>
+    <tr><td>35</td><td>Ceftriaxone + Sulbactam inj.</td><td>500mg + 250mg</td><td>10ml WFI</td></tr>
+    <tr><td>36</td><td>Ceftriaxone + Sulbactam inj.</td><td>1000mg + 500mg</td><td>10ml WFI</td></tr>
+    <tr><td>37</td><td>Ceftriaxone + Tazobactam inj.</td><td>250mg + 31.25mg</td><td>5ml WFI</td></tr>
+    <tr><td>38</td><td>Ceftriaxone + Tazobactam inj.</td><td>500mg + 62.50mg</td><td>10ml WFI</td></tr>
+    <tr><td>39</td><td>Ceftriaxone + Tazobactam inj.</td><td>1000mg + 125mg</td><td>10ml WFI</td></tr>
+    <tr><td>40</td><td>Cefuroxime sodium inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>41</td><td>Cefuroxime sodium inj.</td><td>750mg</td><td>10ml WFI</td></tr>
+    <tr><td>42</td><td>Cefuroxime sodium inj.</td><td>1.5gm</td><td>10ml WFI</td></tr>
+    <tr><td>43</td><td>Imipenem + Cilastatin inj.</td><td>1gm</td><td>10ml WFI</td></tr>
+    <tr><td>44</td><td>Imipenem + Cilastatin inj.</td><td>500mg</td><td>5ml WFI</td></tr>
+    <tr><td>45</td><td>Meropenem inj.</td><td>125mg</td><td>5ml WFI</td></tr>
+    <tr><td>46</td><td>Meropenem inj.</td><td>250mg</td><td>5ml WFI</td></tr>
+    <tr><td>47</td><td>Meropenem inj.</td><td>500mg</td><td>10ml WFI</td></tr>
+    <tr><td>48</td><td>Meropenem inj.</td><td>1000mg</td><td>10ml WFI</td></tr>
+    <tr><td>49</td><td>Meropenem + Sulbactam inj.</td><td>500mg + 250mg</td><td>5ml WFI</td></tr>
+    <tr><td>50</td><td>Meropenem + Sulbactam inj.</td><td>1000mg + 500mg</td><td>10ml WFI</td></tr>
+    <tr><td>51</td><td>Piperacillin + Tazobactam inj.</td><td>4000mg + 500mg</td><td>20ml WFI</td></tr>
+<tr><td>52</td><td>Piperacillin + Tazobactam inj.</td><td>2000mg + 250mg</td><td>10ml WFI</td></tr>
+<tr><td>53</td><td>Piperacillin + Tazobactam inj.</td><td>1000mg + 125mg</td><td>10ml WFI</td></tr>
+</tbody>
+</table>
+
+
   `,
-  "RESPIRATORY & ANTI ALLERGETICS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Respira</td><td>Salbutamol</td><td>Inhaler</td></tr>
-      </tbody>
-    </table>
+      "RESPIRATORY & ANTI ALLERGETICS": `
+   <table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;" id="productTable">
+<thead>
+<tr style="background-color: #f2f2f2;">
+<th class="sorting">Sl No</th>
+<th class="sorting">Generic Name of Product</th>
+<th class="sorting">Strength / Formulation</th>
+<th>Packing / Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Budesonide IP + Formoterol Fumarate</td><td>200MCG + 6MCG</td><td>Inhaler 120 M.D</td></tr>
+<tr><td>2</td><td>Budesonide IP + Formoterol Fumarate</td><td>400MCG + 6MCG</td><td>Inhaler 120 M.D</td></tr>
+<tr><td>3</td><td>Beclomethasone Dipropionate + Levo-Salbutamol</td><td>50MCG + 50MCG</td><td>200 M.D</td></tr>
+<tr><td>4</td><td>Ipratropium Bromide + Levo-Salbutamol</td><td>20MCG + 50MCG</td><td>200 M.D</td></tr>
+<tr><td>5</td><td>Fluticasone Propionate + Salmeterol Xinafoate</td><td>250MCG + 25MCG</td><td>120 M.D</td></tr>
+<tr><td>6</td><td>Budesonide IP</td><td>200MCG</td><td>120 M.D</td></tr>
+<tr><td>7</td><td>Tiotropium Bromide IP</td><td>9MCG</td><td>120 M.D</td></tr>
+<tr><td>8</td><td>Levosalbutamol + Ipratropium</td><td>1.25MG + 500MCG</td><td>2.5 ML</td></tr>
+<tr><td>9</td><td>Fluticasone Propionate</td><td>0.5MG</td><td>2 ML Respules</td></tr>
+<tr><td>10</td><td>Budesonide</td><td>0.5MG</td><td>2 ML</td></tr>
+<tr><td>11</td><td>Budesonide</td><td>1MG</td><td>2 ML Respules</td></tr>
+<tr><td>12</td><td>Levosalbutamol + Ipratropium</td><td>1.25MG + 500MCG</td><td>3 ML</td></tr>
+<tr><td>13</td><td>Formoterol + Budesonide</td><td>20MCG + 0.5MG</td><td>2 ML</td></tr>
+<tr><td>14</td><td>Formoterol + Budesonide</td><td>20MCG + 1MG</td><td>2 ML</td></tr>
+<tr><td>15</td><td>Sodium Chloride</td><td>3%</td><td>4 ML</td></tr>
+<tr><td>16</td><td>Salbutamol</td><td>2.5MG</td><td>2 ML</td></tr>
+<tr><td>17</td><td>Levosalbutamol + Ipratropium</td><td>0.63MG + 500MCG</td><td>2.5 ML</td></tr>
+<tr><td>18</td><td>Levosalbutamol Sulphate</td><td>0.63MG</td><td>2.5 ML</td></tr>
+<tr><td>19</td><td>Levosalbutamol Sulphate</td><td>0.31MG</td><td>2.5 ML</td></tr>
+<tr><td>20</td><td>Levosalbutamol + Budesonide</td><td>1.25MG + 0.5MG</td><td>2 ML</td></tr>
+<tr><td>21</td><td>Levosalbutamol + Budesonide</td><td>1.25MG + 1MG</td><td>2 ML</td></tr>
+<tr><td>22</td><td>Zolmitriptan</td><td>5 MG</td><td>7 MDI</td></tr>
+<tr><td>23</td><td>Fluticasone Propionate</td><td>0.005%</td><td>100 MDI</td></tr>
+<tr><td>24</td><td>Fluticasone Propionate + Azelastine</td><td>0.005% + 140MCG</td><td>70 MDI</td></tr>
+<tr><td>25</td><td>Fluticasone Furoate</td><td>27.5MCG</td><td>120 MDI</td></tr>
+<tr><td>26</td><td>Fluticasone Furoate + Azelastine</td><td>50MCG + 140MCG</td><td>70 MDI</td></tr>
+<tr><td>27</td><td>Mometasone Furoate + Azelastine Hydrochloride</td><td>-</td><td>Nasal Spray 75 MDI</td></tr>
+<tr><td>28</td><td>Mometasone</td><td>50MCG</td><td>Nasal Spray 10 GM</td></tr>
+<tr><td>29</td><td>Levosalbutamol + Beclomethasone Dipropionate</td><td>100MCG + IP</td><td>30's</td></tr>
+<tr><td>30</td><td>Fluticasone Propionate + Formoterol Fumarate</td><td>250 + 6</td><td>30's</td></tr>
+<tr><td>31</td><td>Budesonide + Formoterol Fumarate</td><td>400 + 6</td><td>30's</td></tr>
+<tr><td>32</td><td>Budesonide + Formoterol Fumarate</td><td>200 + 6</td><td>30's</td></tr>
+<tr><td>33</td><td>Levosalbutamol + Ipratropium</td><td>100MCG + 40MCG</td><td>30's</td></tr>
+<tr><td>34</td><td>Glycopyrrolate IP</td><td>50MCG</td><td>30's</td></tr>
+<tr><td>35</td><td>Glycopyrrolate + Formoterol</td><td>12.5MCG + 12MCG</td><td>30's</td></tr>
+<tr><td>36</td><td>Glycopyrrolate + Formoterol + Budesonide</td><td>25MCG + 12MCG + 400MCG</td><td>30's</td></tr>
+<tr><td>37</td><td>Fluticasone Propionate + Salmeterol Xinafoate</td><td>250 + 50</td><td>30's</td></tr>
+<tr><td>38</td><td>Fluticasone Propionate + Salmeterol Xinafoate</td><td>500 + 50</td><td>30's</td></tr>
+<tr><td>39</td><td>Tiotropium Bromide IP</td><td>18</td><td>30's</td></tr>
+<tr><td>40</td><td>Vilanterol + Fluticasone Furoate</td><td>200MCG + 25MCG</td><td>30's</td></tr>
+<tr><td>41</td><td>Acebrophylline</td><td>200MG SR</td><td>10*10</td></tr>
+<tr><td>42</td><td>Acebrophylline</td><td>100MG Capsule</td><td>10*10</td></tr>
+<tr><td>43</td><td>Acebrophylline + Desloratadine + Montelukast</td><td>200MG + 5MG + 10MG</td><td>10*1*10</td></tr>
+<tr><td>44</td><td>Cetirizine</td><td>10 MG</td><td>50*10</td></tr>
+<tr><td>45</td><td>Ebastine</td><td>10 MG</td><td>10*10</td></tr>
+<tr><td>46</td><td>Ebastine</td><td>20 MG</td><td>10*10</td></tr>
+<tr><td>47</td><td>Ebastine + Montelukast</td><td>10 MG + 10MG</td><td>10*10</td></tr>
+<tr><td>48</td><td>Fexofenadine</td><td>120MG</td><td>10*10</td></tr>
+<tr><td>49</td><td>Fexofenadine</td><td>180MG</td><td>10*10</td></tr>
+<tr><td>50</td><td>Levocetirizine + Montelukast</td><td>5MG + 10MG</td><td>10*15</td></tr>
+<tr><td>51</td><td>Ambroxol + Levocetirizine + Montelukast</td><td>75MG + 5MG + 10MG</td><td>10*10</td></tr>
+<tr><td>52</td><td>Montelukast</td><td>10MG</td><td>10*10</td></tr>
+<tr><td>53</td><td>Desloratadine + Montelukast</td><td>5MG + 10MG</td><td>10*10</td></tr>
+<tr><td>54</td><td>Fexofenadine + Montelukast Chewable</td><td>120MG + 10MG</td><td>10*10</td></tr>
+<tr><td>55</td><td>Montelukast + Acebrophylline</td><td>10MG + 200MG</td><td>10*10</td></tr>
+<tr><td>56</td><td>Montelukast + Fexofenadine + Acebrophylline</td><td>10MG + 120MG + 200MG</td><td>10*10</td></tr>
+<tr><td>57</td><td>Acebrophylline + Acetylcysteine</td><td>100MG + 600MG</td><td>10*10</td></tr>
+<tr><td>58</td><td>Pirfenidone</td><td>200 MG</td><td>10*15</td></tr>
+<tr><td>59</td><td>Paracetamol + Phenylephrine + CPM</td><td>325MG + 5MG + 2MG</td><td>20*10</td></tr>
+<tr><td>60</td><td>Dextromethorphan + CPM + Ambroxol + Menthol + Phenylephrine</td><td>10MG + 2MG + 15MG + 1.5MG + 5MG</td><td>100 ML</td></tr>
+<tr><td>61</td><td>Paracetamol + Phenylephrine + Diphenhydramine + Caffeine</td><td>500MG + 5MG + 25MG + 30MG</td><td>10*10</td></tr>
+<tr><td>62</td><td>Dextromethorphan + CPM + Phenylephrine</td><td>10MG + 2MG + 5MG</td><td>10*10</td></tr>
+<tr><td>63</td><td>Dextromethorphan + Phenylephrine + CPM</td><td>10MG + 5MG + 2MG</td><td>20*10</td></tr>
+<tr><td>64</td><td>Levodropropizine + CPM Maleate</td><td>30MG/5ML + 2MG/5ML</td><td>100ML</td></tr>
+<tr><td>65</td><td>CPM + Dextromethorphan</td><td>2MG + 10MG</td><td>100 ML</td></tr>
+<tr><td>66</td><td>Ammonium Chloride + Sodium Citrate + Diphenhydramine + Menthol</td><td>138MG + 57.03MG + 14.08MG + 1.14MG</td><td>100 ML</td></tr>
+<tr><td>67</td><td>Phenylephrine + Dextromethorphan + CPM</td><td>5MG + 10MG + 2MG</td><td>100 ML</td></tr>
+<tr><td>68</td><td>Phenylephrine + Dextromethorphan + CPM</td><td>5MG + 15MG + 2MG</td><td>100 ML</td></tr>
+<tr><td>69</td><td>Diclofenac + Paracetamol + Cetirizine + Magnesium</td><td>50MG + 325MG + 5MG + 100MG</td><td>50*10</td></tr>
+<tr><td>70</td><td>Ambroxol + Levosalbutamol + Guaiphenesin</td><td>30MG + 1MG + 50MG</td><td>100 ML</td></tr>
+<tr><td>71</td><td>Ambroxol + Terbutaline Sulphate + Guaiphenesin + Menthol</td><td>15MG + 1.25MG + 50MG + 2.5MG</td><td>100 ML</td></tr>
+<tr><td>72</td><td>Vaporizing Balm</td><td>Camphor 25MG + Chlorothymol 5MG + Eucalyptol 125MG + Menthol 55MG + Terpineol 120MG</td><td>20*10</td></tr>
+<tr><td>73</td><td>Ivermectin</td><td>12MG</td><td>10*10</td></tr>
+<tr><td>74</td><td>Ivermectin + Albendazole</td><td>6MG + 400MG</td><td>10*10</td></tr>
+<tr><td>75</td><td>Theophylline in Beta Cyclodextrin</td><td>400MG</td><td>10*10</td></tr>
+<tr><td>76</td><td>Doxofylline + Ambroxol</td><td>400MG + 30MG</td><td>10*10</td></tr>
+<tr><td>77</td><td>Doxofylline + Montelukast</td><td>400MG + 10MG</td><td>10*10</td></tr>
+</tbody>
+</table>
+
+    
   `,
-  "SEASONAL PRODUCTS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Product</th><th class="sortable">Use</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Cough Syrup</td><td>Cold & Flu</td><td>Syrup</td></tr>
-      </tbody>
-    </table>
+      "SEASONAL PRODUCTS": `
+    <table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; width: 100%;" id="productTable">
+<thead>
+<tr style="background-color: #f2f2f2;">
+<th class="sorting">Sl No</th>
+<th class="sorting">Generic Name / Composition</th>
+<th>Packing / Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Dextrose Monohydrate + Calcium 170MG + Phosphorus 100MG + Vitamin D3 300 IU + Sodium 60MG</td><td>100 GM</td></tr>
+<tr><td>2</td><td>Dextrose Monohydrate + Calcium 170MG + Phosphorus 100MG + Vitamin C 125MG + Sodium 60MG</td><td>100 GM</td></tr>
+<tr><td>3</td><td>Dextrose Monohydrate + Calcium 170MG + Phosphorus 100MG + Vitamin D3 300 IU + Sodium 60MG</td><td>500 GM</td></tr>
+<tr><td>4</td><td>Sodium Chloride IP 2.6 G + Potassium Chloride 1.5 G + Sodium Citrate 2.9 G + Dextrose IP 13.5 G</td><td>21 G</td></tr>
+<tr><td>5</td><td>Sodium Chloride 0.52 G + Potassium Chloride 0.30 G + Dextrose 2.70 G (WHO Recommended Formula)</td><td>200 ML</td></tr>
+</tbody>
+</table>
+
   `,
-  "SEXUAL WELLNESS": `
-    <table id="productTable">
-      <thead>
-        <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Form</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>WellMax</td><td>Sildenafil 50mg</td><td>Tablet</td></tr>
-      </tbody>
-    </table>
+      "SEXUAL WELLNESS": `
+    <table border="1" cellspacing="0" cellpadding="5"  style="border-collapse: collapse; width: 100%;" id="productTable">
+<thead>
+<tr style="background-color: #f2f2f2;">
+<th class="sorting">Sl no</th>
+<th class="sorting">Generic Name / Composition</th>
+<th class="sorting">Packing / Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>Ashwagandha 125 MG + Safed Musli 125 MG + Shilajeet 75 MG + Shatawar 50 MG + Gokhru 25 MG + Kaunch 25 MG + Amla 25 MG + Trivang Bhasam 35 MG + Abhrak Bhasam 15 MG</td><td>1*30</td></tr>
+<tr><td>2</td><td>Tadalafil 10 MG</td><td>10*10</td></tr>
+<tr><td>3</td><td>Tadalafil 20 MG</td><td>10*10</td></tr>
+<tr><td>4</td><td>Tadalafil 10 MG + Dapoxetine 30 MG</td><td>10*1*4</td></tr>
+<tr><td>5</td><td>Sildenafil 50 MG + Dapoxetine 30 MG</td><td>30*2*4</td></tr>
+<tr><td>6</td><td>Sildenafil 100 MG Blue Color Soft Gel Capsule</td><td>10*10</td></tr>
+<tr><td>7</td><td>Sildenafil 100 MG</td><td>20*1*4</td></tr>
+<tr><td>8</td><td>Sildenafil 100 MG Red Color</td><td>20*1*4</td></tr>
+</tbody>
+</table>
+
   `,
-  "SYRUPS": `
+      "SYRUPS": `
     <table id="productTable">
       <thead>
         <tr><th class="sortable">Brand</th><th class="sortable">Composition</th><th class="sortable">Flavor</th></tr>
@@ -553,7 +2533,7 @@ th.sortable.desc::after {
       </tbody>
     </table>
   `,
-  "TABLETS": `
+      "TABLETS": `
     <table id="productTable">
       <thead>
         <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Strength</th></tr>
@@ -563,7 +2543,7 @@ th.sortable.desc::after {
       </tbody>
     </table>
   `,
-  "UNIQUE RANGES": `
+      "UNIQUE RANGES": `
     <table id="productTable">
       <thead>
         <tr><th class="sortable">Product</th><th class="sortable">Description</th><th class="sortable">Use</th></tr>
@@ -573,7 +2553,7 @@ th.sortable.desc::after {
       </tbody>
     </table>
   `,
-  "UROLOGY": `
+      "UROLOGY": `
     <table id="productTable">
       <thead>
         <tr><th class="sortable">Brand</th><th class="sortable">Drug</th><th class="sortable">Form</th></tr>
@@ -583,7 +2563,7 @@ th.sortable.desc::after {
       </tbody>
     </table>
   `
-};
+    };
 
 
     // Display the correct table
@@ -607,33 +2587,34 @@ th.sortable.desc::after {
     });
 
     // Sort Functionality
-   document.addEventListener('click', function (e) {
-  if (e.target.classList.contains('sortable')) {
-    const th = e.target;
-    const table = th.closest('table');
-    const tbody = table.querySelector('tbody');
-    const index = Array.from(th.parentNode.children).indexOf(th);
-    const rows = Array.from(tbody.querySelectorAll('tr'));
+    document.addEventListener('click', function (e) {
+      if (e.target.classList.contains('sortable')) {
+        const th = e.target;
+        const table = th.closest('table');
+        const tbody = table.querySelector('tbody');
+        const index = Array.from(th.parentNode.children).indexOf(th);
+        const rows = Array.from(tbody.querySelectorAll('tr'));
 
-    // Determine sort direction
-    const isAsc = !th.classList.contains('asc');
-    table.querySelectorAll('th').forEach(header => header.classList.remove('asc', 'desc'));
-    th.classList.toggle('asc', isAsc);
-    th.classList.toggle('desc', !isAsc);
+        // Determine sort direction
+        const isAsc = !th.classList.contains('asc');
+        table.querySelectorAll('th').forEach(header => header.classList.remove('asc', 'desc'));
+        th.classList.toggle('asc', isAsc);
+        th.classList.toggle('desc', !isAsc);
 
-    // Sort rows
-    rows.sort((a, b) => {
-      const cellA = a.children[index].textContent.trim().toLowerCase();
-      const cellB = b.children[index].textContent.trim().toLowerCase();
-      if (cellA < cellB) return isAsc ? -1 : 1;
-      if (cellA > cellB) return isAsc ? 1 : -1;
-      return 0;
+        // Sort rows
+        rows.sort((a, b) => {
+          const cellA = a.children[index].textContent.trim().toLowerCase();
+          const cellB = b.children[index].textContent.trim().toLowerCase();
+          if (cellA < cellB) return isAsc ? -1 : 1;
+          if (cellA > cellB) return isAsc ? 1 : -1;
+          return 0;
+        });
+
+        rows.forEach(row => tbody.appendChild(row));
+      }
     });
-
-    rows.forEach(row => tbody.appendChild(row));
-  }
-});
 
   </script>
 </body>
+
 </html>
