@@ -22,36 +22,59 @@
 </head>
 
 <style>
-/* Make product list responsive and styled */
-.product-list {
-    font-size: 18px;
-    line-height: 2;
-    padding-left: 20px; /* Adds left margin for mobile */
-    list-style: disc; /* Makes the bullets more visible */
-}
+	.product-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		list-style: none;
+		padding: 20px;
+		background-image: url('https://example.com/pharmacy-background.jpg');
+		/* Replace with actual image URL */
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		font-size: 18px;
+		line-height: 2;
+		gap: 20px;
+	}
 
-.product-list li {
-    margin-bottom: 10px; /* Space between items */
-}
+	.product-list li {
+		flex: 1 1 calc(33.333% - 20px);
+		/* 3 items per row on desktop */
+		background: rgba(255, 255, 255, 0.85);
+		padding: 10px;
+		border-radius: 8px;
+		text-align: left;
+	}
 
-.product-list li a {
-    color: #007bff; /* Bootstrap primary blue */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+	.product-list li a {
+		text-decoration: none;
+		color: #006699;
+		font-weight: bold;
+	}
 
-.product-list li a:hover {
-    color: #0056b3; /* Darker blue on hover */
-    text-decoration: underline;
-}
+	.product-list li a:hover {
+		color: #e0b264;
+	}
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .product-list {
-        font-size: 16px;
-        padding-left: 15px;
-    }
-}
+	/* Responsive for tablets/mobiles */
+	@media (max-width: 768px) {
+		.product-list li {
+			flex: 1 1 calc(50% - 20px);
+			/* 2 items per row */
+		}
+	}
+
+	@media (max-width: 480px) {
+		.product-list {
+			padding: 10px;
+		}
+
+		.product-list li {
+			flex: 1 1 100%;
+			/* Stack on small devices */
+		}
+	}
 </style>
 
 <body>
@@ -109,39 +132,47 @@
 			</div>
 
 			<!-- Product List Start -->
-			<ul style="font-size: 18px; line-height: 2;">
-				<li><a href="product-view.html?product=ANTI%20DIABETIC" target="_blank">ANTI DIABETIC</a></li>
-				<li><a href="product-view.html?product=ANTIBIOTICS" target="_blank">ANTIBIOTICS</a></li>
-				<li><a href="product-view.html?product=ANTIINFLAMATORY" target="_blank">ANTIINFLAMATORY</a></li>
-				<li><a href="product-view.html?product=CAPSULES" target="_blank">CAPSULES</a></li>
-				<li><a href="product-view.html?product=CARDIOVASCULAR" target="_blank">CARDIOVASCULAR</a></li>
-				<li><a href="product-view.html?product=CRITICAL%20CARE" target="_blank">CRITICAL CARE</a></li>
-				<li><a href="product-view.html?product=DERMATOLOGY" target="_blank">DERMATOLOGY</a></li>
-				<li><a href="product-view.html?product=DRY%20INJECTIONS" target="_blank">DRY INJECTIONS</a></li>
-				<li><a href="product-view.html?product=GASTROINTESTINALS" target="_blank">GASTROINTESTINALS</a></li>
-				<li><a href="product-view.html?product=GYNACOLOGY" target="_blank">GYNACOLOGY</a></li>
-				<li><a href="product-view.html?product=INJECTIONS" target="_blank">INJECTIONS</a></li>
-				<li><a href="product-view.html?product=INVISAT%20MED%20DEVICES%20PRODUCT%20LIST" target="_blank">INVISAT
-						MED DEVICES PRODUCT LIST</a></li>
-				<li><a href="product-view.html?product=INVISAT%20PRODUCTS%202" target="_blank">INVISAT PRODUCTS 2</a>
+			<ul class="product-list">
+				<li>1. <a href="product-view.html?product=ANTI%20DIABETIC" target="_blank">ANTI DIABETIC</a></li>
+				<li>2. <a href="product-view.html?product=ANTIBIOTICS" target="_blank">ANTIBIOTICS</a></li>
+				<li>3. <a href="product-view.html?product=ANTIINFLAMATORY" target="_blank">ANTIINFLAMATORY</a></li>
+				<li>4. <a href="product-view.html?product=CAPSULES" target="_blank">CAPSULES</a></li>
+				<li>5. <a href="product-view.html?product=CARDIOVASCULAR" target="_blank">CARDIOVASCULAR</a></li>
+				<li>6. <a href="product-view.html?product=CRITICAL%20CARE" target="_blank">CRITICAL CARE</a></li>
+				<li>7. <a href="product-view.html?product=DERMATOLOGY" target="_blank">DERMATOLOGY</a></li>
+				<li>8. <a href="product-view.html?product=DRY%20INJECTIONS" target="_blank">DRY INJECTIONS</a></li>
+				<li>9. <a href="product-view.html?product=GASTROINTESTINALS" target="_blank">GASTROINTESTINALS</a></li>
+				<li>10. <a href="product-view.html?product=GYNACOLOGY" target="_blank">GYNACOLOGY</a></li>
+				<li>11. <a href="product-view.html?product=INJECTIONS" target="_blank">INJECTIONS</a></li>
+				<li>12. <a href="product-view.html?product=INVISAT%20MED%20DEVICES%20PRODUCT%20LIST"
+						target="_blank">INVISAT MED DEVICES PRODUCT LIST</a></li>
+				<li>13. <a href="product-view.html?product=INVISAT%20PRODUCTS%202" target="_blank">INVISAT PRODUCTS
+						2</a></li>
+				<li>14. <a href="product-view.html?product=LIQUID%20INJECTIONS" target="_blank">LIQUID INJECTIONS</a>
 				</li>
-				<li><a href="product-view.html?product=LIQUID%INJECTIONS" target="_blank">LIQUID INJECTIONS</a></li>
-				 <li><a href="product-view.html?product=NEURO%20PSYCHETRIC%20RANGE" target="_blank">NEURO PSYCHETRIC RANGE</a></li>
-    <li><a href="product-view.html?product=OINTMENTS%20%26%20CREAMS" target="_blank">OINTMENTS & CREAMS</a></li>
-    <li><a href="product-view.html?product=ONCOLOGY" target="_blank">ONCOLOGY</a></li>
-    <li><a href="product-view.html?product=OPTHOMOLOGY" target="_blank">OPTHOMOLOGY</a></li>
-    <li><a href="product-view.html?product=ORTHOPEDIC" target="_blank">ORTHOPEDIC</a></li>
-    <li><a href="product-view.html?product=OTC" target="_blank">OTC</a></li>
-    <li><a href="product-view.html?product=PEDIATRICS" target="_blank">PEDIATRICS</a></li>
-    <li><a href="product-view.html?product=REGULAR%20INJECTIONS" target="_blank">REGULAR INJECTIONS</a></li>
-    <li><a href="product-view.html?product=RESPIRATORY%20%26%20ANTI%20ALLERGETICS" target="_blank">RESPIRATORY & ANTI ALLERGETICS</a></li>
-    <li><a href="product-view.html?product=SEASONAL%20PRODUCTS" target="_blank">SEASONAL PRODUCTS</a></li>
-    <li><a href="product-view.html?product=SEXUAL%20WELLNESS" target="_blank">SEXUAL WELLNESS</a></li>
-    <li><a href="product-view.html?product=SYRUPS" target="_blank">SYRUPS</a></li>
-    <li><a href="product-view.html?product=TABLETS" target="_blank">TABLETS</a></li>
-    <li><a href="product-view.html?product=UNIQUE%20RANGES" target="_blank">UNIQUE RANGES</a></li>
-    <li><a href="product-view.html?product=UROLOGY" target="_blank">UROLOGY</a></li>
+				<li>15. <a href="product-view.html?product=NEURO%20PSYCHETRIC%20RANGE" target="_blank">NEURO PSYCHETRIC
+						RANGE</a></li>
+				<li>16. <a href="product-view.html?product=OINTMENTS%20%26%20CREAMS" target="_blank">OINTMENTS &
+						CREAMS</a></li>
+				<li>17. <a href="product-view.html?product=ONCOLOGY" target="_blank">ONCOLOGY</a></li>
+				<li>18. <a href="product-view.html?product=OPTHOMOLOGY" target="_blank">OPTHOMOLOGY</a></li>
+				<li>19. <a href="product-view.html?product=ORTHOPEDIC" target="_blank">ORTHOPEDIC</a></li>
+				<li>20. <a href="product-view.html?product=OTC" target="_blank">OTC</a></li>
+				<li>21. <a href="product-view.html?product=PEDIATRICS" target="_blank">PEDIATRICS</a></li>
+				<li>22. <a href="product-view.html?product=REGULAR%20INJECTIONS" target="_blank">REGULAR INJECTIONS</a>
+				</li>
+				<li>23. <a href="product-view.html?product=RESPIRATORY%20%26%20ANTI%20ALLERGETICS"
+						target="_blank">RESPIRATORY & ANTI ALLERGETICS</a></li>
+				<li>24. <a href="product-view.html?product=SEASONAL%20PRODUCTS" target="_blank">SEASONAL PRODUCTS</a>
+				</li>
+				<li>25. <a href="product-view.html?product=SEXUAL%20WELLNESS" target="_blank">SEXUAL WELLNESS</a></li>
+				<li>26. <a href="product-view.html?product=SYRUPS" target="_blank">SYRUPS</a></li>
+				<li>27. <a href="product-view.html?product=TABLETS" target="_blank">TABLETS</a></li>
+				<li>28. <a href="product-view.html?product=UNIQUE%20RANGES" target="_blank">UNIQUE RANGES</a></li>
+				<li>29. <a href="product-view.html?product=UROLOGY" target="_blank">UROLOGY</a></li>
 			</ul>
+
+
 
 			<!-- Product List End -->
 		</div>
